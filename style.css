@@ -120,16 +120,22 @@ h6 {
 }
 
 .hero-text {
-  font-size: var(--text-hero);
-  font-weight: 800;
-  letter-spacing: -0.05em;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 11vw, 10rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
   text-transform: uppercase;
-  line-height: 1.1;
-  /* Increased to prevent clipping */
-  margin-bottom: var(--space-md);
-  word-wrap: break-word;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  word-break: break-word;
   padding-bottom: 0.2em;
-  /* Extra space for descenders */
+}
+
+.hero-text span {
+  display: block;
 }
 
 .display-text {
@@ -674,7 +680,16 @@ body.loaded {
   }
 
   .hero-text {
-    font-size: 15vw;
+    font-size: clamp(2.8rem, 12vw, 4.5rem);
+    /* Slightly smaller max to prevent huge blowout */
+    line-height: 1.1;
+    /* Much looser to prevent overlap */
+    margin-bottom: 2rem;
+  }
+
+  /* Fix vertical spacing */
+  .hero-text span:nth-child(2) {
+    z-index: 2;
   }
 
   .section {

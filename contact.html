@@ -16,6 +16,24 @@
             align-items: center;
             justify-content: center;
             padding: var(--space-xl) var(--margin-horizontal) var(--space-2xl);
+            width: 100%;
+            overflow-x: hidden;
+            /* Prevent horizontal scroll */
+        }
+
+        @media (max-width: 768px) {
+            .contact-page {
+                padding: var(--space-xl) 1.5rem;
+                min-height: auto;
+            }
+
+            .contact-container {
+                width: 100%;
+            }
+
+            .contact-methods {
+                gap: 1rem;
+            }
         }
 
         .contact-container {
@@ -69,6 +87,8 @@
             text-decoration: none;
             font-family: var(--font-serif);
             transition: color var(--transition-fast);
+            word-break: break-all;
+            /* Fixes overflow for long emails */
         }
 
         .contact-link:hover {
@@ -253,7 +273,7 @@
                 <button type="submit" class="btn form-submit">Send Message</button>
             </form>
 
-          
+
         </div>
     </main>
 

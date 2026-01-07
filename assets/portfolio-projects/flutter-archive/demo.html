@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,99 +10,273 @@
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
   <style>
-    :root{
-      --bg-sky-1:#cfe9ff; 
-      --bg-sky-2:#8dc6ff;
-      --bg-grass-1:#b7e3b1; 
-      --bg-grass-2:#86cf84;
-      --panel:#ffffffea;
-      --ink:#0f172a;
-      --muted:#5b6375;
-      --accent:#6c9cff;
-      --accent-2:#6ee7b7;
-      --ring: rgba(108,156,255,.25);
-    }
-    *,*::before,*::after{box-sizing:border-box}
-    html,body{height:100%; margin:0; overflow:hidden}
-    body{
-      font-family: ui-sans-serif,system-ui,sans-serif;
-      color:var(--ink);
-      background:linear-gradient(180deg,var(--bg-sky-1),var(--bg-sky-2) 40%,var(--bg-grass-1) 60%,var(--bg-grass-2));
+    :root {
+      --bg-sky-1: #cfe9ff;
+      --bg-sky-2: #8dc6ff;
+      --bg-grass-1: #b7e3b1;
+      --bg-grass-2: #86cf84;
+      --panel: #ffffffea;
+      --ink: #0f172a;
+      --muted: #5b6375;
+      --accent: #6c9cff;
+      --accent-2: #6ee7b7;
+      --ring: rgba(108, 156, 255, .25);
     }
 
-    .wrap{display:grid;grid-template-rows:auto 1fr auto;height:100%}
-    header,footer{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 14px}
-    header{
-      background:linear-gradient(180deg,rgba(255,255,255,.6),rgba(255,255,255,.2));
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid rgba(15,23,42,.08);
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box
     }
-    .brand{font-weight:700}
-    .pill{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(15,23,42,.1);background:#fff}
-    .dots{display:flex;gap:6px}
-    .dot{width:12px;height:12px;border-radius:50%;background:#e5e7eb;border:1px solid rgba(15,23,42,.1)}
-    .dot.on{background:var(--accent-2);box-shadow:0 0 0 6px var(--ring)}
-    button.icon{
-      appearance:none;border:1px solid rgba(15,23,42,.12);background:#fff;border-radius:12px;
-      padding:8px 12px;cursor:pointer;font-weight:600;box-shadow:0 6px 14px rgba(0,0,0,.06);
-      transition:.2s
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden
     }
-    button.icon:hover{transform:translateY(-1px)}
-    .stage{position:relative;overflow:hidden}
-    .cloud{position:absolute;top:12%;width:220px;height:70px;background:#ffffffc0;border-radius:60px;filter:blur(2px);opacity:.7;animation:drift 36s linear infinite}
-    .cloud::before,.cloud::after{content:"";position:absolute;background:#ffffffd0;border-radius:50%}
-    .cloud::before{width:90px;height:90px;left:18px;top:-28px}
-    .cloud::after{width:130px;height:130px;right:18px;top:-46px}
-    .cloud.c2{top:22%;width:300px;height:90px;animation-duration:48s;animation-delay:-10s;opacity:.6}
-    .cloud.c3{top:8%;width:180px;height:60px;animation-duration:60s;animation-delay:-24s;opacity:.55}
-    @keyframes drift{0%{transform:translateX(-30vw)}100%{transform:translateX(130vw)}}
+
+    body {
+      font-family: ui-sans-serif, system-ui, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, var(--bg-sky-1), var(--bg-sky-2) 40%, var(--bg-grass-1) 60%, var(--bg-grass-2));
+    }
+
+    .wrap {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      height: 100%
+    }
+
+    header,
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 14px
+    }
+
+    header {
+      background: linear-gradient(180deg, rgba(255, 255, 255, .6), rgba(255, 255, 255, .2));
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(15, 23, 42, .08);
+    }
+
+    .brand {
+      font-weight: 700
+    }
+
+    .pill {
+      font-size: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, .1);
+      background: #fff
+    }
+
+    .dots {
+      display: flex;
+      gap: 6px
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      border: 1px solid rgba(15, 23, 42, .1)
+    }
+
+    .dot.on {
+      background: var(--accent-2);
+      box-shadow: 0 0 0 6px var(--ring)
+    }
+
+    button.icon {
+      appearance: none;
+      border: 1px solid rgba(15, 23, 42, .12);
+      background: #fff;
+      border-radius: 12px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-weight: 600;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, .06);
+      transition: .2s
+    }
+
+    button.icon:hover {
+      transform: translateY(-1px)
+    }
+
+    .stage {
+      position: relative;
+      overflow: hidden
+    }
+
+    .cloud {
+      position: absolute;
+      top: 12%;
+      width: 220px;
+      height: 70px;
+      background: #ffffffc0;
+      border-radius: 60px;
+      filter: blur(2px);
+      opacity: .7;
+      animation: drift 36s linear infinite
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: "";
+      position: absolute;
+      background: #ffffffd0;
+      border-radius: 50%
+    }
+
+    .cloud::before {
+      width: 90px;
+      height: 90px;
+      left: 18px;
+      top: -28px
+    }
+
+    .cloud::after {
+      width: 130px;
+      height: 130px;
+      right: 18px;
+      top: -46px
+    }
+
+    .cloud.c2 {
+      top: 22%;
+      width: 300px;
+      height: 90px;
+      animation-duration: 48s;
+      animation-delay: -10s;
+      opacity: .6
+    }
+
+    .cloud.c3 {
+      top: 8%;
+      width: 180px;
+      height: 60px;
+      animation-duration: 60s;
+      animation-delay: -24s;
+      opacity: .55
+    }
+
+    @keyframes drift {
+      0% {
+        transform: translateX(-30vw)
+      }
+
+      100% {
+        transform: translateX(130vw)
+      }
+    }
 
     /* BUTTERFLY — LOTTIE */
-    .butterfly{
-      position:absolute;
-      width:130px;      
-      height:100px;     
-      cursor:pointer;
-      transform-origin:center;
-      filter:drop-shadow(0 10px 18px rgba(0,0,0,.15));
-      animation:bob 3.6s ease-in-out infinite;
-    }
-    .butterfly:hover{animation-play-state:paused}
-    @keyframes bob{
-      0%,100%{transform:translateY(0) rotate(-4deg)}
-      50%{transform:translateY(-12px) rotate(4deg)}
-    }
-    .shake{animation:shake .35s linear 1}
-    @keyframes shake{
-      0%,100%{transform:translate(0,0) rotate(0)}
-      25%{transform:translate(-2px,1px) rotate(-6deg)}
-      50%{transform:translate(2px,-1px) rotate(6deg)}
-      75%{transform:translate(-1px,2px) rotate(-4deg)}
+    .butterfly {
+      position: absolute;
+      width: 130px;
+      height: 100px;
+      cursor: pointer;
+      transform-origin: center;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .15));
+      animation: bob 3.6s ease-in-out infinite;
     }
 
-  
+    .butterfly:hover {
+      animation-play-state: paused
+    }
+
+    @keyframes bob {
+
+      0%,
+      100% {
+        transform: translateY(0) rotate(-4deg)
+      }
+
+      50% {
+        transform: translateY(-12px) rotate(4deg)
+      }
+    }
+
+    .shake {
+      animation: shake .35s linear 1
+    }
+
+    @keyframes shake {
+
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0)
+      }
+
+      25% {
+        transform: translate(-2px, 1px) rotate(-6deg)
+      }
+
+      50% {
+        transform: translate(2px, -1px) rotate(6deg)
+      }
+
+      75% {
+        transform: translate(-1px, 2px) rotate(-4deg)
+      }
+    }
+
+
     .butterfly lottie-player,
     .butterfly svg,
     .butterfly svg * {
-      background:transparent !important;
-    }
-    .butterfly svg rect[fill="#000000"],
-    .butterfly svg path[fill="#000000"] {
-      fill:none !important;
+      background: transparent !important;
     }
 
-    .poem-panel{
-      position:absolute;right:14px;bottom:14px;width:min(520px,92vw);max-height:52vh;
-      padding:12px 14px;border-radius:14px;background:var(--panel);
-      border:1px solid rgba(15,23,42,.1);box-shadow:0 14px 40px rgba(0,0,0,.12);z-index:10;
-      overflow:auto;
+    .butterfly svg rect[fill="#000000"],
+    .butterfly svg path[fill="#000000"] {
+      fill: none !important;
     }
-    .poem-header{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
-    .poem-title{font-weight:800}
-    .poem-body{line-height:1.6}
-    .hint{font-size:12px;color:var(--muted)}
+
+    .poem-panel {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      width: min(520px, 92vw);
+      max-height: 52vh;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: var(--panel);
+      border: 1px solid rgba(15, 23, 42, .1);
+      box-shadow: 0 14px 40px rgba(0, 0, 0, .12);
+      z-index: 10;
+      overflow: auto;
+    }
+
+    .poem-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 8px
+    }
+
+    .poem-title {
+      font-weight: 800
+    }
+
+    .poem-body {
+      line-height: 1.6
+    }
+
+    .hint {
+      font-size: 12px;
+      color: var(--muted)
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
@@ -129,7 +304,8 @@
           </div>
           <button class="icon" id="btnCopy">Copy</button>
         </div>
-        <div id="poem" class="poem-body">The field is quiet. Butterflies will appear and vanish. Hover to tease them. Click to keep a line.</div>
+        <div id="poem" class="poem-body">The field is quiet. Butterflies will appear and vanish. Hover to tease them.
+          Click to keep a line.</div>
       </section>
     </main>
   </div>
@@ -143,10 +319,10 @@
       "and placed, at last, in the open of my hands."
     ];
 
-   
+
     const BUTTERFLY_LOTTIES = [
-      "butterfly1.json",        
-         
+      "Butterfly1.json",
+
     ];
 
     const stage = document.getElementById('stage');
@@ -206,7 +382,7 @@
       };
 
       container.onclick = capture;
-      container.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); capture(); }};
+      container.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); capture(); } };
       container.onmouseenter = () => {
         container.classList.add('shake');
         setTimeout(() => container.classList.remove('shake'), 360);
@@ -245,4 +421,5 @@
     startSpawning();
   </script>
 </body>
+
 </html>

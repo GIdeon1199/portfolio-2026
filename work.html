@@ -423,11 +423,26 @@
 
                 @media (max-width: 768px) {
                     .interactive-project-card {
-                        height: 350px;
+                        height: auto;
+                        /* Allow content to fit */
+                        min-height: 350px;
                     }
 
                     .projects-grid {
                         grid-template-columns: 1fr !important;
+                    }
+
+                    /* Ensure card overlay content is visible on mobile if needed or handle hover differently */
+                    .interactive-project-card .card-overlay-content {
+                        opacity: 1;
+                        /* Force visible on mobile */
+                        background: rgba(255, 255, 255, 0.95);
+                        /* Ensure readability */
+                    }
+
+                    /* Show image slightly through */
+                    .interactive-project-card .card-bg-image {
+                        opacity: 0.5;
                     }
                 }
             </style>
