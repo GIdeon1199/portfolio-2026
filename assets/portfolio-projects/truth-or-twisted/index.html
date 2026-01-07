@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Daily Truth — Fact Checking Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Playfair Display (Headlines), Lora (Body), Special Elite (Stamps) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;700;900&family=Special+Elite&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="app-container">
+        <!-- MASTHEAD / HUD -->
+        <header class="newspaper-header">
+            <div class="header-top">
+                <span class="date-line">VOL. 1 — NO. 1</span>
+                <span class="weather-line">Todays Forecast: 100% FACTUAL</span>
+            </div>
+            <h1 class="masthead-title">THE DAILY TRUTH</h1>
+            <div class="header-border"></div>
+
+            <div class="hud-stats">
+                <div class="stat-item">
+                    <span class="stat-label">STREAK:</span>
+                    <span id="streak-display" class="stat-val">0</span>
+                </div>
+                <div class="stat-separator">|</div>
+                <div class="stat-item">
+                    <span class="stat-label">SCORE:</span>
+                    <span id="score-display" class="stat-val">0/10</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- GAME AREA -->
+        <main class="game-board">
+            <!-- Card Stack Container -->
+            <div id="card-stack" class="card-stack">
+                <!-- Cards will be injected here by JS -->
+                <div class="empty-state">
+                    <div class="loader-ink"></div>
+                    <p>FETCHING LATEST WIRES...</p>
+                </div>
+            </div>
+
+            <!-- Swipe Feedback Overlays (Stamps) -->
+            <div id="overlay-true" class="swipe-overlay stamp-true">
+                <span>VERIFIED</span>
+            </div>
+            <div id="overlay-twisted" class="swipe-overlay stamp-false">
+                <span>FAKE NEWS</span>
+            </div>
+        </main>
+
+        <!-- CONTROLS -->
+        <div class="controls-area">
+            <button id="btn-false" class="control-btn btn-reject" aria-label="Reject (False)">
+                <span class="btn-icon">✖</span>
+                <span class="btn-label">REJECT</span>
+            </button>
+            <div class="instructions">
+                <p>SWIPE CARDS TO EDIT</p>
+                <div class="arrows">← FALSE &bull; TRUE →</div>
+            </div>
+            <button id="btn-true" class="control-btn btn-publish" aria-label="Publish (True)">
+                <span class="btn-icon">✔</span>
+                <span class="btn-label">PUBLISH</span>
+            </button>
+        </div>
+
+        <!-- WELCOME SCREEN (Front Page) -->
+        <div id="welcome-screen" class="modal">
+            <div class="modal-content newspaper-paper">
+                <div class="paper-header">
+                    <h2>BREAKING NEWS</h2>
+                </div>
+
+                <div class="welcome-body">
+                    <h3 class="headline">MISINFORMATION SPREADING FAST!</h3>
+                    <p class="lead"><strong>CITY DESK &mdash;</strong> Reports are flooding in. We need a sharp editor
+                        to separate fact from fiction.</p>
+
+                    <div class="tutorial-graphic">
+                        <div class="tut-item left">
+                            <span class="tut-icon">✖</span>
+                            <span class="tut-action">SWIPE LEFT</span>
+                            <span class="tut-desc">If the story is <strong>FALSE</strong></span>
+                        </div>
+                        <div class="tut-divider"></div>
+                        <div class="tut-item right">
+                            <span class="tut-icon">✔</span>
+                            <span class="tut-action">SWIPE RIGHT</span>
+                            <span class="tut-desc">If the story is <strong>TRUE</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button id="btn-start-game" class="ink-btn">START EDITING</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL: FEEDBACK (Correction) -->
+        <div id="modal-feedback" class="modal hidden">
+            <div class="modal-content newspaper-paper correction-slip">
+                <div class="correction-header">
+                    <h2 id="feedback-title">CORRECTION</h2>
+                </div>
+                <div class="modal-body">
+                    <div class="stamp-mark" id="feedback-stamp">FALSE</div>
+                    <p id="feedback-explanation">Explanation text goes here...</p>
+
+                    <div class="source-wrapper">
+                        <span class="source-label">PRIMARY SOURCE:</span>
+                        <a id="feedback-source" href="#" target="_blank">View Record</a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-next" class="ink-btn">NEXT STORY &rarr;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- END SCREEN -->
+        <div id="end-screen" class="modal hidden">
+            <div class="modal-content newspaper-paper">
+                <h1 class="headline-large">EDITION COMPLETE</h1>
+
+                <div class="final-stats-grid">
+                    <div class="f-stat">
+                        <span class="f-label">ACCURACY</span>
+                        <span id="final-score" class="f-val">0%</span>
+                    </div>
+                    <div class="f-stat">
+                        <span class="f-label">BEST STREAK</span>
+                        <span id="final-streak" class="f-val">0</span>
+                    </div>
+                </div>
+
+                <div class="performance-review">
+                    <p id="final-message">EDITOR RATING: INTERN</p>
+                </div>
+
+                <button id="btn-restart" class="ink-btn">PRINT NEXT EDITION</button>
+            </div>
+        </div>
+
+        <!-- Texture Overlay -->
+        <div class="paper-texture"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

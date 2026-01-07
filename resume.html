@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Portfolio</title>
+    <meta name="description" content="Resume and professional experience">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/neo-brutalist.css">
+    <style>
+        .resume-page {
+            padding: var(--space-xl) var(--margin-horizontal) var(--space-2xl);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .resume-header {
+            text-align: left;
+            padding-left: 4rem;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .resume-actions {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: flex-start;
+            margin-top: var(--space-xl);
+        }
+
+        .resume-embed {
+            width: 100%;
+            height: 100vh;
+            border: 1px solid var(--color-accent);
+            margin-top: var(--space-xl);
+            background: var(--color-bg-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+
+        .resume-fallback {
+            padding: var(--space-2xl);
+            text-align: center;
+        }
+
+        .resume-fallback h2 {
+            margin-bottom: var(--space-md);
+        }
+
+        .resume-fallback p {
+            margin-bottom: var(--space-lg);
+            color: var(--color-text-secondary);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Neo-Brutalist Navigation -->
+    <div class="neo-nav-container">
+        <div class="neo-top-bar">
+            <a href="./index.html" class="neo-home-link">HOME</a>
+            <div class="neo-qr-code"></div>
+        </div>
+
+        <div class="neo-main-grid">
+            <ul class="neo-nav-list">
+                <li class="neo-nav-item">
+                    <a href="./work.html" class="neo-nav-link">WORK</a>
+                    <div class="neo-nav-bar">
+                        <svg class="neo-nav-arrow" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./about.html" class="neo-nav-link">ABOUT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./contact.html" class="neo-nav-link">CONTACT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./index.html" class="neo-nav-link">PORTFOLIO</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./resume.html" class="neo-nav-link">RESUMÉ</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+            </ul>
+
+            <div class="neo-content-block">
+                <h2 class="neo-headline">Elevating Digital Excellence.</h2>
+                <p class="neo-desc">We specialize in web design, development, UI/UX, and product design. Transform your
+                    online presence with our creative expertise.</p>
+            </div>
+        </div>
+
+        <div class="neo-graphic">
+            <div class="neo-chevron"></div>
+            <div class="neo-chevron"></div>
+        </div>
+    </div>
+
+    <main class="resume-page">
+        <header class="resume-header fade-in">
+            <h1>Resume</h1>
+            <p class="subtitle">Professional Experience & Qualifications</p>
+
+            <div class="resume-actions">
+                <a href="./assets/resume-2026.pdf" download class="btn">Download PDF</a>
+                <a href="./assets/resume-2026.pdf" target="_blank" class="btn btn-secondary">Open in New Tab</a>
+            </div>
+        </header>
+
+        <!-- HTML Resume Content -->
+        <article class="resume-content fade-in delay-1"
+            style="background: white; padding: 4rem; border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+
+            <!-- Contact Info -->
+            <div class="resume-contact"
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; margin-bottom: 3rem; border-bottom: 2px solid var(--color-accent); padding-bottom: 2rem;">
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem; line-height: 1.1;">Gideon Gyamfi</h2>
+                    <p style="font-size: 1.1rem; color: #666; font-weight: 500;">UX/UI Designer | Veteran |
+                        Story-Driven Creative</p>
+                </div>
+                <div style="text-align: right; font-size: 0.95rem; line-height: 1.6;">
+                    <p>Monaca, PA 15061</p>
+                    <p><a href="mailto:gideongyamfi1199@gmail.com">gideongyamfi1199@gmail.com</a></p>
+                    <p>+1 401 500 4737</p>
+                    <div style="margin-top: 0.5rem;">
+                        <a href="https://www.linkedin.com/in/gideon-gyamfi-572aa2234" target="_blank"
+                            style="margin-left: 1rem;">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Summary -->
+            <section style="margin-bottom: 3rem;">
+                <h3
+                    style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; color: var(--color-accent); margin-bottom: 1rem;">
+                    Professional Summary</h3>
+                <p style="font-size: 1.05rem; line-height: 1.7; color: var(--color-text-primary);">
+                    Versatile and motivated UX/UI design student with a strong foundation in user-centered design,
+                    interactive prototyping, and visual storytelling. Currently pursuing a B.A. in UX/UI Design with
+                    hands-on
+                    experience designing emotionally resonant and accessible digital experiences. U.S. Navy veteran with
+                    a
+                    proven track record in leadership, logistics, and administrative support. Skilled in Figma, Adobe
+                    Creative
+                    Suite, and front-end tools, with a passion for creating intuitive, engaging, and inclusive digital
+                    interfaces.
+                </p>
+            </section>
+
+            <!-- Skills Grid -->
+            <section style="margin-bottom: 3rem;">
+                <h3
+                    style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; color: var(--color-accent); margin-bottom: 1.5rem;">
+                    Skills</h3>
+                <div class="skills-grid"
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div>
+                        <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem;">Design & Research</h4>
+                        <ul style="padding-left: 1.2rem; line-height: 1.6; font-size: 0.95rem; color: #444;">
+                            <li>UX/UI Design</li>
+                            <li>Wireframing & Prototyping</li>
+                            <li>User Research & Personas</li>
+                            <li>User Journey Mapping</li>
+                            <li>A/B & Usability Testing</li>
+                            <li>Visual Storytelling</li>
+                            <li>Accessibility (WCAG)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem;">Tools & Technical</h4>
+                        <ul style="padding-left: 1.2rem; line-height: 1.6; font-size: 0.95rem; color: #444;">
+                            <li>Figma</li>
+                            <li>Adobe Creative Suite</li>
+                            <li>HTML5 / CSS3</li>
+                            <li>JavaScript (Basic)</li>
+                            <li>Responsive Design</li>
+                            <li>Microsoft Office Suite</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.75rem;">Professional</h4>
+                        <ul style="padding-left: 1.2rem; line-height: 1.6; font-size: 0.95rem; color: #444;">
+                            <li>Leadership (Military)</li>
+                            <li>Logistics & QA</li>
+                            <li>Troubleshooting</li>
+                            <li>Communication</li>
+                            <li>Design Thinking</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="divider" style="height: 1px; background: #eee; margin: 3rem 0;"></div>
+
+            <!-- Experience -->
+            <section style="margin-bottom: 3rem;">
+                <h3
+                    style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; color: var(--color-accent); margin-bottom: 2rem;">
+                    Work Experience</h3>
+
+                <!-- Graphic Design Intern -->
+                <div style="margin-bottom: 2.5rem;">
+                    <div
+                        style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                        <h4 style="font-size: 1.2rem; font-weight: 700; color: #000;">Graphic Design Intern</h4>
+                        <span style="font-style: italic; color: #666;">May 2024 - August 2024</span>
+                    </div>
+                    <div style="font-size: 1rem; color: var(--color-accent); margin-bottom: 0.75rem;">Robert Morris
+                        University · Pittsburgh, PA</div>
+                    <ul style="padding-left: 1.2rem; line-height: 1.6; color: #444;">
+                        <li>Assisted in media relations, managing social media accounts, and creating content for the
+                            RMU Athletics website.</li>
+                        <li>Coordinated media availability sessions and conducted interviews with coaches and athletes.
+                        </li>
+                        <li>Supported game-day operations including logistics, setup, scoring, and announcing.</li>
+                    </ul>
+                </div>
+
+                <!-- Graphic Designer -->
+                <div style="margin-bottom: 2.5rem;">
+                    <div
+                        style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                        <h4 style="font-size: 1.2rem; font-weight: 700; color: #000;">Graphic Designer</h4>
+                        <span style="font-style: italic; color: #666;">June 2018 - Present</span>
+                    </div>
+                    <div style="font-size: 1rem; color: var(--color-accent); margin-bottom: 0.75rem;">The Apostolic
+                        Church Int USA · Providence, RI</div>
+                    <ul style="padding-left: 1.2rem; line-height: 1.6; color: #444;">
+                        <li>Create visually appealing marketing materials including brochures, flyers, and social media
+                            graphics.</li>
+                        <li>Collaborate with clients to translate requirements into creative concepts that capture
+                            target audiences.</li>
+                        <li>Design logos and brand identity assets ensuring alignment with organizational values.</li>
+                        <li>Execute projects from concept to completion, adhering to strict brand guidelines and
+                            deadlines.</li>
+                    </ul>
+                </div>
+
+                <!-- Military -->
+                <div style="margin-bottom: 2.5rem;">
+                    <div
+                        style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                        <h4 style="font-size: 1.2rem; font-weight: 700; color: #000;">Logistics & Operations (Seaman)
+                        </h4>
+                        <span style="font-style: italic; color: #666;">September 2019 - January 2022</span>
+                    </div>
+                    <div style="font-size: 1rem; color: var(--color-accent); margin-bottom: 0.75rem;">U.S. Navy ·
+                        Everett, WA</div>
+                    <ul style="padding-left: 1.2rem; line-height: 1.6; color: #444;">
+                        <li><strong>Office Management:</strong> Served as office manager, handling correspondence,
+                            personnel administration, and confidential records.</li>
+                        <li><strong>Logistics:</strong> Managing inventory databases (R-Supply, NALCOMIS) for shipboard
+                            warehouses. Ordered and issued repair parts and supplies.</li>
+                        <li><strong>Operations:</strong> Operated small boats, cranes, and winches. Stood critical
+                            watches (helmsman, pier sentry, fire security).</li>
+                        <li><strong>Safety:</strong> Performed hazardous material control and emergency equipment
+                            repair/inspections.</li>
+                    </ul>
+                </div>
+
+                <!-- Previous Roles Condensed -->
+                <div style="margin-bottom: 2rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <h4 style="font-size: 1.1rem; font-weight: 600; color: #333;">Food Safety Specialist</h4>
+                        <span style="font-size: 0.9rem; color: #666;">Jan 2022 - Jan 2023</span>
+                    </div>
+                    <div style="font-size: 0.95rem; color: #555; margin-bottom: 0.5rem;">ECOLAB · Providence, RI</div>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                        <h4 style="font-size: 1.1rem; font-weight: 600; color: #333;">Tech Sales Associate</h4>
+                        <span style="font-size: 0.9rem; color: #666;">Aug 2018 - Aug 2019</span>
+                    </div>
+                    <div style="font-size: 0.95rem; color: #555; margin-bottom: 0.5rem;">Staples · Warwick, RI</div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section style="margin-bottom: 3rem;">
+                <h3
+                    style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; color: var(--color-accent); margin-bottom: 1.5rem;">
+                    Education</h3>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                        <h4 style="font-size: 1.1rem; font-weight: 700;">Bachelor of Arts in UX/UI Design</h4>
+                        <span>Expected May 2026</span>
+                    </div>
+                    <div style="color: #666;">Robert Morris University · Pittsburgh, PA</div>
+                </div>
+
+                <div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 0.25rem;">
+                        <h4 style="font-size: 1.1rem; font-weight: 700;">High School Diploma</h4>
+                        <span>May 2017</span>
+                    </div>
+                    <div style="color: #666;">Fijai Senior High School · Sekondi, Ghana</div>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section>
+                <h3
+                    style="text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.9rem; color: var(--color-accent); margin-bottom: 1.5rem;">
+                    Certifications</h3>
+                <ul style="display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; padding: 0;">
+                    <li style="background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.9rem;">Start
+                        UX Design (Google)</li>
+                    <li style="background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.9rem;">Combat
+                        Systems (US Navy)</li>
+                    <li style="background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.9rem;">
+                        Hazardous Materials Operations</li>
+                    <li style="background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.9rem;">CPR &
+                        Basic First Aid</li>
+                    <li style="background: #f5f5f5; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.9rem;">
+                        Firefighter (US Navy)</li>
+                    <li
+                        style="background: #eef2ff; padding: 0.5rem 1rem; border-radius: 4px; font-size: 0.9rem; font-weight: 600; color: var(--color-accent); border: 1px solid var(--color-accent);">
+                        Game Design Certificate (RMU)</li>
+                </ul>
+            </section>
+
+        </article>
+    </main>
+
+    <script type="module">
+        import { initNavigation } from './src/navigation.js';
+
+        // Simple scroll reveal logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll, .fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome — Portfolio</title>
+  <meta name="description" content="Portfolio of interaction design, systems thinking, and research">
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Welcome Page Specific Styles */
+    .welcome-page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: var(--space-xl);
+      text-align: center;
+    }
+
+    .welcome-content {
+      max-width: 600px;
+    }
+
+    .welcome-text {
+      font-family: var(--font-serif);
+      font-size: var(--text-2xl);
+      line-height: 1.6;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-xl);
+      opacity: 0;
+    }
+
+    .welcome-text.animate {
+      animation: fadeIn var(--transition-slow) ease-in-out forwards;
+      animation-delay: 500ms;
+    }
+
+    .welcome-btn {
+      opacity: 0;
+    }
+
+    .welcome-btn.animate {
+      animation: fadeIn var(--transition-slow) ease-in-out forwards;
+      animation-delay: 1500ms;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="welcome-page">
+    <div class="welcome-content">
+      <p class="welcome-text">
+        This is a space for thoughtful design—<br>
+        where interaction meets intention,<br>
+        and systems reveal themselves slowly.
+      </p>
+      <a href="./hero.html" class="btn welcome-btn">Enter</a>
+    </div>
+  </main>
+
+  <script type="module">
+    import { initNavigation } from './src/navigation.js';
+
+    // Trigger animations on load
+    window.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.welcome-text')?.classList.add('animate');
+      document.querySelector('.welcome-btn')?.classList.add('animate');
+    });
+
+    initNavigation();
+  </script>
+</body>
+
+</html>

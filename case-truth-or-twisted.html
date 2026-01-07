@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth or Twisted | Case Study</title>
+    <meta name="description" content="Gamifying media literacy with an editorial-themed fact-checking game.">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/case-study.css">
+    <link rel="stylesheet" href="./src/neo-brutalist.css">
+</head>
+
+<body>
+    <!-- Neo-Brutalist Navigation -->
+    <div class="neo-nav-container">
+        <div class="neo-top-bar">
+            <a href="./index.html" class="neo-home-link">HOME</a>
+            <div class="neo-qr-code"></div>
+        </div>
+
+        <div class="neo-main-grid">
+            <ul class="neo-nav-list">
+                <li class="neo-nav-item">
+                    <a href="./work.html" class="neo-nav-link">WORK</a>
+                    <div class="neo-nav-bar">
+                        <svg class="neo-nav-arrow" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./about.html" class="neo-nav-link">ABOUT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./contact.html" class="neo-nav-link">CONTACT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./index.html" class="neo-nav-link">PORTFOLIO</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./resume.html" class="neo-nav-link">RESUMÉ</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+            </ul>
+
+            <div class="neo-content-block">
+                <h2 class="neo-headline">Elevating Digital Excellence.</h2>
+                <p class="neo-desc">We specialize in web design, development, UI/UX, and product design. Transform your
+                    online presence with our creative expertise.</p>
+            </div>
+        </div>
+
+        <div class="neo-graphic">
+            <div class="neo-chevron"></div>
+            <div class="neo-chevron"></div>
+        </div>
+    </div>
+
+    <main class="case-study">
+        <!-- Project Header -->
+        <header class="case-header">
+            <div class="header-actions"
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <a href="./work.html" class="back-link">← Back to Work</a>
+                <a href="./assets/portfolio-projects/truth-or-twisted/index.html" class="btn btn-primary"
+                    target="_blank">Play Value →</a>
+            </div>
+
+            <h1 class="case-title fade-in">Truth or Twisted</h1>
+            <p class="lead-text fade-in delay-1"
+                style="font-size: 1.5rem; color: #666; max-width: 800px; margin-top: 1rem;">
+                A "Tinder for News" game that challenges users to separate political fact from fiction in a post-truth
+                era.
+            </p>
+
+            <div class="case-meta fade-in delay-2">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Creative Developer, UI/UX</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">2 Weeks (2024)</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Tech Stack</span>
+                    <span class="meta-value">HTML5, CSS3, Vanilla JS</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Type</span>
+                    <span class="meta-value">Web Game / Interactive Storytelling</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- TL;DR -->
+        <section class="case-section tldr">
+            <div class="section-container">
+                <div class="tldr-content animate-on-scroll">
+                    <h2 class="section-eyebrow">TL;DR</h2>
+                    <p class="tldr-text">
+                        <strong>Truth or Twisted</strong> is an interactive browser game designed to combat
+                        misinformation fatigue.
+                        By wrapping rigorous fact-checking in a familiar, addictive "swipe right/left" interface, it
+                        transforms
+                        passive news consumption into an active editorial challenge. Users play the role of an
+                        Editor-in-Chief,
+                        tasked with verifying or rejecting statements from real political figures.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Problem / Intent -->
+        <section class="case-section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">The Problem</h2>
+                <div class="content-block animate-on-scroll delay-1">
+                    <h3>Truth is boring. Lies are viral.</h3>
+                    <p>
+                        In the current political landscape, misinformation spreads 6x faster than factual news.
+                        Traditional fact-checking sites (like Snopes or Politifact) are invaluable resources,
+                        but their presentation - long walls of text - often fails to capture the attention of the
+                        demographic most susceptible to headlines: the casual scroller.
+                    </p>
+                    <p>
+                        The challenge was to create an experience that had the <strong>visceral immediacy of social
+                            media</strong>
+                        but the <strong>intellectual rigor of journalism</strong>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Features -->
+        <section class="case-section bg-secondary">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">The Solution</h2>
+                <div class="content-block animate-on-scroll delay-1">
+
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <h4>1. Gamified Verification</h4>
+                            <p>Using the familiar "Tinder" mechanic (Swipe Right for True, Left for False) lowers the
+                                barrier to entry. It turns a cognitive task into a muscle-memory interaction.</p>
+                        </div>
+
+                        <div class="feature-item">
+                            <h4>2. The "Editorial" Aesthetic</h4>
+                            <p>Unappealing to the "Cyberpunk" or generic tech aesthetic, I pivoted to a "Newspaper/Noir"
+                                visual language. Paper textures, typewriter fonts, and rubber stamps evoke the authority
+                                of old-school journalism.</p>
+                        </div>
+
+                        <div class="feature-item">
+                            <h4>3. Instant Contextual Feedback</h4>
+                            <p>If you get it wrong, you aren't just told "False." A "Correction Slip" appears,
+                                explaining <em>why</em> (e.g., "Missing Context," "Timeline Error") and linking to
+                                primary sources.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- Critical Analysis -->
+        <section class="case-section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">Critical Analysis</h2>
+
+                <div class="content-block animate-on-scroll delay-1">
+                    <h3>Where it Succeeds</h3>
+                    <p>
+                        The "swipe" mechanic is incredibly effective for rapid-fire engagement. Users can process 10
+                        claims in under a minute, receiving immediate feedback.
+                        The visual identity ("The Daily Truth") successfully builds an immersive atmosphere that
+                        differentiates it from standard quiz apps.
+                    </p>
+                </div>
+
+                <div class="content-block animate-on-scroll delay-2" style="margin-top: 3rem;">
+                    <h3>Shortcomings & Constraints</h3>
+                    <ul class="analysis-list" style="list-style: none; padding: 0;">
+                        <li
+                            style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--color-accent);">
+                            <strong>Binary Nuance:</strong> The game forces a binary "True" or "False" choice. In
+                            politics, many statements are "Half True" or "Mostly False." I had to curate questions that
+                            were definitively one or the other to maintain game balance, which limits the complexity of
+                            the content.
+                        </li>
+                        <li
+                            style="margin-bottom: 1.5rem; padding-left: 1.5rem; border-left: 3px solid var(--color-accent);">
+                            <strong>Static Data:</strong> Currently, the questions are hard-coded in a JSON file. A
+                            production version would need to fetch live data from a Fact-Check API (like the Google Fact
+                            Check Tools API) to stay relevant to the daily news cycle.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="case-section">
+            <div class="section-container" style="text-align: center;">
+                <h2 class="section-title animate-on-scroll">Experience It</h2>
+                <div class="animate-on-scroll delay-1">
+                    <p style="margin-bottom: 2rem;">Ready to take the Editor's desk?</p>
+                    <a href="./assets/portfolio-projects/truth-or-twisted/index.html" class="btn btn-primary"
+                        target="_blank" style="font-size: 1.25rem; padding: 1.25rem 3rem;">Play Truth or Twisted</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module">
+        // Reusing the navigation script for consistency
+        import { initNavigation } from './src/navigation.js';
+
+        // Simple scroll reveal logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll, .fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

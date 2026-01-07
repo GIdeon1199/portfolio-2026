@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gideon Gyamfi — Entering...</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #050505;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            cursor: none;
+            /* Custom cursor container */
+        }
+
+        /* CUSTOM CURSOR */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: white;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        body:hover .cursor-outline {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: transparent;
+            backdrop-filter: blur(2px);
+        }
+
+        /* LAYOUT */
+        .splash-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* KINETIC TYPOGRAPHY */
+        .hero-line {
+            overflow: hidden;
+            line-height: 0.9;
+        }
+
+        .name-title {
+            font-family: 'Inter Tight', sans-serif;
+            font-size: clamp(4rem, 18vw, 14rem);
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0;
+            letter-spacing: -0.04em;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+            position: relative;
+            transition: color 0.5s ease;
+        }
+
+        .name-title span {
+            display: block;
+            transform: translateY(120%);
+            animation: revealText 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Staggered Delays */
+        .line-1 span {
+            animation-delay: 0.2s;
+        }
+
+        .line-2 span {
+            animation-delay: 0.4s;
+            color: white;
+            -webkit-text-stroke: 0;
+        }
+
+        .line-3 span {
+            animation-delay: 0.6s;
+        }
+
+        /* INTERACTIVE BUTTON */
+        .enter-trigger {
+            margin-top: 5vh;
+            position: relative;
+            padding: 1rem 2rem;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            opacity: 0;
+            animation: fadeIn 1s ease 1.5s forwards;
+            background: rgba(255, 255, 255, 0.02);
+            z-index: 20;
+        }
+
+        .enter-trigger:hover {
+            border-color: #FF3C00;
+            background: rgba(255, 60, 0, 0.1);
+            transform: scale(1.05);
+            letter-spacing: 2px;
+        }
+
+        .enter-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ccc;
+            pointer-events: none;
+            transition: color 0.3s;
+        }
+
+        .enter-trigger:hover .enter-text {
+            color: #FF3C00;
+        }
+
+        /* BACKGROUND FX */
+        .noise-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 5;
+        }
+
+        .gradient-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.4;
+            transition: transform 0.2s linear;
+            /* Smooth mouse follow */
+            z-index: 1;
+        }
+
+        .orb-1 {
+            width: 600px;
+            height: 600px;
+            background: #FF3C00;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* PAGE TRANSITION OVERLAY */
+        .transition-curtain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #FF3C00;
+            transform: translateY(100%);
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        /* ANIMATIONS */
+        @keyframes revealText {
+            from {
+                transform: translateY(150%);
+            }
+
+            to {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* MEDIA QUERIES */
+        @media (max-width: 768px) {
+            .name-title {
+                font-size: 15vw;
+            }
+
+            .cursor-dot,
+            .cursor-outline {
+                display: none;
+            }
+
+            /* Hide custom cursor on touch */
+            body,
+            html {
+                cursor: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CUTSOM CURSOR -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- BACKGROUND -->
+    <div class="noise-bg"></div>
+    <div class="gradient-orb orb-1" id="orb"></div>
+
+    <!-- TRANSITION ELEMENT -->
+    <div class="transition-curtain"></div>
+
+    <!-- CONTENT -->
+    <div class="splash-container">
+        <div class="hero-line line-1">
+            <h1 class="name-title"><span>Portfolio</span></h1>
+        </div>
+        <div class="hero-line line-2">
+            <h1 class="name-title"><span>2026</span></h1>
+        </div>
+        <div class="hero-line line-3">
+            <h1 class="name-title"><span>Design</span></h1>
+        </div>
+
+        <a class="enter-trigger" id="enterBtn">
+            <span class="enter-text">Enter Experience</span>
+        </a>
+    </div>
+
+    <script>
+        // MOUSE PARALLAX
+        const orb = document.getElementById('orb');
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            // Custom Cursor Logic
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Add lag to outline for fluid feel
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+
+            // Orb Parallax (Opposite direction)
+            const x = (window.innerWidth / 2 - posX) / 10;
+            const y = (window.innerHeight / 2 - posY) / 10;
+
+            orb.animate({
+                transform: `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`
+            }, { duration: 1000, fill: "forwards" });
+        });
+
+        // PAGE TRANSITION LOGIC
+        const btn = document.getElementById('enterBtn');
+        const curtain = document.querySelector('.transition-curtain');
+
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            // 1. Animate specific elements out
+            document.querySelectorAll('.name-title span').forEach((el, i) => {
+                el.style.transition = 'transform 0.5s ease-in';
+                el.style.transform = 'translateY(-150%)';
+            });
+            btn.style.opacity = '0';
+
+            // 2. Bring in the curtain
+            curtain.style.transition = 'transform 0.8s cubic-bezier(0.83, 0, 0.17, 1) 0.4s';
+            curtain.style.transform = 'translateY(0)';
+
+            // 3. Navigate after transition
+            setTimeout(() => {
+                window.location.href = './index.html';
+            }, 1200);
+        });
+    </script>
+</body>
+
+</html>

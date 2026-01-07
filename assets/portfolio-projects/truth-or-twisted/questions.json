@@ -1,0 +1,131 @@
+[
+    {
+        "id": 1,
+        "statement": "The Russian military has been decimated.",
+        "speaker": "Joe Biden",
+        "isTrue": true,
+        "explanation": "INTELLIGENCE CONFIRMED. Declassified U.S. intelligence assesses that Russia lost 87% of its active-duty ground troops and huge amounts of equipment regarding pre-invasion levels.",
+        "source": "https://time.com/6984968/joe-biden-transcript-2024-interview/",
+        "icon": "🎖️"
+    },
+    {
+        "id": 2,
+        "statement": "Social Security goes completely bankrupt in 2035.",
+        "isTrue": false,
+        "explanation": "MISLEADING. The trust fund reserves are projected to deplete around 2035, but tax revenue will still cover ~80% of scheduled benefits. It does not hit zero.",
+        "source": "https://www.ssa.gov/oact/trsummary/",
+        "icon": "📉"
+    },
+    {
+        "id": 3,
+        "statement": "I defeated 100 percent of ISIS in Syria and Iraq in a couple of months.",
+        "speaker": "Donald Trump",
+        "isTrue": false,
+        "explanation": "TIMELINE ERROR. The territorial defeat of ISIS took over two years of his presidency (until March 2019), continuing strategies largely established under the Obama administration.",
+        "source": "https://www.washingtonpost.com/politics/2024/07/19/fact-checking-trumps-2024-rnc-speech/",
+        "icon": "🏴"
+    },
+    {
+        "id": 4,
+        "statement": "The First Amendment protects all forms of speech, including hate speech.",
+        "isTrue": true,
+        "explanation": "CONSTITUTIONAL FACT. The Supreme Court has repeatedly ruled that there is no 'hate speech' exception to the First Amendment, unless it incites imminent lawless action.",
+        "source": "https://www.ala.org/advocacy/intfreedom/hate",
+        "icon": "⚖️"
+    },
+    {
+        "id": 5,
+        "statement": "Every booster you take, you’re more likely to get COVID as a result of it.",
+        "speaker": "Ron DeSantis",
+        "isTrue": false,
+        "explanation": "MEDICAL MISINFORMATION. Studies consistently show boosters increase protection against severe illness. While efficacy against infection wanes, there is no evidence they *increase* susceptibility.",
+        "source": "https://www.politifact.com/factchecks/2024/jan/12/ron-desantis/ron-desantis-claim-that-covid-19-boosters-make-you/",
+        "icon": "💉"
+    },
+    {
+        "id": 6,
+        "statement": "California ran out of U-Hauls because so many people were leaving.",
+        "speaker": "Ron DeSantis",
+        "isTrue": true,
+        "explanation": "VERIFIED (2021). During the peak of the pandemic migration in 2021, U-Haul reported a severe shortage of equipment for outbound California moves due to high demand.",
+        "source": "https://www.sacbee.com/news/politics-government/capitol-alert/article282496103.html",
+        "icon": "🚚"
+    },
+    {
+        "id": 7,
+        "statement": "The US national debt is higher than its annual GDP.",
+        "isTrue": true,
+        "explanation": "ECONOMIC FACT. The US debt-to-GDP ratio exceeded 100% starting around 2013 and surged further during the pandemic, meaning the debt is larger than the entire economy's yearly output.",
+        "source": "https://fiscaldata.treasury.gov/datasets/debt-to-the-penny/",
+        "icon": "💰"
+    },
+    {
+        "id": 8,
+        "statement": "Donald Trump intends to cut Social Security and Medicare.",
+        "speaker": "Kamala Harris",
+        "isTrue": false,
+        "explanation": "FALSE ATTRIBUTION. Trump has repeatedly stated he will not cut retirement benefits. His previous budget proposals targeted disability insurance, not old-age benefits.",
+        "source": "https://www.factcheck.org/2024/08/factchecking-harris-campaign-launch/",
+        "icon": "👵"
+    },
+    {
+        "id": 9,
+        "statement": "Let them eat cake.",
+        "speaker": "Marie Antoinette",
+        "isTrue": false,
+        "explanation": "HISTORICAL MYTH. This phrase appeared in Rousseau's writings when Marie Antoinette was arguably still a child. It was likely revolutionary propaganda used to villify her.",
+        "source": "https://www.britannica.com/story/did-marie-antoinette-really-say-let-them-eat-cake",
+        "icon": "🍰"
+    },
+    {
+        "id": 10,
+        "statement": "The President can overturn a Supreme Court decision by signing an Executive Order.",
+        "isTrue": false,
+        "explanation": "CIVICS CHECK. A Supreme Court decision can only be overturned by a subsequent Supreme Court ruling or a Constitutional Amendment. Presidents cannot override the Court.",
+        "source": "https://www.whitehouse.gov/about-the-white-house/our-government/the-judicial-branch/",
+        "icon": "🏛️"
+    },
+    {
+        "id": 11,
+        "statement": "An eye for an eye will make the whole world blind.",
+        "speaker": "Mahatma Gandhi",
+        "isTrue": false,
+        "explanation": "MISATTRIBUTION. There is no record of Gandhi ever saying or writing this. It is believed to be a quote from Ben Kingsley in the 1982 movie 'Gandhi'.",
+        "source": "https://quoteinvestigator.com/2010/12/27/eye-for-eye-blind/",
+        "icon": "👓"
+    },
+    {
+        "id": 12,
+        "statement": "Immigrants commit crimes at a higher rate than US-born citizens.",
+        "isTrue": false,
+        "explanation": "DATA CONTRADICTION. Multiple comprehensive studies (e.g., Stanford, CATO) show that first-generation immigrants have significantly lower incarceration rates than native-born citizens.",
+        "source": "https://siepr.stanford.edu/news/myth-immigrant-criminality",
+        "icon": "🛂"
+    },
+    {
+        "id": 13,
+        "statement": "We have the lowest number of state employees per capita in the country.",
+        "speaker": "Ron DeSantis",
+        "isTrue": true,
+        "explanation": "VERIFIED RECORD. Census data confirms Florida consistently ranks at the bottom for state workforce size relative to its population.",
+        "source": "https://www.politifact.com/factchecks/2024/jan/16/ron-desantis/ron-desantis-correct-that-florida-has-fewest-state/",
+        "icon": "users"
+    },
+    {
+        "id": 14,
+        "statement": "The unemployment rate reached 3.5% under my presidency.",
+        "speaker": "Donald Trump",
+        "isTrue": true,
+        "explanation": "VERIFIED RECORD. Before the pandemic, the U.S. unemployment rate hit 3.5% in late 2019/early 2020, a 50-year low.",
+        "source": "https://www.bls.gov/charts/employment-situation/civilian-unemployment-rate.htm",
+        "icon": "📈"
+    },
+    {
+        "id": 15,
+        "statement": "The Great Wall of China is visible from space with the naked eye.",
+        "isTrue": false,
+        "explanation": "Urban Legend. NASA confirms it is generally not visible to the naked eye from low Earth orbit, and definitely not from the Moon. It's too narrow.",
+        "source": "https://www.nasa.gov/vision/space/workinginspace/great_wall.html",
+        "icon": "🧱"
+    }
+]

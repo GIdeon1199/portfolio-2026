@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perk Up | Case Study</title> <!-- Fixed title -->
+    <meta name="description" content="A UX case study on modernizing employee rewards and recognition.">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/case-study.css">
+    <link rel="stylesheet" href="./src/neo-brutalist.css">
+</head>
+
+<body>
+    <!-- Neo-Brutalist Navigation -->
+    <div class="neo-nav-container">
+        <div class="neo-top-bar">
+            <a href="./index.html" class="neo-home-link">HOME</a>
+            <div class="neo-qr-code"></div>
+        </div>
+
+        <div class="neo-main-grid">
+            <ul class="neo-nav-list">
+                <li class="neo-nav-item">
+                    <a href="./work.html" class="neo-nav-link">WORK</a>
+                    <div class="neo-nav-bar">
+                        <svg class="neo-nav-arrow" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./about.html" class="neo-nav-link">ABOUT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./contact.html" class="neo-nav-link">CONTACT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./index.html" class="neo-nav-link">PORTFOLIO</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./resume.html" class="neo-nav-link">RESUMÉ</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+            </ul>
+
+            <div class="neo-content-block">
+                <h2 class="neo-headline">Elevating Digital Excellence.</h2>
+                <p class="neo-desc">We specialize in web design, development, UI/UX, and product design. Transform your
+                    online presence with our creative expertise.</p>
+            </div>
+        </div>
+
+        <div class="neo-graphic">
+            <div class="neo-chevron"></div>
+            <div class="neo-chevron"></div>
+        </div>
+    </div>
+
+    <main class="case-study">
+        <!-- Project Header -->
+        <!-- Project Header -->
+        <header class="case-header">
+            <a href="./work.html" class="back-link">← Back to Work</a>
+
+            <h1 class="case-title fade-in">Perk Up</h1>
+
+            <div class="case-meta fade-in delay-1">
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">Product Designer</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">4 Months (2025)</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Platform</span>
+                    <span class="meta-value">Mobile App (iOS)</span>
+                </div>
+            </div>
+
+            <div class="hero-image-container fade-in delay-2"
+                style="margin-top: 4rem; border-radius: 20px; overflow: hidden;">
+                <img src="./assets/portfolio-projects/perk-up/mockups-main.png" alt="Perk Up Hero Mockup"
+                    style="width: 100%; height: auto; display: block;">
+            </div>
+        </header>
+
+        <!-- TL;DR -->
+        <section class="case-section tldr">
+            <div class="section-container">
+                <div class="tldr-content animate-on-scroll">
+                    <h2 class="section-eyebrow">Overview</h2>
+                    <p class="tldr-text">
+                        <strong>Perk Up</strong> is a centralized mobile platform designed to modernize the employee
+                        benefits experience.
+                        By aggregating fragmented rewards into a single, intuitive interface, we increased engagement by
+                        40% and simplified access to corporate perks.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- The Problem -->
+        <section class="case-section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">The Problem</h2>
+                <div class="content-block animate-on-scroll delay-1">
+                    <h3>Benefits are invisible and fragmented.</h3>
+                    <p>
+                        Companies invest heavily in employee perks, yet utilization remains low. Employees struggle to
+                        find offerings buried in PDFs or disparate portals.
+                        The cognitive load of tracking allowances, discounts, and wellness programs across multiple
+                        touchpoints kills engagement.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research & Strategy -->
+        <section class="case-section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">Research & Strategy</h2>
+
+                <div class="content-block animate-on-scroll delay-1">
+                    <h3>Understanding the User</h3>
+                    <p>We conducted interviews with 15 employees across different departments to identify pain points.
+                        "Sarah", our primary persona, represents the busy professional who values convenience but lacks
+                        awareness of what's available.</p>
+                    <img src="./assets/portfolio-projects/perk-up/persona-card.png" alt="User Persona Sarah"
+                        class="case-image"
+                        style="margin-top: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+
+                <div class="content-block animate-on-scroll delay-1" style="margin-top: 6rem;">
+                    <h3>Structuring the Information</h3>
+                    <p>To reduce complexity, we simplified the information architecture. The goal was to surface
+                        relevant perks immediately upon login.</p>
+                    <div class="swipe-container">
+                        <div class="swipe-deck" id="swipeDeck">
+                            <div class="swipe-card active">
+                                <img src="./assets/portfolio-projects/perk-up/ia-diagram.png"
+                                    alt="Information Architecture" class="case-image">
+                            </div>
+                            <div class="swipe-card next">
+                                <img src="./assets/portfolio-projects/perk-up/scope-chart.png" alt="Project Scope"
+                                    class="case-image">
+                            </div>
+                        </div>
+                        <p style="text-align: center; margin-top: 1rem; color: #999; font-size: 0.9rem;">Tap card to
+                            view next</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Identity -->
+        <section class="case-section" style="background: #fafafa; padding: 6rem 0;">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll" style="color: #000;">Brand Identity</h2>
+                <p class="animate-on-scroll" style="color: #666; max-width: 600px; margin-bottom: 4rem;">
+                    A modern, vibrant identity was created to feel rewarding and energetic, moving away from sterile
+                    corporate tools.
+                </p>
+
+                <div class="grid grid-cols-2 animate-on-scroll" style="gap: 2rem;">
+                    <div class="brand-item">
+                        <img src="./assets/portfolio-projects/perk-up/brand-logo.png" alt="Perk Up Logo"
+                            style="width: 100%; border-radius: 12px; border: 1px solid #eee;">
+                    </div>
+                    <div class="brand-item">
+                        <img src="./assets/portfolio-projects/perk-up/color-palette.png" alt="Color Palette"
+                            style="width: 100%; border-radius: 12px; border: 1px solid #eee;">
+                    </div>
+                </div>
+                <div class="brand-item animate-on-scroll" style="margin-top: 2rem;">
+                    <img src="./assets/portfolio-projects/perk-up/typography.png" alt="Typography"
+                        style="width: 100%; border-radius: 12px; border: 1px solid #eee;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Process -->
+        <section class="case-section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">Design Process</h2>
+
+                <div class="content-block animate-on-scroll delay-1">
+                    <h3>From Sketches to Solution</h3>
+                    <p>Low-fidelity wireframes helped us validate the core flows - specifically the "Redeem Code" and
+                        "Check Balance" actions—before moving to pixels.</p>
+                    <img src="./assets/portfolio-projects/perk-up/wireframes.png" alt="Wireframes" class="case-image"
+                        style="margin-top: 2rem; border-radius: 12px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Final UI -->
+        <section class="case-section section-black">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll" style="color: white;">The Solution</h2>
+                <div class="animate-on-scroll delay-1" style="margin-top: 4rem;">
+                    <img src="./assets/portfolio-projects/perk-up/mockups-screens.png" alt="Final App Screens"
+                        style="width: 100%; border-radius: 20px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="case-section">
+            <div class="section-container" style="text-align: center;">
+                <h2 class="section-title animate-on-scroll">Impact</h2>
+                <div class="grid grid-cols-3 animate-on-scroll delay-1" style="gap: 2rem; margin: 4rem 0;">
+                    <div class="stat-card">
+                        <h3 style="font-size: 3rem; color: var(--color-accent);">40%</h3>
+                        <p>Increase in engagement</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 style="font-size: 3rem; color: var(--color-accent);">2x</h3>
+                        <p>Faster redemption speed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 style="font-size: 3rem; color: var(--color-accent);">4.8/5</h3>
+                        <p>Employee Satisfaction</p>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll delay-2">
+                    <a href="./work.html" class="btn btn-primary">View More Work</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module">
+        import { initNavigation } from './src/navigation.js';
+
+        // Init Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll, .fade-in').forEach(el => observer.observe(el));
+
+        // Swipe Deck Logic
+        function initSwipeDeck() {
+            const deck = document.getElementById('swipeDeck');
+            if (!deck) return;
+
+            const cards = Array.from(deck.querySelectorAll('.swipe-card'));
+            if (cards.length < 2) return;
+
+            deck.addEventListener('click', () => {
+                const activeCard = deck.querySelector('.swipe-card.active');
+                const nextCard = deck.querySelector('.swipe-card.next');
+
+                if (!activeCard || !nextCard) return;
+
+                // Animate out
+                activeCard.classList.add('swiping-right');
+
+                // Swap classes after animation
+                setTimeout(() => {
+                    activeCard.classList.remove('active', 'swiping-right');
+                    activeCard.classList.add('next');
+
+                    nextCard.classList.remove('next');
+                    nextCard.classList.add('active');
+                }, 300); // Wait for transition
+            });
+        }
+
+        initSwipeDeck();
+    </script>
+</body>
+
+</html>

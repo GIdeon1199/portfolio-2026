@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Portfolio</title>
+    <meta name="description" content="Get in touch about design opportunities, collaborations, or graduate programs">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/neo-brutalist.css">
+    <style>
+        .contact-page {
+            min-height: 80vh;
+            /* Reduced since nav takes space */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-xl) var(--margin-horizontal) var(--space-2xl);
+        }
+
+        .contact-container {
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .contact-container h1 {
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-intro {
+            font-size: var(--text-lg);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-2xl);
+            line-height: 1.7;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .contact-item {
+            padding: var(--space-lg);
+            border: 1px solid var(--color-accent);
+            background: var(--color-bg-primary);
+            transition: all var(--transition-medium);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border-color: var(--color-text-primary);
+        }
+
+        .contact-label {
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-xs);
+            display: block;
+        }
+
+        .contact-link {
+            font-size: var(--text-xl);
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-family: var(--font-serif);
+            transition: color var(--transition-fast);
+        }
+
+        .contact-link:hover {
+            color: var(--color-accent);
+        }
+
+        .divider-text {
+            margin: var(--space-2xl) 0;
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-text-secondary);
+            position: relative;
+        }
+
+        .divider-text::before,
+        .divider-text::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: var(--color-accent);
+            opacity: 0.3;
+        }
+
+        .divider-text::before {
+            left: 0;
+        }
+
+        .divider-text::after {
+            right: 0;
+        }
+
+        .contact-form {
+            text-align: left;
+            margin-top: var(--space-xl);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-label {
+            display: block;
+            font-size: var(--text-sm);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: var(--space-sm) var(--space-md);
+            border: 1px solid var(--color-accent);
+            background: var(--color-bg-primary);
+            font-family: var(--font-sans);
+            font-size: var(--text-base);
+            color: var(--color-text-primary);
+            transition: border-color var(--transition-fast);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-text-primary);
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            margin-top: var(--space-md);
+        }
+
+        @media (max-width: 768px) {
+
+            .divider-text::before,
+            .divider-text::after {
+                width: 30%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Neo-Brutalist Navigation -->
+    <div class="neo-nav-container">
+        <div class="neo-top-bar">
+            <a href="./index.html" class="neo-home-link">HOME</a>
+            <div class="neo-qr-code"></div>
+        </div>
+
+        <div class="neo-main-grid">
+            <ul class="neo-nav-list">
+                <li class="neo-nav-item">
+                    <a href="./work.html" class="neo-nav-link">WORK</a>
+                    <div class="neo-nav-bar">
+                        <svg class="neo-nav-arrow" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./about.html" class="neo-nav-link">ABOUT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./contact.html" class="neo-nav-link">CONTACT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./index.html" class="neo-nav-link">PORTFOLIO</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./resume.html" class="neo-nav-link">RESUMÉ</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+            </ul>
+
+            <div class="neo-content-block">
+                <h2 class="neo-headline">Elevating Digital Excellence.</h2>
+                <p class="neo-desc">We specialize in web design, development, UI/UX, and product design. Transform your
+                    online presence with our creative expertise.</p>
+            </div>
+        </div>
+
+        <div class="neo-graphic">
+            <div class="neo-chevron"></div>
+            <div class="neo-chevron"></div>
+        </div>
+    </div>
+
+    <main class="contact-page">
+        <div class="contact-container">
+            <h1 class="fade-in">Let's Connect</h1>
+            <p class="contact-intro fade-in delay-1">
+                I'm always open to conversations about design opportunities, graduate programs, or collaborations that
+                align with my interests in accessibility, systems thinking, and social impact.
+            </p>
+
+            <!-- Contact Methods -->
+            <div class="contact-methods fade-in delay-2">
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:Gideongyamfi1199@gmail.com" class="contact-link">Gideongyamfi1199@gmail.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-label">LinkedIn</span>
+                    <a href="https://www.linkedin.com/in/gideon-gyamfi-572aa2234" target="_blank"
+                        class="contact-link">linkedin.com/in/gideon-gyamfi</a>
+                </div>
+            </div>
+
+            <!-- Optional: Message Form -->
+            <div class="divider-text fade-in delay-3">Or send a message</div>
+
+            <form class="contact-form fade-in delay-4" action="#" method="POST">
+                <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" name="message" class="form-textarea" required></textarea>
+                </div>
+
+                <button type="submit" class="btn form-submit">Send Message</button>
+            </form>
+
+            <p style="margin-top: var(--space-xl); font-size: var(--text-sm); color: var(--color-text-secondary);">
+                Note: To enable form functionality, you'll need to configure a form handling service (e.g., Formspree,
+                Netlify Forms)
+            </p>
+        </div>
+    </main>
+
+    <script type="module">
+        import { initNavigation } from './src/navigation.js';
+
+        // Simple scroll reveal logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll, .fade-in').forEach(el => observer.observe(el));
+
+        // Basic form handling (you'll need to configure a real backend)
+        document.querySelector('.contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! (Note: Configure a form handler to enable actual submissions)');
+        });
+    </script>
+</body>
+
+</html>

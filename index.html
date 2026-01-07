@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio 2026 | Interaction Design</title>
+    <meta name="description"
+        content="Portfolio of Gideon Gyamfi | Interaction Designer & Creative Developer specializing in user-centered systems, accessible web design, and interactive storytelling.">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/sticky-work.css">
+</head>
+
+<body>
+
+    <!-- STICKY CORNER UI -->
+    <div class="sticky-wrapper">
+        <!-- Top Left: Flex Nav Container -->
+        <div class="sticky-element sticky-tl" style="display: flex; gap: 8px;">
+            <!-- Home -->
+            <a href="#" class="btn-icon" aria-label="Home">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                </svg>
+            </a>
+
+            <!-- Work -->
+            <a href="./work.html" class="btn-icon" aria-label="Work">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                </svg>
+            </a>
+
+            <!-- About -->
+            <a href="./about.html" class="btn-icon" aria-label="About">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </a>
+
+            <!-- Resume -->
+            <a href="./resume.html" class="btn-icon" aria-label="Resume">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                    <polyline points="10 9 9 9 8 9"></polyline>
+                </svg>
+            </a>
+        </div>
+
+        <!-- Top Right: Menu / Contact -->
+        <a href="#contact" class="sticky-element sticky-tr btn btn-primary">
+            Hire Me
+        </a>
+
+        <!-- Bottom Right: Floating CTA -->
+        <a href="#work" class="sticky-element sticky-br btn-floating">
+            View Work ↓
+        </a>
+
+        <!-- Bottom Left: Social / Status -->
+        <div class="sticky-element sticky-bl">
+            <span
+                style="font-weight: 600; font-size: 14px; background: white; padding: 8px 16px; border-radius: 100px; border: 1px solid rgba(0,0,0,0.1);">
+                ● Available for new projects
+            </span>
+        </div>
+    </div>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="section full-height">
+            <div class="container">
+                <div class="reveal-text">
+                    <h1 class="hero-text">
+                        <span>UNORTHODOX</span>
+                        <span style="color: var(--color-accent);">BY</span>
+                        <span>DESIGN</span>
+                    </h1>
+                </div>
+                <div class="fade-up" style="margin-top: 4rem;">
+                    <p style="font-size: 1.25rem; color: #666; max-width: 500px;">
+                        Crafting high-impact digital products with intention and precision.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- MARQUEE DIVIDER -->
+        <div class="marquee-container">
+            <div class="marquee-content">
+                <span class="marquee-item">Strategy • Design • Development • Interaction • </span>
+                <span class="marquee-item">Strategy • Design • Development • Interaction • </span>
+            </div>
+        </div>
+
+        <!-- SELECTED WORK (Black Section) -->
+        <!-- SELECTED WORK (Black Section - Sticky Split Screen) -->
+        <section id="work" class="sticky-work-container">
+            <!-- Custom Cursor -->
+            <div class="custom-cursor" id="customCursor"></div>
+
+            <div class="sticky-wrapper-split">
+                <!-- Left Column (Sticky Text) -->
+                <div class="sticky-left">
+                    <!-- Perk Up Info -->
+                    <div class="project-info active" id="info-perk-up">
+                        <h2 class="project-title-huge accent-perk-up">
+                            <a href="./case-perk-up.html" style="text-decoration: none; color: inherit;">Perk Up</a>
+                        </h2>
+                        <ul class="project-meta-list">
+                            <li class="project-meta-item">
+                                <span class="meta-label">Category:</span>
+                                <span class="meta-value">App Design</span>
+                            </li>
+                            <li class="project-meta-item">
+                                <span class="meta-label">Client:</span>
+                                <span class="meta-value">Concept</span>
+                            </li>
+                            <li class="project-meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">4 Weeks</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Broken Systems Info -->
+                    <div class="project-info" id="info-broken">
+                        <h2 class="project-title-huge">
+                            <a href="./case-museum-of-broken-systems.html"
+                                style="text-decoration: none; color: inherit;">Broken Systems</a>
+                        </h2>
+                        <ul class="project-meta-list">
+                            <li class="project-meta-item">
+                                <span class="meta-label">Category:</span>
+                                <span class="meta-value">Graphic Design</span>
+                            </li>
+                            <li class="project-meta-item">
+                                <span class="meta-label">Client:</span>
+                                <span class="meta-value">Personal</span>
+                            </li>
+                            <li class="project-meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">Ongoing</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Twisted Truth Info -->
+                    <div class="project-info" id="info-twisted">
+                        <h2 class="project-title-huge accent-twisted">
+                            <a href="./case-truth-or-twisted.html"
+                                style="text-decoration: none; color: inherit;">Twisted Truth</a>
+                        </h2>
+                        <ul class="project-meta-list">
+                            <li class="project-meta-item">
+                                <span class="meta-label">Category:</span>
+                                <span class="meta-value">Immersive Design</span>
+                            </li>
+                            <li class="project-meta-item">
+                                <span class="meta-label">Client:</span>
+                                <span class="meta-value">Editorial</span>
+                            </li>
+                            <li class="project-meta-item">
+                                <span class="meta-label">Duration:</span>
+                                <span class="meta-value">2 Weeks</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right Column (Scrolling Images) -->
+                <div class="scrolling-right">
+                    <!-- Perk Up Media -->
+                    <div class="project-media-card" data-target="info-perk-up">
+                        <a href="./case-perk-up.html">
+                            <img src="./assets/portfolio-projects/perk-up/mockups-main.png" alt="Perk Up Main Mockup">
+                        </a>
+                        <a href="./case-perk-up.html" style="margin-top: 2rem; display: block;">
+                            <img src="./assets/portfolio-projects/perk-up/perk-up-thumbnail.png" alt="Perk Up Thumbnail"
+                                style="max-width: 80%;">
+                        </a>
+                    </div>
+
+                    <!-- Broken Systems Media -->
+                    <div class="project-media-card" data-target="info-broken">
+                        <a href="./case-museum-of-broken-systems.html">
+                            <img src="./assets/museum_broken_systems_cover.png" alt="Museum Abstract Wireframe">
+                        </a>
+                    </div>
+
+                    <!-- Twisted Truth Media -->
+                    <div class="project-media-card" data-target="info-twisted">
+                        <a href="./case-truth-or-twisted.html">
+                            <img src="./assets/portfolio-projects/truth-or-twisted/Truth-or-twisted.png"
+                                alt="Twisted Truth Installation">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAPABILITIES & PROCESS (Recruiter Section) -->
+        <section class="section">
+            <div class="container">
+                <!-- Grid: Intro & Skills -->
+                <div class="grid grid-cols-2" style="margin-bottom: 8rem; gap: 4rem;">
+                    <div class="fade-up">
+                        <div class="section-title">Capabilities</div>
+                        <h2 class="display-text" style="margin-bottom: 2rem; font-size: 3rem; line-height: 1.1;">
+                            Bridging the gap between <span style="color: var(--color-accent);">design</span> and <span
+                                style="color: var(--color-accent);">engineering</span>.
+                        </h2>
+                    </div>
+                    <div class="fade-up" style="padding-top: 2rem;">
+                        <h4 style="margin-bottom: 1.5rem; font-weight: 700;">Technical Stack</h4>
+                        <div class="tags-container" style="margin-bottom: 3rem;">
+                            <span class="skill-tag">Figma</span>
+                            <span class="skill-tag">Prototyping</span>
+                            <span class="skill-tag">Design Systems</span>
+                            <span class="skill-tag">React / Next.js</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript (ES6+)</span>
+                            <span class="skill-tag">Motion Design</span>
+                            <span class="skill-tag">Game Design Cert (RMU)</span>
+                            <span class="skill-tag">Accessibility (WCAG)</span>
+                        </div>
+                        <a href="./resume.html" class="btn btn-primary">Download Resume</a>
+                    </div>
+                </div>
+
+                <!-- Process Section -->
+                <div class="fade-up">
+                    <div class="section-title">My Process</div>
+                    <div class="grid grid-cols-4" style="margin-top: 3rem;">
+                        <div class="process-step">
+                            <span class="process-num">01</span>
+                            <h3 class="process-title">Discover</h3>
+                            <p style="font-size: 0.9rem;">Understanding the problem space through data, competitive
+                                research, and stakeholder interviews.</p>
+                        </div>
+                        <div class="process-step">
+                            <span class="process-num">02</span>
+                            <h3 class="process-title">Define</h3>
+                            <p style="font-size: 0.9rem;">Synthesizing insights to pinpoint key opportunities and
+                                defining the core product strategy.</p>
+                        </div>
+                        <div class="process-step">
+                            <span class="process-num">03</span>
+                            <h3 class="process-title">Design</h3>
+                            <p style="font-size: 0.9rem;">Iterative prototyping, moving from low-fidelity wireframes to
+                                high-fidelity, accessible interfaces.</p>
+                        </div>
+                        <div class="process-step">
+                            <span class="process-num">04</span>
+                            <h3 class="process-title">Deliver</h3>
+                            <p style="font-size: 0.9rem;">Handing over production-ready assets and collaborating closely
+                                with developers for pixel-perfect code.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recruitment Stats -->
+                <div class="fade-up"
+                    style="margin-top: 8rem; padding: 4rem; background: var(--color-bg-alt); border-radius: 20px;">
+                    <div class="grid grid-cols-3">
+                        <div class="stat-item">
+                            <span class="stat-num">3+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">15+</span>
+                            <span class="stat-label">Projects Launched</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-label">Commitment</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="section section-black" style="padding: 4rem 0; text-align: center;">
+        <div class="container fade-up">
+            <h2 style="font-size: 10vw; margin-bottom: 2rem;">Let's Talk.</h2>
+            <a href="mailto:Gideongyamfi1199@gmail.com" class="btn btn-floating"
+                style="background: white; color: black;">Gideongyamfi1199@gmail.com</a>
+
+            <div style="margin-top: 4rem; display: flex; justify-content: center; gap: 2rem; color: #999;">
+                <a href="https://www.linkedin.com/in/gideon-gyamfi-572aa2234" target="_blank"
+                    style="border-bottom: 1px solid white; color: white;">LinkedIn</a>
+                <a href="#" style="border-bottom: 1px solid white; color: white;">GitHub</a>
+                <a href="./resume.html" style="border-bottom: 1px solid white; color: white;">Resume</a>
+            </div>
+
+            <div style="margin-top: 4rem; color: #666; font-size: 14px;">
+                © 2026 Portfolio. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        import { initAnimations } from './src/animations.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Force visibility hack for JS issues
+            document.body.classList.add('js-loaded');
+            initAnimations();
+            initStickyWork();
+        });
+
+        // STICKY WORK LOGIC
+        function initStickyWork() {
+            const cursor = document.getElementById('customCursor');
+            const workSection = document.getElementById('work');
+            const mediaCards = document.querySelectorAll('.project-media-card');
+            const projectInfos = document.querySelectorAll('.project-info');
+
+            // 1. Custom Cursor Logic
+            if (cursor && workSection) {
+                document.addEventListener('mousemove', (e) => {
+                    // Only show cursor when hovering over work section
+                    const rect = workSection.getBoundingClientRect();
+                    if (e.clientX >= rect.left && e.clientX <= rect.right &&
+                        e.clientY >= rect.top && e.clientY <= rect.bottom) {
+
+                        cursor.style.opacity = '1';
+                        cursor.style.left = e.clientX + 'px';
+                        cursor.style.top = e.clientY + 'px';
+                    } else {
+                        cursor.style.opacity = '0';
+                    }
+                });
+            }
+
+            // 2. Scroll Interaction (Observer)
+            const observerOptions = {
+                root: null,
+                rootMargin: '-45% 0px -45% 0px', // Trigger when element is in middle 10% of screen
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const targetId = entry.target.getAttribute('data-target');
+
+                        // Deactivate all infos
+                        projectInfos.forEach(info => {
+                            info.classList.remove('active');
+                        });
+
+                        // Activate target info
+                        const activeInfo = document.getElementById(targetId);
+                        if (activeInfo) {
+                            activeInfo.classList.add('active');
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            mediaCards.forEach(card => {
+                observer.observe(card);
+            });
+        }
+    </script>
+</body>
+
+</html>

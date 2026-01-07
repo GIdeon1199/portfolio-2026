@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Portfolio</title>
+    <meta name="description"
+        content="Designer exploring systems, interaction, and the spaces where research meets craft">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/neo-brutalist.css">
+    <style>
+        .about-page {
+            /* Removed padding-top as the new nav takes space naturally or needs new spacing logic */
+            /* The new nav has a bottom margin, so we might not need as much top padding on the main */
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--space-2xl);
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: var(--space-xl) var(--margin-horizontal);
+            align-items: start;
+        }
+
+        .about-image-frame {
+            position: sticky;
+            top: calc(var(--space-xl) + 20px);
+            border: 1px solid var(--color-accent);
+            padding: var(--space-md);
+            background: var(--color-bg-primary);
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(20%);
+        }
+
+        .about-caption {
+            margin-top: var(--space-sm);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-text-secondary);
+            text-align: center;
+        }
+
+        .about-content {
+            padding: var(--space-lg) 0;
+        }
+
+        .about-content h1 {
+            margin-bottom: var(--space-lg);
+        }
+
+        .about-content h2 {
+            font-size: var(--text-2xl);
+            margin-top: var(--space-2xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .about-content p {
+            font-size: var(--text-lg);
+            line-height: 1.8;
+            color: var(--color-text-primary);
+            margin-bottom: var(--space-md);
+        }
+
+        .philosophy {
+            border-left: 3px solid var(--color-accent);
+            padding-left: var(--space-lg);
+            margin: var(--space-xl) 0;
+            font-style: italic;
+            color: var(--color-text-secondary);
+        }
+
+        .current-focus {
+            background: var(--color-bg-alt);
+            /* Changed from secondary (black) to alt (grey) */
+            padding: var(--space-lg);
+            margin: var(--space-xl) 0;
+            border: 1px solid var(--color-accent);
+        }
+
+        .current-focus h3 {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-sm);
+        }
+
+        .current-focus ul {
+            margin-left: var(--space-lg);
+            margin-top: var(--space-md);
+        }
+
+        .current-focus li {
+            margin-bottom: var(--space-xs);
+        }
+
+        @media (max-width: 968px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image-frame {
+                position: relative;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Neo-Brutalist Navigation -->
+    <div class="neo-nav-container">
+        <div class="neo-top-bar">
+            <a href="./index.html" class="neo-home-link">HOME</a>
+            <div class="neo-qr-code"></div>
+        </div>
+
+        <div class="neo-main-grid">
+            <ul class="neo-nav-list">
+                <li class="neo-nav-item">
+                    <a href="./work.html" class="neo-nav-link">WORK</a>
+                    <div class="neo-nav-bar">
+                        <svg class="neo-nav-arrow" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./about.html" class="neo-nav-link">ABOUT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./contact.html" class="neo-nav-link">CONTACT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./index.html" class="neo-nav-link">PORTFOLIO</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./resume.html" class="neo-nav-link">RESUMÉ</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+            </ul>
+
+            <div class="neo-content-block">
+                <h2 class="neo-headline">Elevating Digital Excellence.</h2>
+                <p class="neo-desc">We specialize in web design, development, UI/UX, and product design. Transform your
+                    online presence with our creative expertise.</p>
+            </div>
+        </div>
+
+        <div class="neo-graphic">
+            <div class="neo-chevron"></div>
+            <div class="neo-chevron"></div>
+        </div>
+    </div>
+
+    <main class="about-page">
+        <div class="about-grid">
+            <!-- Portrait Column -->
+            <div class="about-image-frame fade-in">
+                <img src="./assets/portrait.jpg" alt="Portrait" class="about-image"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div
+                    style="display:none; width:100%; aspect-ratio:3/4; background:var(--color-bg-secondary); align-items:center; justify-content:center; color:var(--color-text-secondary);">
+                    Portrait Image
+                </div>
+                <p class="about-caption">Designer · Researcher · Systems Thinker</p>
+            </div>
+
+            <!-- Content Column -->
+            <div class="about-content">
+                <h1 class="fade-in">About</h1>
+
+                <div class="fade-in delay-1">
+                    <p>
+                        I'm a designer who believes that the best interactions feel inevitable - like they've always
+                        existed, waiting to be discovered rather than invented.
+                    </p>
+
+                    <p>
+                        My practice sits at the intersection of <strong>interaction design, systems thinking, and
+                            research</strong>. I'm drawn to problems that require understanding not just what people
+                        need, but why systems behave the way they do - and how thoughtful design can reshape those
+                        systems.
+                    </p>
+
+                    <p>
+                        I came to design through a meandering path: literature, cultural studies, and a deep curiosity
+                        about how stories shape behavior. That background taught me to read between the lines, to ask
+                        questions about power and access, and to believe that design is as much about listening as it is
+                        about making.
+                    </p>
+                </div>
+
+                <div class="philosophy fade-in delay-2">
+                    <h2>Design Philosophy</h2>
+                    <p>
+                        Good design doesn't announce itself. It creates space for people to act with intention, to feel
+                        competent, and to trust that the system respects their time and agency. I design for the moments
+                        when technology fades into the background and people can focus on what truly matters.
+                    </p>
+                </div>
+
+                <div class="fade-in delay-3">
+                    <h2>What I Do</h2>
+                    <p>
+                        I specialize in <strong>interaction design and UX research</strong>, with a particular interest
+                        in:
+                    </p>
+                    <ul>
+                        <li>Designing for underserved or marginalized communities</li>
+                        <li>Healthcare and accessibility-focused systems</li>
+                        <li>Cultural preservation through interactive media</li>
+                        <li>Systems design and information architecture</li>
+                    </ul>
+
+                    <p>
+                        I'm proficient in Figma, Adobe Creative Suite, and various prototyping and research tools. But
+                        more importantly, I'm comfortable moving between high-level strategic thinking and detailed
+                        interaction design.
+                    </p>
+                </div>
+
+                <div class="current-focus fade-in delay-4">
+                    <h3>What I'm Seeking</h3>
+                    <p>
+                        I'm currently exploring opportunities for:
+                    </p>
+                    <ul>
+                        <li><strong>Graduate school</strong> in Human-Computer Interaction or Design</li>
+                        <li><strong>UX/Product Design roles</strong> focused on social impact or accessibility</li>
+                        <li><strong>Research positions</strong> where I can deepen my practice in participatory design
+                        </li>
+                    </ul>
+                    <p style="margin-top: var(--space-md);">
+                        I'm especially interested in organizations that value research-driven design and believe in
+                        design as a tool for equity.
+                    </p>
+                </div>
+
+                <div class="fade-in delay-5" style="margin-top: var(--space-2xl);">
+                    <h2>Beyond Design</h2>
+                    <p>
+                        When I'm not designing, you'll find me playing strategy games (my current obsession is designing
+                        my own card game, <a href="./ongoing-anansi.html"
+                            style="color: var(--color-accent); text-decoration: underline;">Anansi's Web of Tricks</a>),
+                        reading speculative fiction, or exploring how folklore and mythology inform modern storytelling.
+                    </p>
+                    <p>
+                        I'm also deeply interested in the ethics of AI, decolonial design practices, and the role of
+                        design in cultural preservation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script type="module">
+        import { initNavigation } from './src/navigation.js';
+
+        // Simple scroll reveal logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll, .fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

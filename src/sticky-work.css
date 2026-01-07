@@ -1,0 +1,208 @@
+/* STICKY WORK SECTION - NEO-GROTESQUE STYLE */
+
+.sticky-work-container {
+    background-color: #000000;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 0;
+    position: relative;
+    cursor: none;
+    /* Hide default cursor */
+}
+
+/* CUSTOM CURSOR */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    display: none;
+    /* JS will enable */
+    transition: transform 0.1s ease, width 0.2s, height 0.2s;
+}
+
+.sticky-work-container:hover .custom-cursor {
+    display: block;
+}
+
+/* LINK HOVER STATE FOR CURSOR */
+.scrolling-right a:hover~.custom-cursor,
+.project-media:hover {
+    transform: translate(-50%, -50%) scale(2);
+    border-radius: 50%;
+    /* Optional: morph to circle on hover */
+}
+
+/* LAYOUT WRAPPER */
+.sticky-wrapper-split {
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+
+/* LEFT COLUMN (STICKY) */
+.sticky-left {
+    width: 40%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+    z-index: 10;
+}
+
+/* PROJECT INFO CONTAINER */
+.project-info {
+    position: absolute;
+    top: 50%;
+    left: 4rem;
+    right: 2rem;
+    transform: translateY(-50%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project-info.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(-50%) translateY(0);
+}
+
+/* TYPOGRAPHY */
+.project-title-huge {
+    font-family: 'Inter', sans-serif;
+    /* Fallback if no specific neo-grotesque loaded */
+    font-size: 6rem;
+    /* Scaled down slightly for safety, user asked for 8rem */
+    font-weight: 800;
+    line-height: 0.9;
+    margin-bottom: 2rem;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+@media (min-width: 1400px) {
+    .project-title-huge {
+        font-size: 8rem;
+    }
+}
+
+.project-meta-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-meta-item {
+    font-family: 'Inter', monospace;
+    font-size: 1rem;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    opacity: 0.6;
+}
+
+.meta-label {
+    font-weight: 400;
+}
+
+.meta-value {
+    font-weight: 600;
+    color: #fff;
+}
+
+/* RIGHT COLUMN (SCROLLING) */
+.scrolling-right {
+    width: 60%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 15vh;
+    /* Space between projects */
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+}
+
+/* MEDIA CARD */
+.project-media-card {
+    width: 100%;
+    /* Aspect ratio or height control */
+    min-height: 600px;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.project-media-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+    /* Minimal rounding */
+}
+
+/* HOVER ACCENTS */
+/* Perk Up Orange */
+.accent-perk-up:hover {
+    color: #FF6B35;
+}
+
+/* Twisted Truth Blue */
+.accent-twisted:hover {
+    color: #0044FF;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 1024px) {
+    .sticky-wrapper-split {
+        flex-direction: column;
+    }
+
+    .sticky-left {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 2rem 1rem;
+        min-height: 50vh;
+    }
+
+    .project-info {
+        position: relative;
+        opacity: 1;
+        transform: none;
+        margin-bottom: 4rem;
+    }
+
+    .project-info:not(.active) {
+        display: none;
+        /* On mobile, maybe hide inactive or stack them? */
+    }
+
+    /* Better mobile approach: Stack vertically normally */
+    .project-info {
+        display: block !important;
+        opacity: 1 !important;
+        margin-bottom: 2rem;
+    }
+
+    .scrolling-right {
+        width: 100%;
+        padding: 1rem;
+        gap: 4rem;
+        padding-top: 0;
+    }
+
+    .custom-cursor {
+        display: none !important;
+    }
+}

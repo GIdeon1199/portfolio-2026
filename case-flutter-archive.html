@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter Archive | Case Study</title> <!-- Fixed title -->
+    <meta name="description" content="A collection of experimental motion and UI interactions built with Flutter.">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./src/case-study.css">
+    <link rel="stylesheet" href="./src/neo-brutalist.css">
+</head>
+
+<body>
+    <!-- Neo-Brutalist Navigation -->
+    <div class="neo-nav-container">
+        <div class="neo-top-bar">
+            <a href="./index.html" class="neo-home-link">HOME</a>
+            <div class="neo-qr-code"></div>
+        </div>
+
+        <div class="neo-main-grid">
+            <ul class="neo-nav-list">
+                <li class="neo-nav-item">
+                    <a href="./work.html" class="neo-nav-link">WORK</a>
+                    <div class="neo-nav-bar">
+                        <svg class="neo-nav-arrow" viewBox="0 0 24 24">
+                            <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./about.html" class="neo-nav-link">ABOUT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./contact.html" class="neo-nav-link">CONTACT</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./index.html" class="neo-nav-link">PORTFOLIO</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+                <li class="neo-nav-item">
+                    <a href="./resume.html" class="neo-nav-link">RESUMÉ</a>
+                    <div class="neo-nav-bar"></div>
+                </li>
+            </ul>
+
+            <div class="neo-content-block">
+                <h2 class="neo-headline">Elevating Digital Excellence.</h2>
+                <p class="neo-desc">We specialize in web design, development, UI/UX, and product design. Transform your
+                    online presence with our creative expertise.</p>
+            </div>
+        </div>
+
+        <div class="neo-graphic">
+            <div class="neo-chevron"></div>
+            <div class="neo-chevron"></div>
+        </div>
+    </div>
+
+    <main class="case-study">
+        <!-- Project Header -->
+        <header class="case-header">
+            <a href="./work.html" class="back-link">← Back to Work</a>
+            <h1 class="case-title fade-in">Flutter Archive</h1>
+            <div class="case-meta fade-in delay-1">
+                <div class="meta-item">
+                    <span class="meta-label">Type</span>
+                    <span class="meta-value">VR Concept · Web Prototype</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Role</span>
+                    <span class="meta-value">UX/UI · Motion Design</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Focus</span>
+                    <span class="meta-value">Spatial Narrative</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Timeline</span>
+                    <span class="meta-value">Ongoing</span>
+                </div>
+            </div>
+            <div class="hero-image-container fade-in delay-2"
+                style="margin-top: 4rem; border-radius: 20px; overflow: hidden;">
+                <img src="./assets/portfolio-projects/flutter-archive/header.png" alt="VR Poetry Garden Concept"
+                    style="width: 100%; height: auto; display: block;">
+            </div>
+        </header>
+
+        <!-- Overview -->
+        <section class="case-section tldr">
+            <div class="section-container">
+                <div class="tldr-content animate-on-scroll">
+                    <h2 class="section-eyebrow">Overview</h2>
+                    <p class="tldr-text">
+                        <strong>Flutter Archive</strong> began as a virtual reality reading experience designed to
+                        explore how poetry could be consumed through active participation rather than passive scrolling.
+                        The core idea was to reimagine the act of reading as a spatial, embodied interaction—where
+                        meaning unfolds through movement, attention, and choice.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Concept -->
+        <section class="case-section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">The Concept</h2>
+                <div class="content-block animate-on-scroll delay-1">
+                    <h3>Embodied Reading</h3>
+                    <p>
+                        To test the feasibility of this concept, the experience was first developed as a web-based
+                        prototype, allowing interaction patterns, pacing, and narrative flow to be evaluated before full
+                        VR implementation. This decision grounded the project in practical UX experimentation while
+                        preserving its immersive intent.
+                    </p>
+                    <p>
+                        The experience places users in an open, calming environment where butterflies appear, drift, and
+                        disappear. Each butterfly interaction reveals a single line of a poem, delivered in small,
+                        intentional doses.
+                    </p>
+                </div>
+                <div class="animate-on-scroll delay-1" style="margin-top: 3rem;">
+                    <img src="./assets/portfolio-projects/flutter-archive/thumbnail.png" alt="Butterfly concept"
+                        style="width: 100%; border-radius: 12px;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Design Approach -->
+        <section class="case-section bg-secondary">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">Design Approach</h2>
+                <div class="content-block animate-on-scroll delay-1">
+                    <h3>Co-Created Meaning</h3>
+                    <p>
+                        This design approach treats reading as a co-created act. The user is not simply consuming text
+                        but assembling it through interaction. Progress is communicated subtly through visual indicators
+                        rather than explicit instructions, allowing discovery to feel personal and unforced.
+                    </p>
+                    <p>
+                        The butterfly animations, built with Lottie, function simultaneously as interface elements and
+                        narrative metaphors - symbolizing fragility, memory, and the fleeting nature of meaning.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Prototype -->
+        <section class="case-section">
+            <div class="section-container">
+                <h2 class="section-title animate-on-scroll">The Prototype</h2>
+                <div class="content-block animate-on-scroll delay-1">
+                    <p>
+                        The web prototype recreates the intended VR atmosphere using layered gradients, ambient motion,
+                        and spatial pacing. UI components such as the poem panel, progress markers, and controls are
+                        intentionally restrained, designed to support reflection rather than dominate attention.
+                    </p>
+                    <p>
+                        A separate test environment was created to validate animation transparency, scaling, and
+                        environmental integration before committing to immersive hardware constraints.
+                    </p>
+                    <div style="margin-top: 3rem;">
+                        <img src="./assets/portfolio-projects/flutter-archive/demo-screenshot.png"
+                            alt="Web Prototype Interface"
+                            style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                    </div>
+
+                    <!-- Moved Blockquote here to reduce gap -->
+                    <blockquote class="animate-on-scroll" style="margin-top: 4rem;">
+                        "How might immersive systems encourage readers to slow down, participate, and inhabit a
+                        poem—rather
+                        than simply finish it?"
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="case-section">
+            <div class="section-container" style="text-align: center;">
+                <h2 class="section-title animate-on-scroll">Experience It</h2>
+                <div class="animate-on-scroll delay-1">
+                    <p style="margin-bottom: 2rem;">Explore the interactive prototype.</p>
+                    <a href="./assets/portfolio-projects/flutter-archive/Flutter Demo.html" class="btn btn-primary"
+                        target="_blank" style="font-size: 1.25rem; padding: 1.25rem 3rem;">Launch Interactive Demo</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module">
+        import { initNavigation } from './src/navigation.js';
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.animate-on-scroll, .fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>

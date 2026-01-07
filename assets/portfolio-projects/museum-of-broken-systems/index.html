@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Museum of Broken Systems</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <a href="../../../index.html" class="return-btn">← Return to Main Page</a>
+
+    <!-- SLIDE 1: LANDING -->
+    <section class="screen" id="entrance">
+        <div class="landing-frame">
+            <h1 class="title-main">THE MUSEUM<br>OF <span class="glitch" data-text="BROKEN SYSTEMS">BROKEN
+                    SYSTEMS</span></h1>
+            <div style="width: 60px; height: 1px; background: #ccc; margin: 1.5rem auto;"></div>
+            <p class="subtitle">A collection of systems that worked as designed - just not for people.</p>
+        </div>
+
+        <a href="#collection" class="enter-link">Enter the Museum &rarr;</a>
+    </section>
+
+    <!-- SLIDE 2: COLLECTION -->
+    <section class="screen" id="collection">
+        <h2
+            style="margin-bottom: 3rem; font-size: 1rem; letter-spacing: 0.2em; border-bottom: 1px solid #ccc; padding-bottom: 1rem;">
+            The Collection</h2>
+
+        <div class="collection-grid">
+            <a href="#exhibit-01" class="framed-card">
+                <span class="card-eyebrow">Exhibit 01</span>
+                <h3 class="card-title glitch" data-text="Education Portals">Education Portals</h3>
+                <p class="card-desc">"Designed for admin, difficult for students."</p>
+            </a>
+
+            <a href="#exhibit-02" class="framed-card">
+                <span class="card-eyebrow">Exhibit 02</span>
+                <h3 class="card-title glitch" data-text="Healthcare Systems">Healthcare Systems</h3>
+                <p class="card-desc">"Appointments delayed, care denied."</p>
+            </a>
+
+            <a href="#exhibit-03" class="framed-card">
+                <span class="card-eyebrow">Exhibit 03</span>
+                <h3 class="card-title glitch" data-text="Customer Support Bots">Customer Support Bots</h3>
+                <p class="card-desc">"Scripted help, human frustration."</p>
+            </a>
+
+            <a href="#exhibit-04" class="framed-card">
+                <span class="card-eyebrow">Exhibit 04</span>
+                <h3 class="card-title glitch" data-text="Voting Interfaces">Voting Interfaces</h3>
+                <p class="card-desc">"Access that isn't equal."</p>
+            </a>
+
+            <a href="#exhibit-05" class="framed-card">
+                <span class="card-eyebrow">Exhibit 05</span>
+                <h3 class="card-title glitch" data-text="Dark Patterns">Dark Patterns</h3>
+                <p class="card-desc">"Designed to trap you."</p>
+            </a>
+
+            <a href="#exhibit-06" class="framed-card">
+                <span class="card-eyebrow">Exhibit 06</span>
+                <h3 class="card-title glitch" data-text="Algorithmic Bias">Algorithmic Bias</h3>
+                <p class="card-desc">"Automated rejection."</p>
+            </a>
+
+            <a href="#exhibit-07" class="framed-card">
+                <span class="card-eyebrow">Exhibit 07</span>
+                <h3 class="card-title glitch" data-text="Attention Economy">Attention Economy</h3>
+                <p class="card-desc">"The war for your eyes."</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: EXHIBIT 01 -->
+    <section class="screen" id="exhibit-01">
+        <div class="exhibit-container">
+            <div class="exhibit-header">
+                <span style="font-family: 'Inter'; font-size: 0.7rem; text-transform: uppercase; color: #888;">Exhibit
+                    01</span>
+                <h2 style="font-size: 2rem;">Education Portals</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">Intended to guide, became a maze.</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Important deadlines buried in nested menus."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Human Cost</div>
+                <div class="row-content">
+                    Missed opportunities. Unnecessary stress.
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Redesign</div>
+                <div class="row-content">
+                    Streamlined. Student-focused.
+                    <div class="comparison-container" id="details-slider">
+                        <!-- Bottom Layer (After - Fixed) -->
+                        <div class="comp-layer">
+                            <img src="./education_after.png" alt="Streamlined student dashboard">
+                        </div>
+                        <!-- Top Layer (Before - Broken) -->
+                        <div class="comp-layer comp-overlay" id="overlay-layer">
+                            <img src="./education_before.png" alt="Chaotic legacy portal">
+                        </div>
+                        <!-- Handle -->
+                        <div class="comp-handle" id="slider-handle"></div>
+                    </div>
+                    <div
+                        style="margin-top: 0.5rem; display: flex; justify-content: space-between; font-family: var(--font-sans); font-size: 0.7rem; color: #888; text-transform: uppercase;">
+                        <span>Before (Broken)</span>
+                        <span>After (Fixed)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#collection" class="enter-link" style="margin-top:2rem;">&larr; Back to Collection</a>
+    </section>
+
+    <!-- SLIDE 4: EXHIBIT 02 -->
+    <section class="screen" id="exhibit-02">
+        <div class="exhibit-container">
+            <div class="exhibit-header">
+                <span style="font-family: 'Inter'; font-size: 0.7rem; text-transform: uppercase; color: #888;">Exhibit
+                    02</span>
+                <h2 style="font-size: 2rem;">Healthcare Systems</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">Designed for billing codes, not healing.</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Appointments delayed due to confusing portal workflows."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Human Cost</div>
+                <div class="row-content">
+                    <div class="red-tape-container">
+                        <div class="red-tape-overlay">
+                            <span class="tape-strip">PRIOR AUTHORIZATION</span>
+                            <span class="tape-strip">FORM 1040-X</span>
+                            <span class="tape-strip">DENIED</span>
+                            <span class="tape-strip">OUT OF NETWORK</span>
+                            <span class="tape-strip">FAX REQUIRED</span>
+                            <span class="tape-strip">ERROR 404</span>
+                            <span class="tape-strip">PROCESSING...</span>
+                        </div>
+                        <span
+                            style="display:block; padding: 1rem; border: 1px dashed red; color: red; font-weight: bold;">
+                            Care denied. Trust eroded.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Analysis</div>
+                <div class="row-content">
+                    When efficiency metrics override patient accessibility, we create digital barrier walls.
+                </div>
+            </div>
+        </div>
+        <a href="#collection" class="enter-link" style="margin-top:2rem;">&larr; Back to Collection</a>
+    </section>
+
+    <!-- SLIDE 5: EXHIBIT 03 -->
+    <section class="screen" id="exhibit-03">
+        <div class="exhibit-container">
+            <div class="exhibit-header">
+                <span style="font-family: 'Inter'; font-size: 0.7rem; text-transform: uppercase; color: #888;">Exhibit
+                    03</span>
+                <h2 style="font-size: 2rem;">Customer Support Bots</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">Scripted help, human frustration.</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Circular logic loops preventing access to human agents."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Human Cost</div>
+                <div class="row-content">
+                    Helplessness. Time lost.
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Analysis</div>
+                <div class="row-content">
+                    <div class="chat-interface">
+                        <div class="chat-header">
+                            <div class="chat-avatar"></div>
+                            <div style="font-size: 0.8rem; font-weight: 600;">HelperBot 3000</div>
+                            <div class="chat-status"></div>
+                        </div>
+                        <div class="chat-body" id="chat-stream">
+                            <div class="chat-msg msg-bot">
+                                Hello! I'm your automated assistant. How can I misunderstand you today?
+                            </div>
+                        </div>
+                        <div class="chat-options" id="chat-controls">
+                            <button class="chat-btn" onclick="sendChat('Speak to Human')">Speak to Human</button>
+                            <button class="chat-btn" onclick="sendChat('Billing Issue')">Billing Issue</button>
+                            <button class="chat-btn" onclick="sendChat('Cancel Service')">Cancel Service</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#collection" class="enter-link" style="margin-top:2rem;">&larr; Back to Collection</a>
+    </section>
+
+    <!-- SLIDE 6: EXHIBIT 04 -->
+    <section class="screen" id="exhibit-04">
+        <div class="exhibit-container">
+            <div class="exhibit-header">
+                <span class="exhibit-label">Exhibit 04</span>
+                <h2 style="font-size: 2rem;">Voting Interfaces</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">The "Butterfly Ballot".</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Confusing layout leading to unintended votes."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Experience</div>
+                <div class="row-content">
+                    <p style="margin-bottom: 1rem;">Try to vote for <strong>AL GORE</strong> (Second on Left).</p>
+
+                    <div class="ballot-card">
+                        <div class="ballot-header">Official Ballot</div>
+
+                        <div class="ballot-row">
+                            <div class="candidate-left">GEORGE BUSH</div>
+                            <div class="arrow-line line-left" style="top:50%; transform: rotate(10deg);"></div>
+                            <div class="punch-strip">
+                                <div class="punch-hole" onclick="toggleVote(this, 'BUSH')"></div>
+                                <div class="punch-hole" onclick="toggleVote(this, 'BUCHANAN')"></div>
+                                <div class="punch-hole" onclick="toggleVote(this, 'GORE')"></div>
+                            </div>
+                            <div class="candidate-right">PAT BUCHANAN</div>
+                            <div class="arrow-line line-confusing"></div>
+                        </div>
+
+                        <div class="ballot-row">
+                            <div class="candidate-left">AL GORE</div>
+                            <div class="arrow-line line-left" style="top:70%; transform: rotate(-15deg);"></div>
+                            <!-- Empty space on right -->
+                            <div class="candidate-right"></div>
+                        </div>
+
+                        <div id="vote-result" class="vote-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#collection" class="enter-link" style="margin-top:2rem;">&larr; Back to Collection</a>
+    </section>
+
+    <!-- SLIDE 7: EXHIBIT 05 -->
+    <section class="screen" id="exhibit-05">
+        <div class="exhibit-container">
+            <div class="exhibit-header">
+                <span class="exhibit-label">Exhibit 05</span>
+                <h2 style="font-size: 2rem;">Dark Patterns</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">The "Roach Motel".</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Easy to get in, impossible to get out."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Experience</div>
+                <div class="row-content">
+                    <p style="margin-bottom: 2rem;">Try to <strong>Cancel Subscription</strong>.</p>
+
+                    <div class="subscription-modal">
+                        <div class="modal-icon">🥺</div>
+                        <h3 class="modal-title">Wait! Don't go!</h3>
+                        <p class="modal-text">If you leave now, you'll lose all your gathered points, your friends will
+                            miss you, and a puppy might cry. Are you sure?</p>
+
+                        <button class="btn-keep"
+                            onclick="alert('Great choice! Subscription auto-renewed for 12 months.')">KEEP MEMBERSHIP
+                            AND SAVE 0%</button>
+
+                        <div style="margin-top: 1rem; position: relative; height: 30px;">
+                            <button class="btn-cancel-trap" id="trap-btn" onmouseover="hoverTrap()"
+                                onclick="alert('Error 503: Unable to process cancellation at this time. Please fax us.')">No
+                                thanks, I hate happiness</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#collection" class="enter-link" style="margin-top:2rem;">&larr; Back to Collection</a>
+    </section>
+
+    <!-- SLIDE 8: EXHIBIT 06 -->
+    <section class="screen" id="exhibit-06">
+        <div class="exhibit-container">
+            <div class="exhibit-header">
+                <span class="exhibit-label">Exhibit 06</span>
+                <h2 style="font-size: 2rem;">Algorithmic Bias</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">Automated Resume Systems (ATS).</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Qualified people rejected by invisible rules."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Experience</div>
+                <div class="row-content">
+                    <p style="margin-bottom: 2rem;">Upload the <strong>Perfect Resume</strong>.</p>
+
+                    <div class="ats-interaction-area">
+                        <div style="text-align: center;">
+                            <div class="resume-icon" id="drag-resume" draggable="true" ondragstart="drag(event)">📄
+                            </div>
+                            <div
+                                style="font-size: 0.8rem; margin-top: 0.5rem; color: #666; font-family: var(--font-sans);">
+                                Your Resume</div>
+                        </div>
+
+                        <div class="scanner-zone" id="ats-scanner" ondrop="dropResume(event)"
+                            ondragover="allowDrop(event)">
+                            <div class="scan-line"></div>
+                            <div id="scanner-instruction" style="color:#666;">Drag Resume Here</div>
+                            <div id="scan-feedback" class="scan-result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#collection" class="enter-link" style="margin-top:2rem;">&larr; Back to Collection</a>
+    </section>
+
+    <!-- SLIDE 9: EXHIBIT 07 -->
+    <section class="screen" id="exhibit-07">
+        <div class="exhibit-container">
+            <div class="exhibit-header">
+                <span class="exhibit-label">Exhibit 07</span>
+                <h2 style="font-size: 2rem;">Attention Economy</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">Ad-supported Media.</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Content buried under aggressive demands for engagement."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Experience</div>
+                <div class="row-content">
+                    <p style="margin-bottom: 1rem;">Try to read the <strong>Poem</strong> below.</p>
+
+                    <div class="reading-area" onscroll="triggerPopups()" id="popup-zone">
+                        <h3>Silence</h3>
+                        <p>In the quiet spaces between the noise,<br>we find the thoughts we lost.</p>
+                        <br>
+                        <p>The screen is a window,<br>not a wall.</p>
+                        <br>
+                        <p>But when the window is covered<br>in painted signs,</p>
+                        <br>
+                        <p>We forget there is a world<br>outside the frame.</p>
+                        <br>
+                        <p>We click, we scroll,<br>we accept.</p>
+                        <br>
+                        <p>And silence becomes<br>the most expensive luxury.</p>
+                        <br>
+                        <p>End.</p>
+
+                        <!-- Popups -->
+                        <div class="popup-trap" id="popup-1" style="top:50px; left:20px;">
+                            <span class="popup-close" onclick="closePopup('popup-1')">X</span>
+                            <strong>SUBSCRIBE NOW!</strong><br>Get 10% off silence!
+                            <button class="popup-btn-fake">YES PLZ</button>
+                        </div>
+                        <div class="popup-trap" id="popup-2" style="top:120px; right:30px;">
+                            <span class="popup-close" onclick="closePopup('popup-2')">X</span>
+                            <strong>WE USE COOKIES</strong><br>To track your soul.
+                            <button class="popup-btn-fake">ACCEPT ALL</button>
+                        </div>
+                        <div class="popup-trap" id="popup-3" style="bottom:40px; left:60px;">
+                            <span class="popup-close" onclick="closePopup('popup-3')">X</span>
+                            <strong>WAIT!</strong><br>Chat with an agent?
+                            <button class="popup-btn-fake">CHAT NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#collection" class="enter-link" style="margin-top:2rem;">&larr; Back to Collection</a>
+    </section>
+
+    <!-- SLIDE 10: OUTRO -->
+    <section class="screen" id="outro">
+        <div style="text-align: center; max-width: 600px;">
+            <h2 style="font-size: 2rem; margin-bottom: 2rem;" class="glitch" data-text="The System Is Not Neutral.">The
+                System Is Not Neutral.</h2>
+            <div style="width: 100px; height: 1px; background: #ccc; margin: 0 auto 2rem;"></div>
+            <p style="font-size: 1.2rem; font-style: italic; color: #555; margin-bottom: 3rem;">
+                Systems shape lives, for better or worse.<br>
+                As designers, we have a responsibility to build empathy and integrity.
+            </p>
+            <p style="font-family: 'Inter'; font-size: 0.8rem; text-transform: uppercase;">
+                Thank you for exploring the failures with us.<br>
+                Let's rethink what we create next.
+            </p>
+            <div style="margin-top: 4rem;">
+                <span style="font-family: 'Cormorant Garamond'; font-style: italic;">- The Curator</span>
+            </div>
+
+            <a href="../../../work.html" class="enter-link" style="display: block; margin-top: 4rem;">Exit
+                Exhibition</a>
+        </div>
+    </section>
+
+    <script>
+        // Simple smooth scroll behavior for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+
+                // Entrance Animation Handler
+                if (this.classList.contains('enter-link') && targetId === '#collection') {
+                    const landingFrame = document.querySelector('.landing-frame');
+                    if (landingFrame) {
+                        landingFrame.classList.add('breaking-apart');
+                        // Delay scroll slightly to show effect
+                        setTimeout(() => {
+                            document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+                        }, 800);
+                        return;
+                    }
+                }
+
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Comparison Slider Logic
+        const container = document.getElementById('details-slider');
+        const overlay = document.getElementById('overlay-layer');
+        const handle = document.getElementById('slider-handle');
+
+        if (container && overlay && handle) {
+            let isDragging = false;
+
+            const move = (e) => {
+                if (!isDragging) return;
+                const rect = container.getBoundingClientRect();
+                let x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+                x = Math.max(0, Math.min(x, rect.width));
+                const percent = (x / rect.width) * 100;
+
+                overlay.style.width = percent + "%";
+                handle.style.left = percent + "%";
+            };
+
+            const startDrag = (e) => { isDragging = true; };
+            const stopDrag = () => { isDragging = false; };
+
+            handle.addEventListener('mousedown', startDrag);
+            window.addEventListener('mouseup', stopDrag);
+            window.addEventListener('mousemove', move);
+
+            // Touch support
+            handle.addEventListener('touchstart', startDrag);
+            window.addEventListener('touchend', stopDrag);
+            window.addEventListener('touchmove', move);
+        }
+
+        // Circular Logic Chat Bot
+        function sendChat(option) {
+            const chatBody = document.getElementById('chat-stream');
+
+            // User Message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chat-msg msg-user';
+            userMsg.innerText = option;
+            chatBody.appendChild(userMsg);
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            // Bot Response (Delayed Loop)
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = 'chat-msg msg-bot';
+
+                const responses = [
+                    "I didn't quite catch that. Did you mean 'Billing Issue'?",
+                    "All our agents are currently ignoring you. Please try again.",
+                    "Error 992: Empathy module not found.",
+                    "To proceed, please re-state your problem in binary.",
+                    "Have you tried restarting your life?"
+                ];
+
+                botMsg.innerText = responses[Math.floor(Math.random() * responses.length)];
+                chatBody.appendChild(botMsg);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 1000);
+        }
+
+        // Exhibit 04: Butterfly Ballot Logic
+        function toggleVote(element, candidate) {
+            // Clear previous votes
+            document.querySelectorAll('.punch-hole').forEach(el => el.classList.remove('selected'));
+
+            // Punch this hole
+            element.classList.add('selected');
+
+            const resultDisplay = document.getElementById('vote-result');
+            resultDisplay.style.opacity = 0;
+
+            setTimeout(() => {
+                if (candidate === 'BUCHANAN') {
+                    resultDisplay.innerHTML = "You voted for: <span style='color:red'>PAT BUCHANAN</span><br><span style='font-size:0.7rem; color:black'>(You likely followed the line from Al Gore. That line is misleading.)</span>";
+                } else if (candidate === 'GORE') {
+                    resultDisplay.innerHTML = "You voted for: <span style='color:blue'>AL GORE</span><br><span style='font-size:0.7rem; color:black'>(Correct hole, but poor layout makes this difficult.)</span>";
+                } else {
+                    resultDisplay.innerHTML = "You voted for: <strong>" + candidate + "</strong>";
+                }
+                resultDisplay.style.opacity = 1;
+            }, 200);
+        }
+
+        // Exhibit 05: Dark Pattern Trap
+        function hoverTrap() {
+            const btn = document.getElementById('trap-btn');
+            // 50% chance to move slightly to annoy user
+            if (Math.random() > 0.5) {
+                const x = (Math.random() - 0.5) * 100;
+                const y = (Math.random() - 0.5) * 50;
+                btn.style.transform = `translate(${x}px, ${y}px)`;
+            }
+        }
+
+        // Exhibit 06: Resume Scanner (Drag & Drop)
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function dropResume(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            const icon = document.getElementById(data);
+            const zone = document.getElementById('ats-scanner');
+            const feedback = document.getElementById('scan-feedback');
+            const instruction = document.getElementById('scanner-instruction');
+
+            // Move icon into zone
+            if (icon && zone) {
+                zone.appendChild(icon);
+                icon.style.position = 'absolute';
+                icon.style.top = '50%';
+                icon.style.left = '50%';
+                icon.style.transform = 'translate(-50%, -50%)';
+                instruction.style.display = 'none';
+
+                // Start Scan
+                zone.classList.add('scanning');
+                feedback.innerText = "SCANNING KEYWORDS...";
+
+                setTimeout(() => {
+                    zone.classList.remove('scanning');
+                    feedback.innerText = "REJECTED: 'Humanity' not found in database.";
+                    icon.style.border = "2px solid red";
+                }, 3000);
+            }
+        }
+
+        // Exhibit 07: Popup Barrage
+        function closePopup(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function triggerPopups() {
+            const scrollPos = document.getElementById('popup-zone').scrollTop;
+
+            // Randomly trigger popups based on scroll
+            if (scrollPos > 50 && Math.random() > 0.95) {
+                document.getElementById('popup-1').classList.add('active');
+            }
+            if (scrollPos > 150 && Math.random() > 0.95) {
+                document.getElementById('popup-2').classList.add('active');
+            }
+            if (scrollPos > 250 && Math.random() > 0.95) {
+                document.getElementById('popup-3').classList.add('active');
+            }
+            // Re-trigger if verified closed (annoying!)
+            if (Math.random() > 0.99) {
+                const id = 'popup-' + (Math.floor(Math.random() * 3) + 1);
+                document.getElementById(id).classList.add('active');
+            }
+        }
+    </script>
+</body>
+
+</html>
