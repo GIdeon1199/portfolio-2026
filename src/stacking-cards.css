@@ -203,7 +203,37 @@
     }
 
     .stacking-card {
-        min-height: 100vh;
-        /* Ensure full height on mobile too */
+        min-height: auto;
+        /* Allow content to dictate height */
+        height: auto;
+        position: relative;
+        /* Disable sticky on mobile if needed, or keep sticky but handle height */
+        padding-bottom: 0;
+    }
+
+    .card-visual {
+        min-height: 300px;
+    }
+
+    .card-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .card-title {
+        font-size: 3rem;
+    }
+
+    .stacking-work-container {
+        padding-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 2.5rem;
+    }
+
+    .card-meta {
+        font-size: 0.9rem;
     }
 }

@@ -416,8 +416,19 @@
                 }
 
                 /* Hover Effect: Text fades out, Image revealed */
+                /* Hover Effect: Text fades out, Image revealed */
                 .interactive-project-card:hover .card-overlay-content {
                     opacity: 0;
+                }
+
+                @media (max-width: 768px) {
+                    .interactive-project-card {
+                        height: 350px;
+                    }
+
+                    .projects-grid {
+                        grid-template-columns: 1fr !important;
+                    }
                 }
             </style>
 
@@ -428,7 +439,7 @@
                     Can Explore</h2>
 
                 <div class="projects-grid"
-                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md);">
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md);">
 
                     <!-- Project A: Monster Hunt -->
                     <a href="https://gideon1199.github.io/Monster-Hunt/" target="_blank"
