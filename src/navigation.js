@@ -87,6 +87,8 @@ export function initNavigation() {
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+      // Ignore empty hash links
+      if (this.getAttribute('href') === '#') return;
       e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
       if (target) {

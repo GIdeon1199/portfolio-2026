@@ -69,7 +69,7 @@
 }
 
 .card-red {
-    background-color: #FF4400;
+    background-color: var(--color-accent);
     color: #ffffff;
 }
 
@@ -89,6 +89,8 @@
     display: flex;
     width: 100%;
     height: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
 }
 
 .card-content {
@@ -179,7 +181,7 @@
 
 .card-red .card-btn-arrow:hover {
     background: #fff;
-    color: #FF4400;
+    color: var(--color-accent);
 }
 
 .card-white .card-btn-arrow:hover {

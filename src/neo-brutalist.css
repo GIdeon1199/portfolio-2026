@@ -98,7 +98,7 @@
     width: 100%;
     /* Match text width */
     height: 100%;
-    background-color: #E95325;
+    background-color: var(--color-accent);
     transform: translateY(-50%) translateX(-105%);
     /* Hide off-left */
     z-index: 1;

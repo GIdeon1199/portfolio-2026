@@ -12,36 +12,6 @@
     <link rel="stylesheet" href="./src/case-study.css">
     <style>
         /* Interactive Card Logic for Game Mechanics */
-        .interactive-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-            padding: 2rem;
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            background-color: var(--color-bg-primary);
-            /* Fallback */
-            border: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        /* The Background Image Pseudo-element */
-        .interactive-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: var(--bg-image);
-            background-size: cover;
-            background-position: center;
-            filter: blur(10px) opacity(0.2);
-            /* Blurred and faint by default */
-            transition: all 0.5s ease;
-            z-index: 0;
-        }
-
-        .interactive-card .card-content {
-            position: relative;
             z-index: 1;
             transition: opacity 0.3s ease;
             background: rgba(255, 255, 255, 0.8);
@@ -65,6 +35,36 @@
 </head>
 
 <body>
+    <!-- MOBILE BOTTOM NAV (Universal) -->
+    <nav class="mobile-bottom-nav">
+        <a href="./index.html" class="mobile-nav-item">
+            <svg class="mobile-nav-icon" viewBox="0 0 24 24">
+                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
+            </svg>
+            <span>Home</span>
+        </a>
+        <a href="./work.html" class="mobile-nav-item">
+            <svg class="mobile-nav-icon" viewBox="0 0 24 24">
+                <path
+                    d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z" />
+            </svg>
+            <span>Work</span>
+        </a>
+        <a href="./resume.html" class="mobile-nav-item">
+            <svg class="mobile-nav-icon" viewBox="0 0 24 24">
+                <path
+                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
+            </svg>
+            <span>Resume</span>
+        </a>
+        <a href="./contact.html" class="mobile-nav-item">
+            <svg class="mobile-nav-icon" viewBox="0 0 24 24">
+                <path
+                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
+            <span>Contact</span>
+        </a>
+    </nav>
     <!-- Neo-Brutalist Navigation -->
     <div class="neo-nav-container">
         <div class="neo-top-bar">
