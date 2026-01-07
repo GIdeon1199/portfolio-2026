@@ -369,6 +369,128 @@
                 </div>
             </div>
         </section>
+
+        <!-- Other Projects Section -->
+        <section class="ongoing-section" style="background: var(--color-bg-primary); padding-top: 0;">
+            <style>
+                .interactive-project-card {
+                    position: relative;
+                    height: 400px;
+                    overflow: hidden;
+                    border: 1px solid var(--color-border);
+                    text-decoration: none;
+                    color: inherit;
+                    display: block;
+                    transition: all 0.4s ease;
+                }
+
+                .interactive-project-card:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.1);
+                    border-color: var(--color-text-primary);
+                }
+
+                .interactive-project-card .card-bg-image {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: 1;
+                    /* Image is behind */
+                }
+
+                .interactive-project-card .card-overlay-content {
+                    position: relative;
+                    z-index: 2;
+                    width: 100%;
+                    height: 100%;
+                    background-color: var(--color-bg-alt);
+                    padding: var(--space-md);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    /* Text aligned to top as requested previously */
+                    transition: opacity 0.5s ease;
+                }
+
+                /* Hover Effect: Text fades out, Image revealed */
+                .interactive-project-card:hover .card-overlay-content {
+                    opacity: 0;
+                }
+            </style>
+
+            <div class="container">
+                <div class="section-divider"></div>
+                <h2 class="text-center animate-on-scroll" style="margin-bottom: var(--space-xl);">Other Projects On
+                    Github You
+                    Can Explore</h2>
+
+                <div class="projects-grid"
+                    style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-md);">
+
+                    <!-- Project A: Monster Hunt -->
+                    <a href="https://gideon1199.github.io/Monster-Hunt/" target="_blank"
+                        class="interactive-project-card animate-on-scroll">
+                        <!-- Image Layout (Behind) -->
+                        <img src="./assets/monster_hunt_thumbnail.png" alt="Monster Hunt 360 Visual"
+                            class="card-bg-image">
+
+                        <!-- Content Layout (Front) -->
+                        <div class="card-overlay-content">
+                            <p class="project-label">360 Experience</p>
+                            <h3 style="font-size: var(--text-xl); font-weight: 700; margin-bottom: 0.5rem;">Monster Hunt
+                            </h3>
+                            <p class="project-description" style="margin-bottom: 2rem;">
+                                An immersive 360-degree interactive hunt. Hover to reveal.
+                            </p>
+                            <span class="btn-outline"
+                                style="font-size: 0.9rem; padding: 8px 16px; align-self: flex-start; margin-top: auto; background: var(--color-bg-primary);">Play
+                                Now ↗</span>
+                        </div>
+                    </a>
+
+                    <!-- Project B: Echoes of the Void -->
+                    <a href="https://gideon1199.github.io/echosofthevoid/" target="_blank"
+                        class="interactive-project-card animate-on-scroll">
+                        <img src="./assets/echoes_void_thumbnail.png" alt="Echoes of the Void Visual"
+                            class="card-bg-image">
+
+                        <div class="card-overlay-content">
+                            <p class="project-label">Experimental Code Game</p>
+                            <h3 style="font-size: var(--text-xl); font-weight: 700; margin-bottom: 0.5rem;">Echoes of
+                                the Void</h3>
+                            <p class="project-description" style="margin-bottom: 2rem;">
+                                Abstract interactive game exploring void states. Hover to reveal.
+                            </p>
+                            <span class="btn-outline"
+                                style="font-size: 0.9rem; padding: 8px 16px; align-self: flex-start; margin-top: auto; background: var(--color-bg-primary);">Play
+                                Now ↗</span>
+                        </div>
+                    </a>
+
+                    <!-- Project C: Light OUT -->
+                    <a href="https://gideon1199.github.io/Lightout/" target="_blank"
+                        class="interactive-project-card animate-on-scroll">
+                        <img src="./assets/light_out_thumbnail.png" alt="Light Out Visual" class="card-bg-image">
+
+                        <div class="card-overlay-content">
+                            <p class="project-label">360 Experience</p>
+                            <h3 style="font-size: var(--text-xl); font-weight: 700; margin-bottom: 0.5rem;">Light OUT
+                            </h3>
+                            <p class="project-description" style="margin-bottom: 2rem;">
+                                Navigate the dark in this 360-degree survival experience. Hover to reveal.
+                            </p>
+                            <span class="btn-outline"
+                                style="font-size: 0.9rem; padding: 8px 16px; align-self: flex-start; margin-top: auto; background: var(--color-bg-primary);">Play
+                                Now ↗</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
     </main>
 
     <script type="module">
@@ -385,6 +507,7 @@
 
         document.querySelectorAll('.animate-on-scroll, .fade-in').forEach(el => observer.observe(el));
     </script>
+    <script type="module" src="./src/global.js"></script>
 </body>
 
 </html>

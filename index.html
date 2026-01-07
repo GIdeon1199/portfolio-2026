@@ -8,7 +8,7 @@
     <meta name="description"
         content="Portfolio of Gideon Gyamfi | Interaction Designer & Creative Developer specializing in user-centered systems, accessible web design, and interactive storytelling.">
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="./src/sticky-work.css">
+    <link rel="stylesheet" href="./src/stacking-cards.css">
 </head>
 
 <body>
@@ -97,110 +97,90 @@
             </div>
         </div>
 
-        <!-- SELECTED WORK (Black Section) -->
-        <!-- SELECTED WORK (Black Section - Sticky Split Screen) -->
-        <section id="work" class="sticky-work-container">
-            <!-- Custom Cursor -->
-            <div class="custom-cursor" id="customCursor"></div>
+        <!-- SELECTED WORK (Stacking Cards) -->
+        <section id="work" class="stacking-work-container">
 
-            <div class="sticky-wrapper-split">
-                <!-- Left Column (Sticky Text) -->
-                <div class="sticky-left">
-                    <!-- Perk Up Info -->
-                    <div class="project-info active" id="info-perk-up">
-                        <h2 class="project-title-huge accent-perk-up">
-                            <a href="./case-perk-up.html" style="text-decoration: none; color: inherit;">Perk Up</a>
-                        </h2>
-                        <ul class="project-meta-list">
-                            <li class="project-meta-item">
-                                <span class="meta-label">Category:</span>
-                                <span class="meta-value">App Design</span>
-                            </li>
-                            <li class="project-meta-item">
-                                <span class="meta-label">Client:</span>
-                                <span class="meta-value">Concept</span>
-                            </li>
-                            <li class="project-meta-item">
-                                <span class="meta-label">Duration:</span>
-                                <span class="meta-value">4 Weeks</span>
-                            </li>
-                        </ul>
+            <!-- CARD 1: PERK UP (Black) -->
+            <div class="stacking-card card-black">
+                <div class="card-split">
+                    <div class="card-content">
+                        <span class="card-meta">App Design / Concept</span>
+                        <h2 class="card-title">Perk Up</h2>
+                        <p style="font-size: 1.1rem; color: #999; margin-bottom: 2rem;">
+                            Modernizing employee rewards with a seamless mobile experience.
+                        </p>
+                        <a href="./case-perk-up.html" class="card-btn-arrow">&rarr;</a>
                     </div>
-
-                    <!-- Broken Systems Info -->
-                    <div class="project-info" id="info-broken">
-                        <h2 class="project-title-huge">
-                            <a href="./case-museum-of-broken-systems.html"
-                                style="text-decoration: none; color: inherit;">Broken Systems</a>
-                        </h2>
-                        <ul class="project-meta-list">
-                            <li class="project-meta-item">
-                                <span class="meta-label">Category:</span>
-                                <span class="meta-value">Graphic Design</span>
-                            </li>
-                            <li class="project-meta-item">
-                                <span class="meta-label">Client:</span>
-                                <span class="meta-value">Personal</span>
-                            </li>
-                            <li class="project-meta-item">
-                                <span class="meta-label">Duration:</span>
-                                <span class="meta-value">Ongoing</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- Twisted Truth Info -->
-                    <div class="project-info" id="info-twisted">
-                        <h2 class="project-title-huge accent-twisted">
-                            <a href="./case-truth-or-twisted.html"
-                                style="text-decoration: none; color: inherit;">Twisted Truth</a>
-                        </h2>
-                        <ul class="project-meta-list">
-                            <li class="project-meta-item">
-                                <span class="meta-label">Category:</span>
-                                <span class="meta-value">Immersive Design</span>
-                            </li>
-                            <li class="project-meta-item">
-                                <span class="meta-label">Client:</span>
-                                <span class="meta-value">Editorial</span>
-                            </li>
-                            <li class="project-meta-item">
-                                <span class="meta-label">Duration:</span>
-                                <span class="meta-value">2 Weeks</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Right Column (Scrolling Images) -->
-                <div class="scrolling-right">
-                    <!-- Perk Up Media -->
-                    <div class="project-media-card" data-target="info-perk-up">
-                        <a href="./case-perk-up.html">
-                            <img src="./assets/portfolio-projects/perk-up/mockups-main.png" alt="Perk Up Main Mockup">
-                        </a>
-                        <a href="./case-perk-up.html" style="margin-top: 2rem; display: block;">
-                            <img src="./assets/portfolio-projects/perk-up/perk-up-thumbnail.png" alt="Perk Up Thumbnail"
-                                style="max-width: 80%;">
-                        </a>
-                    </div>
-
-                    <!-- Broken Systems Media -->
-                    <div class="project-media-card" data-target="info-broken">
-                        <a href="./case-museum-of-broken-systems.html">
-                            <img src="./assets/museum_broken_systems_cover.png" alt="Museum Abstract Wireframe">
-                        </a>
-                    </div>
-
-                    <!-- Twisted Truth Media -->
-                    <div class="project-media-card" data-target="info-twisted">
-                        <a href="./case-truth-or-twisted.html">
-                            <img src="./assets/portfolio-projects/truth-or-twisted/Truth-or-twisted.png"
-                                alt="Twisted Truth Installation">
-                        </a>
+                    <div class="card-visual">
+                        <img src="./assets/portfolio-projects/perk-up/mockups-main.png" alt="Perk Up 3D Mockup">
                     </div>
                 </div>
             </div>
+
+            <!-- CARD 2: BROKEN SYSTEMS (Red) -->
+            <div class="stacking-card card-red">
+                <div class="card-split">
+                    <div class="card-content">
+                        <span class="card-meta">Graphic Design / Exhibition</span>
+                        <h2 class="card-title">Broken Systems</h2>
+                        <p style="font-size: 1.1rem; color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
+                            A digital museum curating user-hostile design patterns.
+                        </p>
+                        <a href="./case-museum-of-broken-systems.html" class="card-btn-arrow">&rarr;</a>
+                    </div>
+                    <div class="card-visual">
+                        <img src="./assets/museum_broken_systems_cover.png" alt="Broken Systems Wireframe">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 3: TWISTED TRUTH (Black) -->
+            <div class="stacking-card card-black">
+                <div class="card-split">
+                    <div class="card-content">
+                        <span class="card-meta">Immersive Design / Editorial</span>
+                        <h2 class="card-title">Twisted Truth</h2>
+                        <p style="font-size: 1.1rem; color: #999; margin-bottom: 2rem;">
+                            Gamifying media literacy in an era of misinformation.
+                        </p>
+                        <a href="./case-truth-or-twisted.html" class="card-btn-arrow">&rarr;</a>
+                    </div>
+                    <div class="card-visual">
+                        <img src="./assets/portfolio-projects/truth-or-twisted/Truth-or-twisted.png"
+                            alt="Twisted Truth Installation">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 4: FLUTTER ARCHIVE (White) -->
+            <div class="stacking-card card-white">
+                <div class="card-split">
+                    <div class="card-content">
+                        <span class="card-meta">Mobile Dev / Experimentation</span>
+                        <h2 class="card-title">Flutter Archive</h2>
+                        <p style="font-size: 1.1rem; color: #555; margin-bottom: 2rem;">
+                            Experimental motion and UI interactions built with code.
+                        </p>
+                        <a href="./case-flutter-archive.html" class="card-btn-arrow">&rarr;</a>
+                    </div>
+                    <div class="card-visual">
+                        <!-- Using a tech-focused image or placeholder -->
+                        <img src="./assets/portfolio-projects/flutter-archive/flutter-archive.png"
+                            alt="Flutter Code Archive">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CARD 5: CTA (Red - Center) -->
+            <div class="stacking-card card-red center-layout">
+                <a href="./work.html" class="cta-link">
+                    <div class="cta-title">MORE<br>PROJECTS</div>
+                    <div
+                        style="font-size: 1.25rem; letter-spacing: 0.1em; margin-top: 2rem; border-bottom: 2px solid white;">
+                        Thinking about the future</div>
+                </a>
+            </div>
+
         </section>
 
         <!-- CAPABILITIES & PROCESS (Recruiter Section) -->
@@ -314,64 +294,9 @@
             // Force visibility hack for JS issues
             document.body.classList.add('js-loaded');
             initAnimations();
-            initStickyWork();
         });
-
-        // STICKY WORK LOGIC
-        function initStickyWork() {
-            const cursor = document.getElementById('customCursor');
-            const workSection = document.getElementById('work');
-            const mediaCards = document.querySelectorAll('.project-media-card');
-            const projectInfos = document.querySelectorAll('.project-info');
-
-            // 1. Custom Cursor Logic
-            if (cursor && workSection) {
-                document.addEventListener('mousemove', (e) => {
-                    // Only show cursor when hovering over work section
-                    const rect = workSection.getBoundingClientRect();
-                    if (e.clientX >= rect.left && e.clientX <= rect.right &&
-                        e.clientY >= rect.top && e.clientY <= rect.bottom) {
-
-                        cursor.style.opacity = '1';
-                        cursor.style.left = e.clientX + 'px';
-                        cursor.style.top = e.clientY + 'px';
-                    } else {
-                        cursor.style.opacity = '0';
-                    }
-                });
-            }
-
-            // 2. Scroll Interaction (Observer)
-            const observerOptions = {
-                root: null,
-                rootMargin: '-45% 0px -45% 0px', // Trigger when element is in middle 10% of screen
-                threshold: 0
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const targetId = entry.target.getAttribute('data-target');
-
-                        // Deactivate all infos
-                        projectInfos.forEach(info => {
-                            info.classList.remove('active');
-                        });
-
-                        // Activate target info
-                        const activeInfo = document.getElementById(targetId);
-                        if (activeInfo) {
-                            activeInfo.classList.add('active');
-                        }
-                    }
-                });
-            }, observerOptions);
-
-            mediaCards.forEach(card => {
-                observer.observe(card);
-            });
-        }
     </script>
+    <script type="module" src="./src/global.js"></script>
 </body>
 
 </html>

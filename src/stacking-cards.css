@@ -1,0 +1,209 @@
+/* STACKING CARDS LAYOUT */
+/* Replaces previous sticky work styles */
+
+.stacking-work-container {
+    background-color: #000;
+    /* Fallback */
+    padding-bottom: 0;
+    /* Important for clean ending */
+}
+
+/* BASE CARD STYLE */
+.stacking-card {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    transform-origin: center top;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+/* COLOR VARIANTS */
+.card-black {
+    background-color: #000000;
+    color: #ffffff;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.card-black .card-title,
+.card-black .card-meta,
+.card-black p {
+    color: #ffffff !important;
+}
+
+.card-red {
+    background-color: #FF4400;
+    color: #ffffff;
+}
+
+.card-red .card-title,
+.card-red .card-meta,
+.card-red p {
+    color: #ffffff !important;
+}
+
+.card-white {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* LAYOUT: SPLIT SCREEN (Standard) */
+.card-split {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.card-content {
+    width: 40%;
+    padding: 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.card-visual {
+    width: 60%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-out;
+}
+
+/* Parallax Effect Helper: Image starts slightly zoomed/transformed */
+.stacking-card:hover .card-visual img {
+    transform: scale(1.05);
+}
+
+/* LAYOUT: CENTER CTA */
+.center-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+/* TYPOGRAPHY */
+.card-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 0.9;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+}
+
+.card-meta {
+    font-family: 'Inter', monospace;
+    font-size: 1.1rem;
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.card-btn-arrow {
+    display: inline-block;
+    margin-top: 2rem;
+    font-size: 2rem;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card-btn-arrow:hover {
+    background: currentColor;
+    color: inherit;
+    /* Requires mix-blend-mode or specific handling if not simple */
+}
+
+/* Specific button hover for better contrast */
+.card-black .card-btn-arrow:hover {
+    background: #fff;
+    color: #000;
+}
+
+.card-red .card-btn-arrow:hover {
+    background: #fff;
+    color: #FF4400;
+}
+
+.card-white .card-btn-arrow:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* CTA Styles */
+.cta-title {
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 0.8;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.center-layout:hover .cta-title {
+    transform: scale(1.05);
+    /* User requested scale up */
+}
+
+.cta-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+    .card-split {
+        flex-direction: column;
+    }
+
+    .card-content {
+        width: 100%;
+        height: 40%;
+        padding: 2rem;
+    }
+
+    .card-visual {
+        width: 100%;
+        height: 60%;
+    }
+
+    .card-title {
+        font-size: 3rem;
+    }
+
+    .cta-title {
+        font-size: 4rem;
+    }
+
+    .stacking-card {
+        min-height: 100vh;
+        /* Ensure full height on mobile too */
+    }
+}
