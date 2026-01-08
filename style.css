@@ -128,7 +128,7 @@ h6 {
 
 .hero-text {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 11vw, 10rem);
+  font-size: clamp(2.5rem, 9vw, 8rem);
   font-weight: 900;
   line-height: 0.85;
   letter-spacing: -0.04em;
