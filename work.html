@@ -50,13 +50,7 @@
             border-color: var(--color-text-primary);
         }
 
-        .project-card:nth-child(even) {
-            direction: rtl;
-        }
-
-        .project-card:nth-child(even)>* {
-            direction: ltr;
-        }
+        /* Zig-zag layout removed by user request (Standardized to Image-Left / Text-Right) */
 
         .project-image {
             width: 100%;
@@ -69,14 +63,10 @@
             overflow: hidden;
         }
 
-        /* Desktop: align images towards the center text to reduce gap */
+        /* Desktop: align image content towards the text (Right) for consistent gap */
         @media (min-width: 969px) {
-            .project-card:nth-child(odd) .project-image {
-                justify-content: flex-end;
-            }
-
-            .project-card:nth-child(even) .project-image {
-                justify-content: flex-start;
+            .project-image img {
+                object-position: right center;
             }
         }
 
@@ -92,6 +82,7 @@
             object-fit: contain;
             /* Fix: Show full image always */
             object-position: center;
+            /* Default fallback */
             filter: grayscale(30%);
             transition: all var(--transition-medium);
         }
