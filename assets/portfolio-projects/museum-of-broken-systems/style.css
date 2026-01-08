@@ -130,8 +130,8 @@ h3 {
    ─────────────────────────────────────────────────────────── */
 .collection-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 0.5rem;
     width: 100%;
     max-width: 1200px;
     padding: 0 1rem;
@@ -140,7 +140,7 @@ h3 {
 .framed-card {
     background: #FDFCF9;
     border: 1px solid #E0DED5;
-    padding: 1.5rem 2rem;
+    padding: 0.75rem 0.5rem;
     box-shadow:
         inset 1px 1px 0px #FFFFFF,
         inset -1px -1px 0px #DCD9D0,
@@ -174,13 +174,13 @@ h3 {
 }
 
 .card-title {
-    font-size: 1.4rem;
-    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.15rem;
 }
 
 .card-desc {
     font-style: italic;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: #666;
 }
 
@@ -310,9 +310,16 @@ h3 {
     }
 
     .screen {
-        padding: 2rem;
+        padding: 1rem 0.5rem;
         height: auto;
         min-height: 100vh;
+    }
+
+    /* Force dense grid on mobile */
+    .collection-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+        padding: 0;
     }
 }
 

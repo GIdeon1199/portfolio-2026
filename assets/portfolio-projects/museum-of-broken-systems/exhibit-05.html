@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibit 05: Dark Patterns | Museum of Broken Systems</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Specific page overrides */
+        body {
+            background: #F4F3EF;
+            overflow-y: auto;
+        }
+
+        .exhibit-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="./index.html" class="return-btn">← Back to Collection</a>
+
+    <div class="exhibit-wrapper">
+        <div class="exhibit-container" style="border:none; padding-top:0;">
+            <div class="exhibit-header">
+                <span class="exhibit-label">Exhibit 05</span>
+                <h2 style="font-size: 2rem;">Dark Patterns</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">The "Roach Motel".</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Easy to get in, impossible to get out."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Experience</div>
+                <div class="row-content">
+                    <p style="margin-bottom: 2rem;">Try to <strong>Cancel Subscription</strong>.</p>
+
+                    <div class="subscription-modal">
+                        <div class="modal-icon">🥺</div>
+                        <h3 class="modal-title">Wait! Don't go!</h3>
+                        <p class="modal-text">If you leave now, you'll lose all your gathered points, your friends will
+                            miss you, and a puppy might cry. Are you sure?</p>
+
+                        <button class="btn-keep"
+                            onclick="alert('Great choice! Subscription auto-renewed for 12 months.')">KEEP MEMBERSHIP
+                            AND SAVE 0%</button>
+
+                        <div style="margin-top: 1rem; position: relative; height: 30px;">
+                            <button class="btn-cancel-trap" id="trap-btn" onmouseover="hoverTrap()"
+                                onclick="alert('Error 503: Unable to process cancellation at this time. Please fax us.')">No
+                                thanks, I hate happiness</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; display: flex; justify-content: space-between;">
+            <a href="./exhibit-04.html" class="enter-link">&larr; Previous</a>
+            <a href="./exhibit-06.html" class="enter-link">Next Exhibit &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        // Exhibit 05: Dark Pattern Trap
+        function hoverTrap() {
+            const btn = document.getElementById('trap-btn');
+            // 50% chance to move slightly to annoy user
+            if (Math.random() > 0.5) {
+                const x = (Math.random() - 0.5) * 100;
+                const y = (Math.random() - 0.5) * 50;
+                btn.style.transform = `translate(${x}px, ${y}px)`;
+            }
+        }
+    </script>
+    <script src="../../../src/back-to-top.js"></script>
+</body>
+
+</html>

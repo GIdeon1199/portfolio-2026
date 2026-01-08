@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibit 03: Customer Support Bots | Museum of Broken Systems</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Specific page overrides */
+        body {
+            background: #F4F3EF;
+            overflow-y: auto;
+        }
+
+        .exhibit-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="./index.html" class="return-btn">← Back to Collection</a>
+
+    <div class="exhibit-wrapper">
+        <div class="exhibit-container" style="border:none; padding-top:0;">
+            <div class="exhibit-header">
+                <span style="font-family: 'Inter'; font-size: 0.7rem; text-transform: uppercase; color: #888;">Exhibit
+                    03</span>
+                <h2 style="font-size: 2rem;">Customer Support Bots</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">Scripted help, human frustration.</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Circular logic loops preventing access to human agents."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Human Cost</div>
+                <div class="row-content">
+                    Helplessness. Time lost.
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Analysis</div>
+                <div class="row-content">
+                    <div class="chat-interface">
+                        <div class="chat-header">
+                            <div class="chat-avatar"></div>
+                            <div style="font-size: 0.8rem; font-weight: 600;">HelperBot 3000</div>
+                            <div class="chat-status"></div>
+                        </div>
+                        <div class="chat-body" id="chat-stream">
+                            <div class="chat-msg msg-bot">
+                                Hello! I'm your automated assistant. How can I misunderstand you today?
+                            </div>
+                        </div>
+                        <div class="chat-options" id="chat-controls">
+                            <button class="chat-btn" onclick="sendChat('Speak to Human')">Speak to Human</button>
+                            <button class="chat-btn" onclick="sendChat('Billing Issue')">Billing Issue</button>
+                            <button class="chat-btn" onclick="sendChat('Cancel Service')">Cancel Service</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; display: flex; justify-content: space-between;">
+            <a href="./exhibit-02.html" class="enter-link">&larr; Previous</a>
+            <a href="./exhibit-04.html" class="enter-link">Next Exhibit &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        // Circular Logic Chat Bot
+        function sendChat(option) {
+            const chatBody = document.getElementById('chat-stream');
+
+            // User Message
+            const userMsg = document.createElement('div');
+            userMsg.className = 'chat-msg msg-user';
+            userMsg.innerText = option;
+            chatBody.appendChild(userMsg);
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            // Bot Response (Delayed Loop)
+            setTimeout(() => {
+                const botMsg = document.createElement('div');
+                botMsg.className = 'chat-msg msg-bot';
+
+                const responses = [
+                    "I didn't quite catch that. Did you mean 'Billing Issue'?",
+                    "All our agents are currently ignoring you. Please try again.",
+                    "Error 992: Empathy module not found.",
+                    "To proceed, please re-state your problem in binary.",
+                    "Have you tried restarting your life?"
+                ];
+
+                botMsg.innerText = responses[Math.floor(Math.random() * responses.length)];
+                chatBody.appendChild(botMsg);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 1000);
+        }
+    </script>
+    <script src="../../../src/back-to-top.js"></script>
+</body>
+
+</html>

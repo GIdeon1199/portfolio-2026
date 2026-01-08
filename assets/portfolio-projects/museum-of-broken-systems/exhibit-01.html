@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibit 01: Education Portals | Museum of Broken Systems</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Specific page overrides */
+        body {
+            background: #F4F3EF;
+            overflow-y: auto;
+        }
+
+        .exhibit-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="./index.html" class="return-btn">← Back to Collection</a>
+
+    <div class="exhibit-wrapper">
+        <div class="exhibit-container" style="border:none; padding-top:0;">
+            <div class="exhibit-header">
+                <span style="font-family: 'Inter'; font-size: 0.7rem; text-transform: uppercase; color: #888;">Exhibit
+                    01</span>
+                <h2 style="font-size: 2rem;">Education Portals</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">Intended to guide, became a maze.</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Important deadlines buried in nested menus."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Human Cost</div>
+                <div class="row-content">
+                    Missed opportunities. Unnecessary stress.
+                </div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Redesign</div>
+                <div class="row-content">
+                    Streamlined. Student-focused.
+                    <div class="comparison-container" id="details-slider">
+                        <!-- Bottom Layer (After - Fixed) -->
+                        <div class="comp-layer">
+                            <img src="./education_after.png" alt="Streamlined student dashboard">
+                        </div>
+                        <!-- Top Layer (Before - Broken) -->
+                        <div class="comp-layer comp-overlay" id="overlay-layer">
+                            <img src="./education_before.png" alt="Chaotic legacy portal">
+                        </div>
+                        <!-- Handle -->
+                        <div class="comp-handle" id="slider-handle"></div>
+                    </div>
+                    <div
+                        style="margin-top: 0.5rem; display: flex; justify-content: space-between; font-family: var(--font-sans); font-size: 0.7rem; color: #888; text-transform: uppercase;">
+                        <span>Before (Broken)</span>
+                        <span>After (Fixed)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; display: flex; justify-content: space-between;">
+            <a href="./index.html" class="enter-link">&larr; Collection</a>
+            <a href="./exhibit-02.html" class="enter-link">Next Exhibit &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        // Comparison Slider Logic
+        const container = document.getElementById('details-slider');
+        const overlay = document.getElementById('overlay-layer');
+        const handle = document.getElementById('slider-handle');
+
+        if (container && overlay && handle) {
+            let isDragging = false;
+
+            const move = (e) => {
+                if (!isDragging) return;
+                const rect = container.getBoundingClientRect();
+                let x = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
+                x = Math.max(0, Math.min(x, rect.width));
+                const percent = (x / rect.width) * 100;
+
+                overlay.style.width = percent + "%";
+                handle.style.left = percent + "%";
+            };
+
+            const startDrag = (e) => { isDragging = true; };
+            const stopDrag = () => { isDragging = false; };
+
+            handle.addEventListener('mousedown', startDrag);
+            window.addEventListener('mouseup', stopDrag);
+            window.addEventListener('mousemove', move);
+
+            // Touch support
+            handle.addEventListener('touchstart', startDrag);
+            window.addEventListener('touchend', stopDrag);
+            window.addEventListener('touchmove', move);
+        }
+    </script>
+    <script src="../../../src/back-to-top.js"></script>
+</body>
+
+</html>

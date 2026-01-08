@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibit 04: Voting Interfaces | Museum of Broken Systems</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Specific page overrides */
+        body {
+            background: #F4F3EF;
+            overflow-y: auto;
+        }
+
+        .exhibit-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="./index.html" class="return-btn">← Back to Collection</a>
+
+    <div class="exhibit-wrapper">
+        <div class="exhibit-container" style="border:none; padding-top:0;">
+            <div class="exhibit-header">
+                <span class="exhibit-label">Exhibit 04</span>
+                <h2 style="font-size: 2rem;">Voting Interfaces</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">The "Butterfly Ballot".</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Confusing layout leading to unintended votes."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Experience</div>
+                <div class="row-content">
+                    <p style="margin-bottom: 1rem;">Try to vote for <strong>AL GORE</strong> (Second on Left).</p>
+
+                    <div class="ballot-card">
+                        <div class="ballot-header">Official Ballot</div>
+
+                        <div class="ballot-row">
+                            <div class="candidate-left">GEORGE BUSH</div>
+                            <div class="arrow-line line-left" style="top:50%; transform: rotate(10deg);"></div>
+                            <div class="punch-strip">
+                                <div class="punch-hole" onclick="toggleVote(this, 'BUSH')"></div>
+                                <div class="punch-hole" onclick="toggleVote(this, 'BUCHANAN')"></div>
+                                <div class="punch-hole" onclick="toggleVote(this, 'GORE')"></div>
+                            </div>
+                            <div class="candidate-right">PAT BUCHANAN</div>
+                            <div class="arrow-line line-confusing"></div>
+                        </div>
+
+                        <div class="ballot-row">
+                            <div class="candidate-left">AL GORE</div>
+                            <div class="arrow-line line-left" style="top:70%; transform: rotate(-15deg);"></div>
+                            <!-- Empty space on right -->
+                            <div class="candidate-right"></div>
+                        </div>
+
+                        <div id="vote-result" class="vote-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; display: flex; justify-content: space-between;">
+            <a href="./exhibit-03.html" class="enter-link">&larr; Previous</a>
+            <a href="./exhibit-05.html" class="enter-link">Next Exhibit &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        // Exhibit 04: Butterfly Ballot Logic
+        function toggleVote(element, candidate) {
+            // Clear previous votes
+            document.querySelectorAll('.punch-hole').forEach(el => el.classList.remove('selected'));
+
+            // Punch this hole
+            element.classList.add('selected');
+
+            const resultDisplay = document.getElementById('vote-result');
+            resultDisplay.style.opacity = 0;
+
+            setTimeout(() => {
+                if (candidate === 'BUCHANAN') {
+                    resultDisplay.innerHTML = "You voted for: <span style='color:red'>PAT BUCHANAN</span><br><span style='font-size:0.7rem; color:black'>(You likely followed the line from Al Gore. That line is misleading.)</span>";
+                } else if (candidate === 'GORE') {
+                    resultDisplay.innerHTML = "You voted for: <span style='color:blue'>AL GORE</span><br><span style='font-size:0.7rem; color:black'>(Correct hole, but poor layout makes this difficult.)</span>";
+                } else {
+                    resultDisplay.innerHTML = "You voted for: <strong>" + candidate + "</strong>";
+                }
+                resultDisplay.style.opacity = 1;
+            }, 200);
+        }
+    </script>
+    <script src="../../../src/back-to-top.js"></script>
+</body>
+
+</html>

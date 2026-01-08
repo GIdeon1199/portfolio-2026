@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibit 06: Algorithmic Bias | Museum of Broken Systems</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Specific page overrides */
+        body {
+            background: #F4F3EF;
+            overflow-y: auto;
+        }
+
+        .exhibit-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="./index.html" class="return-btn">← Back to Collection</a>
+
+    <div class="exhibit-wrapper">
+        <div class="exhibit-container" style="border:none; padding-top:0;">
+            <div class="exhibit-header">
+                <span class="exhibit-label">Exhibit 06</span>
+                <h2 style="font-size: 2rem;">Algorithmic Bias</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">Automated Resume Systems (ATS).</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Qualified people rejected by invisible rules."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Experience</div>
+                <div class="row-content">
+                    <p style="margin-bottom: 2rem;">Upload the <strong>Perfect Resume</strong>.</p>
+
+                    <div class="ats-interaction-area">
+                        <div style="text-align: center;">
+                            <div class="resume-icon" id="drag-resume" draggable="true" ondragstart="drag(event)">📄
+                            </div>
+                            <div
+                                style="font-size: 0.8rem; margin-top: 0.5rem; color: #666; font-family: var(--font-sans);">
+                                Your Resume</div>
+                        </div>
+
+                        <div class="scanner-zone" id="ats-scanner" ondrop="dropResume(event)"
+                            ondragover="allowDrop(event)">
+                            <div class="scan-line"></div>
+                            <div id="scanner-instruction" style="color:#666;">Drag Resume Here</div>
+                            <div id="scan-feedback" class="scan-result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; display: flex; justify-content: space-between;">
+            <a href="./exhibit-05.html" class="enter-link">&larr; Previous</a>
+            <a href="./exhibit-07.html" class="enter-link">Next Exhibit &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        // Exhibit 06: Resume Scanner (Drag & Drop)
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function dropResume(ev) {
+            ev.preventDefault();
+            const data = ev.dataTransfer.getData("text");
+            const icon = document.getElementById(data);
+            const zone = document.getElementById('ats-scanner');
+            const feedback = document.getElementById('scan-feedback');
+            const instruction = document.getElementById('scanner-instruction');
+
+            // Move icon into zone
+            if (icon && zone) {
+                zone.appendChild(icon);
+                icon.style.position = 'absolute';
+                icon.style.top = '50%';
+                icon.style.left = '50%';
+                icon.style.transform = 'translate(-50%, -50%)';
+                instruction.style.display = 'none';
+
+                // Start Scan
+                zone.classList.add('scanning');
+                feedback.innerText = "SCANNING KEYWORDS...";
+
+                setTimeout(() => {
+                    zone.classList.remove('scanning');
+                    feedback.innerText = "REJECTED: 'Humanity' not found in database.";
+                    icon.style.border = "2px solid red";
+                }, 3000);
+            }
+        }
+    </script>
+    <script src="../../../src/back-to-top.js"></script>
+</body>
+
+</html>

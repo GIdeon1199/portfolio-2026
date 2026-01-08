@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exhibit 07: Attention Economy | Museum of Broken Systems</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Specific page overrides */
+        body {
+            background: #F4F3EF;
+            overflow-y: auto;
+        }
+
+        .exhibit-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="./index.html" class="return-btn">← Back to Collection</a>
+
+    <div class="exhibit-wrapper">
+        <div class="exhibit-container" style="border:none; padding-top:0;">
+            <div class="exhibit-header">
+                <span class="exhibit-label">Exhibit 07</span>
+                <h2 style="font-size: 2rem;">Attention Economy</h2>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The System</div>
+                <div class="row-content italic">Ad-supported Media.</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">The Fracture</div>
+                <div class="row-content italic">"Content buried under aggressive demands for engagement."</div>
+            </div>
+
+            <div class="detail-row">
+                <div class="row-label">Experience</div>
+                <div class="row-content">
+                    <p style="margin-bottom: 1rem;">Try to read the <strong>Poem</strong> below.</p>
+
+                    <div class="reading-area" onscroll="triggerPopups()" id="popup-zone">
+                        <h3>Silence</h3>
+                        <p>In the quiet spaces between the noise,<br>we find the thoughts we lost.</p>
+                        <br>
+                        <p>The screen is a window,<br>not a wall.</p>
+                        <br>
+                        <p>But when the window is covered<br>in painted signs,</p>
+                        <br>
+                        <p>We forget there is a world<br>outside the frame.</p>
+                        <br>
+                        <p>We click, we scroll,<br>we accept.</p>
+                        <br>
+                        <p>And silence becomes<br>the most expensive luxury.</p>
+                        <br>
+                        <p>End.</p>
+
+                        <!-- Popups -->
+                        <div class="popup-trap" id="popup-1" style="top:50px; left:20px;">
+                            <span class="popup-close" onclick="closePopup('popup-1')">X</span>
+                            <strong>SUBSCRIBE NOW!</strong><br>Get 10% off silence!
+                            <button class="popup-btn-fake">YES PLZ</button>
+                        </div>
+                        <div class="popup-trap" id="popup-2" style="top:120px; right:30px;">
+                            <span class="popup-close" onclick="closePopup('popup-2')">X</span>
+                            <strong>WE USE COOKIES</strong><br>To track your soul.
+                            <button class="popup-btn-fake">ACCEPT ALL</button>
+                        </div>
+                        <div class="popup-trap" id="popup-3" style="bottom:40px; left:60px;">
+                            <span class="popup-close" onclick="closePopup('popup-3')">X</span>
+                            <strong>WAIT!</strong><br>Chat with an agent?
+                            <button class="popup-btn-fake">CHAT NOW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; display: flex; justify-content: space-between;">
+            <a href="./exhibit-06.html" class="enter-link">&larr; Previous</a>
+            <a href="./outro.html" class="enter-link">Finish Tour &rarr;</a>
+        </div>
+    </div>
+
+    <script>
+        // Exhibit 07: Popup Barrage
+        function closePopup(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        function triggerPopups() {
+            const scrollPos = document.getElementById('popup-zone').scrollTop;
+
+            // Randomly trigger popups based on scroll
+            if (scrollPos > 50 && Math.random() > 0.95) {
+                document.getElementById('popup-1').classList.add('active');
+            }
+            if (scrollPos > 150 && Math.random() > 0.95) {
+                document.getElementById('popup-2').classList.add('active');
+            }
+            if (scrollPos > 250 && Math.random() > 0.95) {
+                document.getElementById('popup-3').classList.add('active');
+            }
+            // Re-trigger if verified closed (annoying!)
+            if (Math.random() > 0.99) {
+                const id = 'popup-' + (Math.floor(Math.random() * 3) + 1);
+                document.getElementById(id).classList.add('active');
+            }
+        }
+    </script>
+    <script src="../../../src/back-to-top.js"></script>
+</body>
+
+</html>
