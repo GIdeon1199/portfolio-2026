@@ -18,7 +18,7 @@
         <!-- Top Left: Flex Nav Container -->
         <div class="sticky-element sticky-tl" style="display: flex; gap: 8px;">
             <!-- Home -->
-            <a href="./index.html" class="btn-icon" aria-label="Home">
+            <a href="#" class="btn-icon" aria-label="Home">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 </svg>
@@ -72,7 +72,8 @@
 
     <main>
         <!-- HERO SECTION -->
-        <section class="section full-height">
+        <section class="section full-height"
+            style="align-items: flex-start; padding-top: 20vh; padding-bottom: 10vh; height: auto; min-height: 80vh; overflow: visible;">
             <div class="container">
                 <div class="reveal-text">
                     <h1 class="hero-text">
@@ -81,7 +82,7 @@
                         <span>DESIGN</span>
                     </h1>
                 </div>
-                <div class="fade-up" style="margin-top: 4rem;">
+                <div class="fade-up" style="margin-top: 4rem; display: none;">
                     <p style="font-size: 1.25rem; color: #666; max-width: 500px;">
                         Crafting high-impact digital products with intention and precision.
                     </p>
@@ -261,7 +262,21 @@
                         </div>
                     </div>
                 </div>
+                <style>
+                    /* CRITICAL: Fix wide screen clipping on Hero */
+                    .hero {
+                        max-width: 1600px;
+                        margin: 0 auto;
+                        /* Centers the hero content */
+                        padding-left: 2rem;
+                        padding-right: 2rem;
+                    }
 
+                    /* Prevent content from sticking to the far left edge */
+                    .hero-text {
+                        max-width: 1200px;
+                    }
+                </style>
             </div>
         </section>
 

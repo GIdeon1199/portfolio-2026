@@ -1,0 +1,703 @@
+/* ═══════════════════════════════════════════════════════════
+   AGENTIC PORTFOLIO — DESIGN SYSTEM
+   Bold, Minimalist, High-Contrast
+   ═══════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────── 
+   IMPORTS — Google Fonts
+   ─────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&display=swap');
+
+/* ─────────────────────────────────────────────────────────── 
+   CSS VARIABLES — Design Tokens
+   ─────────────────────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #000000;
+  --color-bg-alt: #F5F5F5;
+
+  --color-text-primary: #000000;
+  --color-text-inverse: #FFFFFF;
+  --color-text-secondary: #666666;
+
+  --color-accent: #6366F1;
+  /* Soft Indigo - Professional, Non-Alarming */
+  --accent-soft: #A5B4FC;
+  /* Lighter Indigo for Backgrounds */
+  --accent-ink: #4338CA;
+  /* Darker Indigo for Hover States */
+  --color-border: rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --font-display: 'Inter Tight', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Font Sizes - Scale is massive for impact */
+  --text-xs: 0.75rem;
+  /* 12px */
+  --text-sm: 0.875rem;
+  /* 14px */
+  --text-base: 1rem;
+  /* 16px */
+  --text-lg: 1.25rem;
+  /* 20px */
+  --text-xl: 1.5rem;
+  /* 24px */
+  --text-2xl: 2.5rem;
+  /* 40px */
+  --text-3xl: 4rem;
+  /* 64px */
+  --text-4xl: 6rem;
+  /* 96px */
+  --text-hero: clamp(3rem, 10vw, 10rem);
+  /* Massive responsive hero */
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  --space-2xl: 12rem;
+
+  /* Layout */
+  --container-width: 1400px;
+  --header-height: 80px;
+  --margin-horizontal: 2rem;
+  /* Was missing, causing invalid padding */
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 200ms var(--ease-out-expo);
+  --transition-normal: 400ms var(--ease-out-expo);
+  --transition-slow: 800ms var(--ease-out-expo);
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   RESET & BASE STYLES
+   ─────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  /* Fix Issue 1: Prevent ultra-wide stretching on large screens */
+  max-width: 2560px;
+  margin: 0 auto;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   TYPOGRAPHY
+   ─────────────────────────────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+}
+
+.hero-text {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 11vw, 10rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  word-break: break-word;
+  padding-bottom: 0.2em;
+}
+
+.hero-text span {
+  display: block;
+}
+
+.display-text {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.section-title {
+  font-size: var(--text-xl);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.section-title::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+p {
+  max-width: 60ch;
+  color: var(--color-text-secondary);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   LAYOUT UTILITIES
+   ─────────────────────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-12 {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* Sticky Corners Layout */
+.sticky-wrapper {
+  position: relative;
+  z-index: 100;
+  pointer-events: none;
+  /* Let clicks pass through to content */
+}
+
+.sticky-element {
+  position: fixed;
+  pointer-events: auto;
+  z-index: 999;
+}
+
+.sticky-tl {
+  top: var(--space-sm);
+  left: var(--space-sm);
+}
+
+.sticky-tr {
+  top: var(--space-sm);
+  right: var(--space-sm);
+}
+
+.sticky-br {
+  bottom: var(--space-sm);
+  right: var(--space-sm);
+}
+
+.sticky-bl {
+  bottom: var(--space-sm);
+  left: var(--space-sm);
+}
+
+/* Sections */
+.section {
+  padding: var(--space-2xl) 0;
+  position: relative;
+}
+
+.section-black {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-inverse);
+}
+
+.section-black h1,
+.section-black h2,
+.section-black p {
+  color: var(--color-text-inverse);
+}
+
+.full-height {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   COMPONENTS
+   ─────────────────────────────────────────────────────────── */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--text-sm);
+  border-radius: 8px;
+  /* Slightly rounded */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+.btn-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Page Transitions */
+body {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+/* --- CUSTOM CURSOR --- */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  transition: width 0.3s, height 0.3s, background-color 0.3s;
+}
+
+.custom-cursor.hovered {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 2px solid var(--color-accent);
+}
+
+/* Hide default cursor on desktop */
+@media (min-width: 992px) {
+
+  body,
+  a,
+  button,
+  .btn {
+    cursor: none;
+  }
+}
+
+.btn-floating {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  padding: 16px 32px;
+  border-radius: 100px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.btn-floating:hover {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+/* Project Cards / Bento Grid */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+}
+
+.project-card {
+  position: relative;
+  background-color: var(--color-bg-alt);
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+
+.project-card-large {
+  grid-column: span 2;
+  aspect-ratio: 16/9;
+}
+
+.project-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.project-overlay .project-title {
+  font-size: var(--text-2xl);
+  color: white;
+  transform: translateY(20px);
+  transition: transform var(--transition-normal);
+}
+
+.project-tags {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: var(--space-xs);
+  transform: translateY(20px);
+  transition: transform var(--transition-normal) 100ms;
+}
+
+.project-card:hover .project-media {
+  transform: scale(1.05);
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-overlay .project-card:hover .project-title,
+.project-card:hover .project-tags {
+  transform: translateY(0);
+}
+
+
+
+/* Scoped to overlay cards (Index page) */
+.project-overlay .project-actions {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.project-card:hover .project-overlay .project-actions {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-overlay {
+  pointer-events: none;
+}
+
+.project-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  pointer-events: auto;
+}
+
+/* Base Action Button (Index Overlay) */
+.btn-action {
+  padding: 8px 16px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(4px);
+}
+
+.btn-action-outline {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+}
+
+.btn-action-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+.btn-action-primary {
+  background: white;
+  color: black;
+  border: 1px solid white;
+}
+
+.btn-action-primary:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+/* General Outline Button (Work Page) */
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: var(--text-sm);
+  transition: all var(--transition-fast);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+}
+
+
+/* ─────────────────────────────────────────────────────────── 
+   ANIMATIONS & UTILITIES
+   ─────────────────────────────────────────────────────────── */
+.reveal-text {
+  position: relative;
+  overflow: visible;
+  /* Fix clipping - allow text to breathe */
+  /* Removed padding/margin hacks */
+}
+
+.reveal-text span {
+  display: block;
+  transform: translateY(100%);
+  transition: transform var(--transition-slow);
+}
+
+.is-visible .reveal-text span {
+  transform: translateY(0);
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+/* Force visibility hack for debugging if JS fails */
+.is-visible .fade-up,
+.fade-up {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+
+/* Marquee Animation */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: var(--space-md) 0;
+  background: var(--color-accent);
+  color: white;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee-item {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-right: var(--space-lg);
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+/* ─────────────────────────────────────────────────────────── 
+   RECRUITER SECTIONS (Skills, Process, Stats)
+   — NEWLY ADDED
+   ─────────────────────────────────────────────────────────── */
+
+/* Skills / Tags */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.skill-tag {
+  padding: 8px 16px;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.skill-tag:hover {
+  background-color: var(--color-text-primary);
+  color: var(--color-text-inverse);
+  border-color: var(--color-text-primary);
+}
+
+/* Process Grid */
+.process-step {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-sm);
+}
+
+.process-num {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  color: var(--color-accent);
+  margin-bottom: var(--space-xs);
+  display: block;
+}
+
+.process-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+}
+
+/* Stats */
+.stat-item {
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 800;
+  line-height: 1;
+  display: block;
+}
+
+.stat-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+
+/* ─────────────────────────────────────────────────────────── 
+   RESPONSIVE
+   ─────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  :root {
+    --text-hero: 4rem;
+    --text-3xl: 3rem;
+  }
+
+  .project-card-large {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .sticky-tr,
+  .sticky-bl {
+    display: none;
+  }
+
+  /* Simplify on mobile */
+  .grid-cols-2,
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .hero-text {
+    font-size: clamp(2.8rem, 12vw, 4.5rem);
+    /* Slightly smaller max to prevent huge blowout */
+    line-height: 1.1;
+    /* Much looser to prevent overlap */
+    margin-bottom: 2rem;
+  }
+
+  /* Fix vertical spacing */
+  .hero-text span:nth-child(2) {
+    z-index: 2;
+  }
+
+  .section {
+    padding: var(--space-lg) 0;
+  }
+}

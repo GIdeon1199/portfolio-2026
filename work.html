@@ -12,6 +12,36 @@
         /* Work Index Specific Styles */
         .work-header {
             padding: var(--space-xl) var(--margin-horizontal) var(--space-xl);
+            text-align: center;
+        }
+
+        .work-intro {
+            font-family: var(--font-sans);
+            font-size: var(--text-lg);
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto var(--space-2xl);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-2xl);
+            padding: 0 var(--margin-horizontal) var(--space-3xl);
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .project-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+            align-items: center;
+            border: var(--border-width) solid var(--color-accent);
+            padding: var(--space-xl);
+            text-decoration: none;
+            color: inherit;
+            transition: all var(--transition-medium);
         }
 
         .project-card:hover {
@@ -31,7 +61,8 @@
         .project-image {
             width: 100%;
             height: 400px;
-            background: var(--color-bg-secondary);
+            background: #F8F7F5;
+            /* Neutral warm gray for contained images */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -41,7 +72,9 @@
         .project-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            /* Fix: Show full image always */
+            object-position: center;
             filter: grayscale(30%);
             transition: all var(--transition-medium);
         }
@@ -117,46 +150,123 @@
         @media (max-width: 968px) {
             .project-card {
                 grid-template-columns: 1fr;
+                align-items: start;
+                /* Don't center - let content flow */
             }
 
             .project-card:nth-child(even) {
                 direction: ltr;
+            }
+
+            /* Image takes full width and reasonable height */
+            .project-image {
+                height: auto;
+                max-height: 400px;
+                aspect-ratio: 16/9;
+            }
+
+            /* Content flows naturally below */
+            .project-content {
+                padding: 1.5rem 0.5rem;
+            }
+        }
+
+        /* MOBILE CRITICAL FIXES - Text flows OUTSIDE the box */
+        @media (max-width: 768px) {
+            .project-card {
+                display: block;
+                padding: 0;
+                /* Remove card padding */
+                border: none;
+                /* Remove card border on mobile */
+                background: transparent;
+                margin-bottom: 2.5rem;
+            }
+
+            /* Image stays in its own bordered container */
+            .project-image {
+                height: auto !important;
+                aspect-ratio: 4/3;
+                min-height: unset;
+                border-radius: 12px;
+                overflow: hidden;
+                border: 1px solid var(--color-border, rgba(0, 0, 0, 0.1));
+            }
+
+            .project-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+
+            /* Text flows freely below the image - NOT inside a box */
+            .project-content {
+                padding: 1.25rem 0.5rem;
+                background: transparent;
+            }
+
+            .project-title {
+                font-size: 1.5rem;
+                line-height: 1.25;
+                margin-bottom: 0.5rem;
+            }
+
+            .project-description {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 0.75rem;
+                color: var(--color-text-secondary);
+            }
+
+            .project-meta {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+                font-size: 0.75rem;
+            }
+
+            .project-actions {
+                margin-top: 1rem !important;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .project-actions a {
+                text-align: center;
+                width: 100%;
+            }
+
+            .projects-grid {
+                gap: 2rem;
+                padding: 0 1rem var(--space-xl);
+            }
+
+            /* Remove hover effects on mobile */
+            .project-card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-image {
+                aspect-ratio: 16/10;
+                border-radius: 8px;
+            }
+
+            .project-title {
+                font-size: 1.35rem;
+            }
+
+            .project-content {
+                padding: 1rem 0.25rem;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- MOBILE BOTTOM NAV (Universal) -->
-    <nav class="mobile-bottom-nav">
-        <a href="./index.html" class="mobile-nav-item">
-            <svg class="mobile-nav-icon" viewBox="0 0 24 24">
-                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-            </svg>
-            <span>Home</span>
-        </a>
-        <a href="./work.html" class="mobile-nav-item active">
-            <svg class="mobile-nav-icon" viewBox="0 0 24 24">
-                <path
-                    d="M20 6h-8l-2-2H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 12H4V8h16v10z" />
-            </svg>
-            <span>Work</span>
-        </a>
-        <a href="./resume.html" class="mobile-nav-item">
-            <svg class="mobile-nav-icon" viewBox="0 0 24 24">
-                <path
-                    d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" />
-            </svg>
-            <span>Resume</span>
-        </a>
-        <a href="./contact.html" class="mobile-nav-item">
-            <svg class="mobile-nav-icon" viewBox="0 0 24 24">
-                <path
-                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
-            </svg>
-            <span>Contact</span>
-        </a>
-    </nav>
     <!-- Neo-Brutalist Navigation -->
     <div class="neo-nav-container">
         <div class="neo-top-bar">

@@ -15,6 +15,27 @@
     margin: 0 auto;
 }
 
+/* Centered Hero Image for Case Studies */
+.case-hero-image {
+    width: 100%;
+    max-width: 1200px;
+    /* Constrain wide screens */
+    margin: 0 auto var(--space-2xl);
+    text-align: center;
+    background: var(--color-bg-alt);
+    border-radius: 12px;
+    /* Optional: adds polish */
+    overflow: hidden;
+}
+
+.case-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    /* Ensure it fits nicely */
+}
+
 .back-link {
     display: inline-flex;
     align-items: center;

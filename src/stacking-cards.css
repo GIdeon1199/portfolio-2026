@@ -69,7 +69,8 @@
 }
 
 .card-red {
-    background-color: var(--color-accent);
+    background-color: #6366F1;
+    /* Updated to Soft Indigo */
     color: #ffffff;
 }
 
@@ -89,8 +90,6 @@
     display: flex;
     width: 100%;
     height: 100%;
-    max-width: var(--container-width);
-    margin: 0 auto;
 }
 
 .card-content {
@@ -181,7 +180,7 @@
 
 .card-red .card-btn-arrow:hover {
     background: #fff;
-    color: var(--color-accent);
+    color: #FF4400;
 }
 
 .card-white .card-btn-arrow:hover {
@@ -215,53 +214,55 @@
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
+
+    /* Disable sticky behavior and allow natural stacking */
+    .stacking-card {
+        position: relative !important;
+        height: auto !important;
+        min-height: auto;
+        margin-bottom: 2rem;
+        padding-bottom: 0;
+    }
+
+    /* Stack vertically: image on top, content below */
     .card-split {
         flex-direction: column;
+        height: auto;
     }
 
     .card-content {
         width: 100%;
         height: auto;
-        /* Let text expand */
-        min-height: 300px;
-        padding: 3rem 2rem;
-        flex: 1;
+        min-height: auto;
+        padding: 2rem 1.5rem;
+        flex: none;
     }
 
     .card-visual {
         width: 100%;
         height: 300px;
-        /* Fixed height for image area */
         flex: none;
-    }
-
-    .card-title {
-        font-size: 3rem;
-    }
-
-    .cta-title {
-        font-size: 4rem;
-    }
-
-    .stacking-card {
-        min-height: auto;
-        /* Allow content to dictate height */
-        height: auto;
-        position: relative;
-        /* Disable sticky on mobile if needed, or keep sticky but handle height */
-        padding-bottom: 0;
-    }
-
-    .card-visual {
         min-height: 300px;
     }
 
-    .card-content {
-        padding: 2rem 1.5rem;
+    .card-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
     }
 
     .card-title {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+
+    .card-meta {
+        font-size: 0.85rem;
+    }
+
+    .cta-title {
+        font-size: 3.5rem;
     }
 
     .stacking-work-container {
@@ -271,10 +272,83 @@
 
 @media (max-width: 768px) {
     .card-title {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .card-meta {
+        font-size: 0.75rem;
+    }
+
+    .card-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .cta-title {
+        font-size: 2.5rem;
+    }
+}
+
+/* MOBILE: CRITICAL FIXES FOR HOMEPAGE EMPTY SPACE */
+@media (max-width: 480px) {
+
+    /* Remove ALL fixed/min heights on smallest screens */
+    .stacking-card {
+        min-height: unset !important;
+        height: auto !important;
+        margin-bottom: 1.5rem;
+    }
+
+    .stacking-work-container {
+        padding: 1rem 0;
+    }
+
+    /* Drastically reduce padding - desktop 80px becomes 20-24px */
+    .card-content {
+        padding: 1.25rem 1rem !important;
+        min-height: unset !important;
+    }
+
+    /* Image wrapper: use aspect-ratio instead of fixed height */
+    .card-visual {
+        width: 100%;
+        aspect-ratio: 4/3;
+        /* Consistent frame */
+        height: auto !important;
+        min-height: unset !important;
+    }
+
+    .card-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    /* Tighter typography */
+    .card-title {
+        font-size: 1.75rem !important;
+        line-height: 1.15;
+        margin-bottom: 0.5rem;
+    }
+
+    .card-meta {
+        font-size: 0.7rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .card-content p {
         font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 1rem !important;
+    }
+
+    /* CTA card: no empty space */
+    .cta-link {
+        padding: 2rem 1rem;
+        min-height: unset;
+    }
+
+    .cta-title {
+        font-size: 2rem;
     }
 }

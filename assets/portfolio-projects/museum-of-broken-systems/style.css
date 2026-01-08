@@ -298,6 +298,9 @@ h3 {
     color: #888;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    z-index: 99999;
+    /* Fix: Ensure button is clickable above all layers */
+    cursor: pointer;
 }
 
 @media (max-width: 768px) {
