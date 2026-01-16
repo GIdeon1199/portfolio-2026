@@ -5,6 +5,7 @@ import './back-to-top.js';
 import { animationController } from './animation-controller.js';
 import { initHeroAnimation } from './hero-animation.js'; // NEW
 import { initHeroShapes } from './hero-shapes.js';
+import { initDecryptEffect } from './decrypt-effect.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Page Fade In
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize Hero Animation (Pinning)
     try { initHeroAnimation(); } catch (e) { console.error("Hero Animation Failed", e); }
     try { initHeroShapes(); } catch (e) { console.error("Hero Shapes Failed", e); }
+    try { initDecryptEffect(); } catch (e) { console.error("Decrypt Effect Failed", e); }
 
     console.log("✅ Global: Initialized");
     // Initialize Cursor if desktop
