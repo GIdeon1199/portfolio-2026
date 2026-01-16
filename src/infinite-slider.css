@@ -1,0 +1,128 @@
+/* Seamless Loop Gallery Styles (Adapted from CodePen) */
+
+.gallery {
+    position: relative;
+    /* Changed from absolute to relative to sit in flow */
+    width: 100%;
+    height: 80vh;
+    /* Occupy significant height */
+    overflow: hidden;
+    background: var(--color-bg-primary);
+    /* Use site background */
+}
+
+.cards {
+    position: absolute;
+    width: 18rem;
+    /* Slightly larger than original 14rem */
+    height: 24rem;
+    /* Aspect ratio adjusted */
+    top: 50%;
+    /* Center in container */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    margin: 0;
+}
+
+.cards li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 18rem;
+    height: 24rem;
+    text-align: center;
+    line-height: 18rem;
+    font-size: 2rem;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    background-color: var(--color-bg-alt);
+    border-radius: 4px;
+    /* Neo-Brutalist cleaner edge */
+    border: 1px solid var(--color-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+    overflow: hidden;
+    /* For inner content */
+}
+
+.cards li:hover {
+    border-color: var(--color-accent);
+}
+
+/* Inner Content Overlay */
+.card-inner-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    /* Opaque background for readability */
+    border-top: 1px solid var(--color-border);
+    text-align: left;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.cards li:hover .card-inner-content {
+    transform: translateY(0);
+}
+
+.card-inner-content h3 {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    color: var(--color-text-primary);
+    margin: 0 0 0.25rem 0;
+    line-height: 1.2;
+}
+
+.card-inner-content span {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+}
+
+
+.actions {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 200;
+}
+
+.actions button {
+    background: transparent;
+    border: 1px solid var(--color-text-primary);
+    color: var(--color-text-primary);
+    padding: 10px 24px;
+    border-radius: 30px;
+    /* Pill shape matches site style */
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+}
+
+.actions button:hover {
+    background: var(--color-text-primary);
+    color: var(--color-bg-primary);
+}
+
+.drag-proxy {
+    visibility: hidden;
+    position: absolute;
+}

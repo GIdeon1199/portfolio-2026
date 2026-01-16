@@ -4,7 +4,7 @@
     style.innerHTML = `
         #backToTop {
             position: fixed;
-            bottom: 2rem;
+            bottom: 6.5rem;
             right: 2rem;
             width: 50px;
             height: 50px;
@@ -18,7 +18,7 @@
             justify-content: center;
             font-size: 1.5rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            z-index: 10000;
+            z-index: 99999;
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease, transform 0.3s ease;
@@ -35,8 +35,8 @@
         }
         @media (max-width: 768px) {
             #backToTop {
-                bottom: 1.5rem;
-                right: 1.5rem;
+                bottom: 7.5rem !important;
+                right: 1.5rem !important;
                 width: 45px;
                 height: 45px;
                 font-size: 1.2rem;

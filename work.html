@@ -8,6 +8,7 @@
     <meta name="description" content="Selected interaction design and systems thinking projects">
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./src/neo-brutalist.css">
+    <link rel="stylesheet" href="./src/infinite-slider.css">
     <style>
         /* Work Index Specific Styles */
         .work-header {
@@ -333,156 +334,113 @@
             </p>
         </header>
 
-        <!-- Projects Grid -->
-        <div class="projects-grid">
-            <!-- Project 1: Museum of Broken Systems (Replaces Hear Me) -->
-            <!-- Project 1: Museum of Broken Systems (Replaces Hear Me) -->
-            <div class="project-card animate-on-scroll">
-                <a href="./case-museum-of-broken-systems.html" class="project-image-link" style="display:block">
-                    <div class="project-image">
-                        <img src="./assets/museum_broken_systems_cover.png"
-                            alt="Museum of Broken Systems exhibition poster"
-                            onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;color:var(--color-text-secondary)\'>Museum of<br>Broken Systems</div>'">
+        <!-- Seamless Loop Gallery -->
+        <div class="gallery">
+            <ul class="cards">
+                <!-- Museum of Broken Systems -->
+                <li onclick="window.location.href='./case-museum-of-broken-systems.html'"
+                    style="background-image: url('./assets/museum_broken_systems_cover.png');">
+                    <div class="card-inner-content">
+                        <h3>Museum of Broken Systems</h3>
+                        <span>Case Study</span>
                     </div>
-                </a>
-                <div class="project-content">
-                    <p class="project-label">Case Study</p>
-                    <a href="./case-museum-of-broken-systems.html">
-                        <h2 class="project-title">The Museum of Broken Systems</h2>
-                    </a>
-                    <p class="project-description">
-                        An interactive exhibition curating systems that failed not through error, but through design.
-                        An inquiry into ethics, user hostility, and systemic fractures.
-                    </p>
-                    <div class="project-meta">
-                        <div class="project-meta-item">
-                            <span class="project-meta-label">Type</span>
-                            <span>Editorial Design · Systems Analysis</span>
-                        </div>
-                        <div class="project-meta-item">
-                            <span class="project-meta-label">Tone</span>
-                            <span>Critical, Reflective</span>
-                        </div>
-                        <div class="project-meta-item">
-                            <span class="project-meta-label">Timeline</span>
-                            <span>2 weeks</span>
-                        </div>
+                </li>
+                <!-- Perk Up -->
+                <li onclick="window.location.href='./case-perk-up.html'"
+                    style="background-image: url('./assets/portfolio-projects/perk-up/perk-up-thumbnail.png');">
+                    <div class="card-inner-content">
+                        <h3>Perk Up</h3>
+                        <span>App Design</span>
                     </div>
-                    <div class="project-actions" style="margin-top: 2rem;">
-                        <a href="./case-museum-of-broken-systems.html" class="btn-outline">Read Case Study</a>
-                        <a href="./assets/portfolio-projects/museum-of-broken-systems/index.html"
-                            class="btn btn-primary">Launch Project ↗</a>
+                </li>
+                <!-- Twisted Truth -->
+                <li onclick="window.location.href='./case-truth-or-twisted.html'"
+                    style="background-image: url('./assets/portfolio-projects/truth-or-twisted/Truth-or-twisted.png');">
+                    <div class="card-inner-content">
+                        <h3>Twisted Truth</h3>
+                        <span>Immersive</span>
                     </div>
-                </div>
-            </div>
+                </li>
+                <!-- Flutter Archive -->
+                <li onclick="window.location.href='./case-flutter-archive.html'"
+                    style="background-image: url('./assets/portfolio-projects/flutter-archive/thumbnail.png');">
+                    <div class="card-inner-content">
+                        <h3>Flutter Archive</h3>
+                        <span>XR Concept</span>
+                    </div>
+                </li>
 
-            <!-- Project 2: Perk Up -->
-            <!-- Project 2: Perk Up -->
-            <div class="project-card animate-on-scroll">
-                <a href="./case-perk-up.html" class="project-image-link" style="display:block">
-                    <div class="project-image">
-                        <img src="./assets/portfolio-projects/perk-up/perk-up-thumbnail.png"
-                            alt="Perk Up project preview"
-                            onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;color:var(--color-text-secondary)\'>Perk Up<br>Project Visual</div>'">
+                <!-- DUPLICATES FOR LOOP SMOOTHNESS -->
+                <!-- Museum of Broken Systems -->
+                <li onclick="window.location.href='./case-museum-of-broken-systems.html'"
+                    style="background-image: url('./assets/museum_broken_systems_cover.png');">
+                    <div class="card-inner-content">
+                        <h3>Museum of Broken Systems</h3>
+                        <span>Case Study</span>
                     </div>
-                </a>
-                <div class="project-content">
-                    <p class="project-label">Case Study</p>
-                    <a href="./case-perk-up.html">
-                        <h2 class="project-title">Perk Up</h2>
-                    </a>
-                    <p class="project-description">
-                        A centralized mobile platform designed to modernize the employee benefits experience by
-                        aggregating rewards and tracking spending.
-                    </p>
-                    <div class="project-meta">
-                        <div class="project-meta-item">
-                            <span class="project-meta-label">Role</span>
-                            <span>Product Design · Prototyping</span>
-                        </div>
-                        <div class="project-meta-item">
-                            <span class="project-meta-label">Timeline</span>
-                            <span>4 months</span>
-                        </div>
+                </li>
+                <!-- Perk Up -->
+                <li onclick="window.location.href='./case-perk-up.html'"
+                    style="background-image: url('./assets/portfolio-projects/perk-up/perk-up-thumbnail.png');">
+                    <div class="card-inner-content">
+                        <h3>Perk Up</h3>
+                        <span>App Design</span>
                     </div>
-                    <div class="project-actions" style="margin-top: 2rem;">
-                        <a href="./case-perk-up.html" class="btn-outline">Read Case Study</a>
+                </li>
+                <!-- Twisted Truth -->
+                <li onclick="window.location.href='./case-truth-or-twisted.html'"
+                    style="background-image: url('./assets/portfolio-projects/truth-or-twisted/Truth-or-twisted.png');">
+                    <div class="card-inner-content">
+                        <h3>Twisted Truth</h3>
+                        <span>Immersive</span>
                     </div>
-                </div>
+                </li>
+                <!-- Flutter Archive -->
+                <li onclick="window.location.href='./case-flutter-archive.html'"
+                    style="background-image: url('./assets/portfolio-projects/flutter-archive/thumbnail.png');">
+                    <div class="card-inner-content">
+                        <h3>Flutter Archive</h3>
+                        <span>XR Concept</span>
+                    </div>
+                </li>
+                <!-- Museum of Broken Systems -->
+                <li onclick="window.location.href='./case-museum-of-broken-systems.html'"
+                    style="background-image: url('./assets/museum_broken_systems_cover.png');">
+                    <div class="card-inner-content">
+                        <h3>Museum of Broken Systems</h3>
+                        <span>Case Study</span>
+                    </div>
+                </li>
+                <!-- Perk Up -->
+                <li onclick="window.location.href='./case-perk-up.html'"
+                    style="background-image: url('./assets/portfolio-projects/perk-up/perk-up-thumbnail.png');">
+                    <div class="card-inner-content">
+                        <h3>Perk Up</h3>
+                        <span>App Design</span>
+                    </div>
+                </li>
+                <!-- Twisted Truth -->
+                <li onclick="window.location.href='./case-truth-or-twisted.html'"
+                    style="background-image: url('./assets/portfolio-projects/truth-or-twisted/Truth-or-twisted.png');">
+                    <div class="card-inner-content">
+                        <h3>Twisted Truth</h3>
+                        <span>Immersive</span>
+                    </div>
+                </li>
+                <!-- Flutter Archive -->
+                <li onclick="window.location.href='./case-flutter-archive.html'"
+                    style="background-image: url('./assets/portfolio-projects/flutter-archive/thumbnail.png');">
+                    <div class="card-inner-content">
+                        <h3>Flutter Archive</h3>
+                        <span>XR Concept</span>
+                    </div>
+                </li>
+            </ul>
+            <div class="actions">
+                <button class="prev">Prev</button>
+                <button class="next">Next</button>
             </div>
-
-            <!-- Project 3: Twisted Truth -->
-            <div class="project-card animate-on-scroll">
-                <a href="./case-truth-or-twisted.html" class="project-image-link" style="display:block">
-                    <div class="project-image">
-                        <img src="./assets/portfolio-projects/truth-or-twisted/Truth-or-twisted.png"
-                            alt="Twisted Truth project visual"
-                            onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;color:var(--color-text-secondary)\'>Twisted Truth<br>Project Visual</div>'">
-                    </div>
-                </a>
-                <div class="project-content">
-                    <p class="project-label">Case Study</p>
-                    <a href="./case-truth-or-twisted.html">
-                        <h2 class="project-title">Twisted Truth</h2>
-                    </a>
-                    <p class="project-description">
-                        Gamifying media literacy in an era of misinformation through an interactive installation and
-                        digital experience.
-                    </p>
-                    <div class="project-meta">
-                        <div class="project-meta-item">
-                            <span class="project-meta-label">Type</span>
-                            <span>Immersive Installation</span>
-                        </div>
-                        <div class="project-meta-item">
-                            <span class="project-meta-label">Focus</span>
-                            <span>Editorial · Interaction</span>
-                        </div>
-                    </div>
-                    <div class="project-actions" style="margin-top: 2rem;">
-                        <a href="./case-truth-or-twisted.html" class="btn-outline">Read Case Study</a>
-                        <a href="./assets/portfolio-projects/truth-or-twisted/index.html" class="btn btn-primary">Launch
-                            Project ↗</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 4: Flutter Archive -->
-            <!-- Project 3: Flutter Archive -->
-            <div class="project-card animate-on-scroll">
-                <a href="./case-flutter-archive.html" class="project-image-link" style="display:block">
-                    <div class="project-image">
-                        <img src="./assets/portfolio-projects/flutter-archive/thumbnail.png"
-                            alt="Flutter Archive project preview"
-                            onerror="this.parentElement.innerHTML='<div style=\'padding:2rem;text-align:center;color:var(--color-text-secondary)\'>Flutter Archive<br>Project Visual</div>'">
-                    </div>
-                </a>
-                <div class="project-content">
-                    <p class="project-label">Case Study</p>
-                    <a href="./case-flutter-archive.html">
-                        <h2 class="project-title">Flutter Archive</h2>
-                    </a>
-                    <p class="project-description">
-                        A VR concept and interactive web prototype that reimagines reading as a spatial, embodied
-                        experience.
-                    </p>
-                    <div class="project-meta">
-                        <div class="project-meta-item">
-                            <span class="project-meta-label">Type</span>
-                            <span>VR Concept · Web Prototype</span>
-                        </div>
-                        <div class="project-meta-item">
-                            <span class="project-meta-label">Focus</span>
-                            <span>Motion · Narrative Design</span>
-                        </div>
-                    </div>
-                    <div class="project-actions" style="margin-top: 2rem;">
-                        <a href="./case-flutter-archive.html" class="btn-outline">Read Case Study</a>
-                        <a href="./assets/portfolio-projects/flutter-archive/demo.html" class="btn btn-primary">View
-                            Demo ↗</a>
-                    </div>
-                </div>
-            </div>
+            <div class="drag-proxy"></div>
         </div>
 
         <!-- Ongoing Work Section -->
@@ -675,6 +633,11 @@
 
     <script type="module">
         import { initNavigation } from './src/navigation.js';
+        import { initInfiniteSlider } from './src/infinite-slider.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initInfiniteSlider();
+        });
 
         // Simple scroll reveal logic
         const observer = new IntersectionObserver((entries) => {
@@ -688,7 +651,6 @@
         document.querySelectorAll('.animate-on-scroll, .fade-in').forEach(el => observer.observe(el));
     </script>
     <script type="module" src="./src/global.js"></script>
-    <script src="./src/back-to-top.js"></script>
 </body>
 
 </html>

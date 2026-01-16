@@ -88,8 +88,34 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth;  <-- REMOVED: Conflicts with Lenis */
   height: 100%;
+  -webkit-text-size-adjust: 100%;
+  /* Prevent automatic text resizing on mobile matching */
+  text-size-adjust: 100%;
+}
+
+/* LENIS RECOMMENDED CSS */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+  /* Force auto so Lenis takes over */
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 body {
@@ -100,6 +126,8 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Stronger font smoothing for consistency */
   /* Fix Issue 1: Prevent ultra-wide stretching on large screens */
   max-width: 2560px;
   margin: 0 auto;
@@ -126,23 +154,101 @@ h6 {
   color: var(--color-text-primary);
 }
 
-.hero-text {
+/* Hero Text Standardization */
+.hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 9vw, 8rem);
+  /* Responsive sizing based on viewport width */
+  font-size: clamp(3rem, 11vw, 9rem);
   font-weight: 900;
-  line-height: 0.85;
+  line-height: 0.9;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   margin: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  /* Centered */
+  text-align: center;
+  /* Centered */
   word-break: break-word;
   padding-bottom: 0.2em;
+  width: 100%;
+  z-index: 10;
 }
 
-.hero-text span {
+/* Hard Cap for Large Screens */
+@media (min-width: 1600px) {
+  .hero-title {
+    font-size: 10rem;
+  }
+}
+
+/* Fix for Hero Layout */
+.hero-section-fix {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.hero-line {
   display: block;
+  will-change: transform, opacity;
+}
+
+.hero-line.accent {
+  color: var(--color-accent);
+}
+
+/* Abstract Shapes */
+.hero-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  /* Increased opacity for better visibility per user feedback */
+  opacity: 0.6;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  /* Ensure they don't block text selection */
+}
+
+/* Specific shape tweaks */
+.shape-circle {
+  width: 40vw;
+  /* Larger but thinner */
+  height: 40vw;
+  max-width: 600px;
+  max-height: 600px;
+  stroke-width: 1.5;
+  /* Much thinner, elegant stroke */
+  opacity: 0.4;
+}
+
+.shape-square {
+  width: 20vw;
+  height: 20vw;
+  max-width: 250px;
+  max-height: 250px;
+  opacity: 0.08;
+  /* Very subtle watermark feel */
+  border-radius: 20px;
+  /* Soften edges */
 }
 
 .display-text {
@@ -343,16 +449,15 @@ body.loaded {
   border: 2px solid var(--color-accent);
 }
 
-/* Hide default cursor on desktop */
-@media (min-width: 992px) {
-
+/* Hide default cursor on desktop - REMOVED per user request */
+/* @media (min-width: 992px) {
   body,
   a,
   button,
   .btn {
-    cursor: none;
+    cursor: auto; 
   }
-}
+} */
 
 .btn-floating {
   background-color: var(--color-bg-primary);
@@ -684,8 +789,8 @@ body.loaded {
     gap: 2rem;
   }
 
-  .hero-text {
-    font-size: clamp(2.8rem, 12vw, 4.5rem);
+  .hero-title {
+    font-size: clamp(2rem, 13vw, 4.5rem);
     /* Slightly smaller max to prevent huge blowout */
     line-height: 1.1;
     /* Much looser to prevent overlap */
