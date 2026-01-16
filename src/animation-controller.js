@@ -1,6 +1,6 @@
 import gsap from 'https://cdn.skypack.dev/gsap';
 import { ScrollTrigger } from 'https://cdn.skypack.dev/gsap/ScrollTrigger';
-import Lenis from 'https://cdn.skypack.dev/@studio-freight/lenis';
+import Lenis from 'https://cdn.jsdelivr.net/npm/lenis@1.1.18/+esm';
 
 export class AnimationController {
     constructor() {
