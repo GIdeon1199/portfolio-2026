@@ -13,6 +13,8 @@ export function initHeroAnimation() {
     // Initial State: Set opacity to 0 for fade-in
     gsap.set(heroTitle.children, { y: 100, opacity: 0 });
 
+    console.log("Hero Animation: Found elements, starting...");
+
     // 1. Entry Animation (Fade Up)
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 

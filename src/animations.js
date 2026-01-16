@@ -29,9 +29,15 @@ function setupIntersectionObserver() {
 }
 
 function setupParallax() {
+  // Hero Parallax is now handled by hero-animation.js (GSAP ScrollTrigger)
+  // We leave this function empty or for other parallax elements to avoid conflict.
+  /*
   const heroText = document.querySelector('.hero-text');
-
   if (!heroText) return;
+  */
+  const otherParallax = document.querySelectorAll('.parallax-item');
+  if (otherParallax.length === 0) return;
+
 
   let currentScroll = 0;
   let targetScroll = 0;

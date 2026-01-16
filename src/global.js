@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 50);
 
     // Initialize Navigation (Page Transitions & Scroll Animations)
-    initNavigation();
+    try { initNavigation(); } catch (e) { console.error("Navigation Init Failed", e); }
 
     // Initialize Animation System (Lenis + GSAP)
-    animationController.init();
+    try { animationController.init(); } catch (e) { console.error("Animation Controller Failed", e); }
 
     // Initialize Hero Animation (Pinning)
-    initHeroAnimation();
-    initHeroShapes();
+    try { initHeroAnimation(); } catch (e) { console.error("Hero Animation Failed", e); }
+    try { initHeroShapes(); } catch (e) { console.error("Hero Shapes Failed", e); }
 
     console.log("✅ Global: Initialized");
     // Initialize Cursor if desktop
