@@ -299,8 +299,13 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             // Force visibility hack for JS issues
-            document.body.classList.add('js-loaded');
-            initAnimations();
+            document.body.classList.add('loaded');
+            try {
+                initAnimations();
+            } catch (e) {
+                console.error("Animation init failed:", e);
+                document.body.style.opacity = '1'; // Ultimate fallback
+            }
         });
     </script>
     <script type="module" src="./src/global.js"></script>

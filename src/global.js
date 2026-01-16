@@ -8,8 +8,12 @@ import { initHeroShapes } from './hero-shapes.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Page Fade In
+    // 1. Page Fade In - FAILSAFE
+    // Add 'loaded' class immediately if not already present, but allow a tiny frame for CSS transition
     setTimeout(() => {
         document.body.classList.add('loaded');
+        // Also add js-loaded to match index.html just in case, though style.css uses .loaded
+        document.body.classList.add('js-loaded');
     }, 50);
 
     // Initialize Navigation (Page Transitions & Scroll Animations)
