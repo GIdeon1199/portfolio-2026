@@ -194,6 +194,10 @@ h6 {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  height: 100svh;
+  /* Better mobile support */
+  padding-top: 80px;
+  /* Offset for nav if needed */
 }
 
 .hero-line {

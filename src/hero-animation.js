@@ -26,20 +26,16 @@ export function initHeroAnimation() {
         delay: 0.2
     });
 
-    // 2. Scroll Interaction (Pin & Fade)
-    // We pin the hero section so the user "scrubs" through the fade out
-    ScrollTrigger.create({
-        trigger: heroSection,
-        start: "top top", // Pin when top of hero hits top of viewport
-        end: "+=800", // Drag out the animation for 800px of scrolling
-        pin: true,
-        scrub: true,
+    // 2. Micro-Interaction: Subtle Parallax on Mouse Move
+    heroSection.addEventListener('mousemove', (e) => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 20; // Subtle movement
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
 
-        animation: gsap.to(heroTitle, {
-            scale: 1.5, // Zoom IN logic (or out, user choice, let's try zoom out/fade)
-            opacity: 0,
-            y: -100,
-            ease: "none"
-        })
+        gsap.to(heroTitle, {
+            x: x,
+            y: y,
+            duration: 1,
+            ease: 'power2.out'
+        });
     });
 }
