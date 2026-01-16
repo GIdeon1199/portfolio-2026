@@ -1,3 +1,6 @@
+import gsap from 'https://cdn.skypack.dev/gsap';
+import { ScrollTrigger } from 'https://cdn.skypack.dev/gsap/ScrollTrigger';
+
 export function initHeroShapes() {
     gsap.registerPlugin(ScrollTrigger);
 

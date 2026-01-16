@@ -1,6 +1,6 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Draggable } from 'gsap/Draggable';
+import gsap from 'https://cdn.skypack.dev/gsap';
+import { ScrollTrigger } from 'https://cdn.skypack.dev/gsap/ScrollTrigger';
+import { Draggable } from 'https://cdn.skypack.dev/gsap/Draggable';
 
 export function initInfiniteSlider() {
     gsap.registerPlugin(Draggable); // ScrollTrigger no longer needed for driving animation
