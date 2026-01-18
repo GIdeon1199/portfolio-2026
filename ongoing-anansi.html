@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="./src/neo-brutalist.css">
     <link rel="stylesheet" href="./src/case-study.css">
     <style>
-        /* Interactive Card Logic for Game Mechanics */
         .interactive-card {
             position: relative;
             overflow: hidden;
@@ -22,11 +21,9 @@
             flex-direction: column;
             justify-content: center;
             background-color: var(--color-bg-primary);
-            /* Fallback */
             border: 1px solid rgba(0, 0, 0, 0.1);
         }
 
-        /* The Background Image Pseudo-element */
         .interactive-card::before {
             content: "";
             position: absolute;
@@ -35,7 +32,6 @@
             background-size: cover;
             background-position: center;
             filter: blur(10px) opacity(0.2);
-            /* Blurred and faint by default */
             transition: all 0.5s ease;
             z-index: 0;
         }
@@ -45,7 +41,6 @@
             z-index: 1;
             transition: opacity 0.3s ease;
             background: rgba(255, 255, 255, 0.8);
-            /* Readability backing */
             padding: 1.5rem;
             border-radius: 8px;
             backdrop-filter: blur(5px);
@@ -53,7 +48,6 @@
 
         .interactive-card:hover::before {
             filter: blur(0) opacity(1);
-            /* Clear and visible */
             transform: scale(1.05);
         }
 
@@ -65,7 +59,6 @@
 </head>
 
 <body>
-    <!-- Neo-Brutalist Navigation -->
     <div class="neo-nav-container">
         <div class="neo-top-bar">
             <a href="./index.html" class="neo-home-link">HOME</a>
@@ -115,7 +108,6 @@
     </div>
 
     <main class="case-study">
-        <!-- Project Header -->
         <header class="case-header">
             <a href="./work.html" class="back-link">← Back to Work</a>
 
@@ -152,7 +144,6 @@
             </div>
         </header>
 
-        <!-- Overview -->
         <section class="case-section tldr">
             <div class="section-container">
                 <div class="tldr-content animate-on-scroll">
@@ -170,7 +161,6 @@
 
         <div class="divider"></div>
 
-        <!-- Why This Project Exists -->
         <section class="case-section">
             <div class="section-container">
                 <h2 class="section-title animate-on-scroll">Why This Project Exists</h2>
@@ -207,7 +197,6 @@
             </div>
         </section>
 
-        <!-- Official Rules -->
         <section class="case-section">
             <div class="section-container">
                 <h2 class="section-title animate-on-scroll">Rules of Engagement</h2>
@@ -241,7 +230,6 @@
             </div>
         </section>
 
-        <!-- Current Iteration -->
         <section class="case-section bg-secondary">
             <div class="section-container">
                 <h2 class="section-title animate-on-scroll">Current Iteration: Physical Card Game</h2>
@@ -254,7 +242,6 @@
                 </div>
 
                 <div class="feature-grid animate-on-scroll delay-2">
-                    <!-- Character Cards -->
                     <div class="feature-item interactive-card" style="--bg-image: url('./assets/character-card.png');">
                         <div class="card-content">
                             <h4>Character Cards</h4>
@@ -264,7 +251,6 @@
                         </div>
                     </div>
 
-                    <!-- Trick/Trap/Action Cards -->
                     <div class="feature-item interactive-card" style="--bg-image: url('./assets/TTAcards.png');">
                         <div class="card-content">
                             <h4>Trick, Trap, & Action Cards</h4>
@@ -273,7 +259,6 @@
                         </div>
                     </div>
 
-                    <!-- Mischief Cards -->
                     <div class="feature-item interactive-card" style="--bg-image: url('./assets/mischief-card.png');">
                         <div class="card-content">
                             <h4>Mischief Cards</h4>
@@ -282,7 +267,6 @@
                         </div>
                     </div>
 
-                    <!-- Web of Consequences -->
                     <div class="feature-item interactive-card" style="--bg-image: url('./assets/cardback.png');">
                         <div class="card-content">
                             <h4>Web of Consequences</h4>
@@ -313,7 +297,6 @@
 
         <div class="divider"></div>
 
-        <!-- Future Roadmap -->
         <section class="case-section">
             <div class="section-container">
                 <h2 class="section-title animate-on-scroll">Future Roadmap</h2>
@@ -395,7 +378,6 @@
             </div>
         </section>
 
-        <!-- What It Demonstrates -->
         <section class="case-section bg-secondary">
             <div class="section-container">
                 <h2 class="section-title animate-on-scroll">What This Demonstrates as a Designer</h2>
@@ -439,7 +421,6 @@
             </div>
         </section>
 
-        <!-- Next Steps -->
         <section class="case-section">
             <div class="section-container">
                 <div class="next-project">
@@ -453,7 +434,6 @@
     <script type="module">
         import { initNavigation } from './src/navigation.js';
 
-        // Expandable sections functionality
         document.querySelectorAll('details').forEach(detail => {
             detail.addEventListener('toggle', function () {
                 const icon = this.querySelector('.toggle-icon');
@@ -461,7 +441,6 @@
             });
         });
 
-        // Simple scroll reveal
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {

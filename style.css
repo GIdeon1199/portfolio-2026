@@ -1,19 +1,7 @@
-/* ═══════════════════════════════════════════════════════════
-   AGENTIC PORTFOLIO — DESIGN SYSTEM
-   Bold, Minimalist, High-Contrast
-   ═══════════════════════════════════════════════════════════ */
-
-/* ─────────────────────────────────────────────────────────── 
-   IMPORTS — Google Fonts
-   ─────────────────────────────────────────────────────────── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&display=swap');
 
-/* ─────────────────────────────────────────────────────────── 
-   CSS VARIABLES — Design Tokens
-   ─────────────────────────────────────────────────────────── */
 :root {
-  /* Colors */
   --color-bg-primary: #FFFFFF;
   --color-bg-secondary: #000000;
   --color-bg-alt: #F5F5F5;
@@ -23,38 +11,23 @@
   --color-text-secondary: #666666;
 
   --color-accent: #6366F1;
-  /* Soft Indigo - Professional, Non-Alarming */
   --accent-soft: #A5B4FC;
-  /* Lighter Indigo for Backgrounds */
   --accent-ink: #4338CA;
-  /* Darker Indigo for Hover States */
   --color-border: rgba(0, 0, 0, 0.1);
 
-  /* Typography */
   --font-display: 'Inter Tight', sans-serif;
   --font-body: 'Inter', sans-serif;
 
-  /* Font Sizes - Scale is massive for impact */
   --text-xs: 0.75rem;
-  /* 12px */
   --text-sm: 0.875rem;
-  /* 14px */
   --text-base: 1rem;
-  /* 16px */
   --text-lg: 1.25rem;
-  /* 20px */
   --text-xl: 1.5rem;
-  /* 24px */
   --text-2xl: 2.5rem;
-  /* 40px */
   --text-3xl: 4rem;
-  /* 64px */
   --text-4xl: 6rem;
-  /* 96px */
   --text-hero: clamp(3rem, 10vw, 10rem);
-  /* Massive responsive hero */
 
-  /* Spacing */
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 2rem;
@@ -62,22 +35,16 @@
   --space-xl: 8rem;
   --space-2xl: 12rem;
 
-  /* Layout */
   --container-width: 1400px;
   --header-height: 80px;
   --margin-horizontal: 2rem;
-  /* Was missing, causing invalid padding */
 
-  /* Motion */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: 200ms var(--ease-out-expo);
   --transition-normal: 400ms var(--ease-out-expo);
   --transition-slow: 800ms var(--ease-out-expo);
 }
 
-/* ─────────────────────────────────────────────────────────── 
-   RESET & BASE STYLES
-   ─────────────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -88,14 +55,11 @@
 
 html {
   font-size: 16px;
-  /* scroll-behavior: smooth;  <-- REMOVED: Conflicts with Lenis */
   height: 100%;
   -webkit-text-size-adjust: 100%;
-  /* Prevent automatic text resizing on mobile matching */
   text-size-adjust: 100%;
 }
 
-/* LENIS RECOMMENDED CSS */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -103,7 +67,6 @@ html.lenis body {
 
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
-  /* Force auto so Lenis takes over */
 }
 
 .lenis.lenis-smooth [data-lenis-prevent] {
@@ -127,8 +90,6 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Stronger font smoothing for consistency */
-  /* Fix Issue 1: Prevent ultra-wide stretching on large screens */
   max-width: 2560px;
   margin: 0 auto;
 }
@@ -138,9 +99,6 @@ body {
   color: var(--color-text-inverse);
 }
 
-/* ─────────────────────────────────────────────────────────── 
-   TYPOGRAPHY
-   ─────────────────────────────────────────────────────────── */
 h1,
 h2,
 h3,
@@ -154,10 +112,8 @@ h6 {
   color: var(--color-text-primary);
 }
 
-/* Hero Text Standardization */
 .hero-title {
   font-family: var(--font-display);
-  /* Responsive sizing based on viewport width */
   font-size: clamp(3rem, 11vw, 9rem);
   font-weight: 900;
   line-height: 0.9;
@@ -167,23 +123,19 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Centered */
   text-align: center;
-  /* Centered */
   word-break: break-word;
   padding-bottom: 0.2em;
   width: 100%;
   z-index: 10;
 }
 
-/* Hard Cap for Large Screens */
 @media (min-width: 1600px) {
   .hero-title {
     font-size: 10rem;
   }
 }
 
-/* Fix for Hero Layout */
 .hero-section-fix {
   width: 100%;
   max-width: 1600px;
@@ -195,9 +147,7 @@ h6 {
   align-items: center;
   min-height: 100vh;
   height: 100svh;
-  /* Better mobile support */
   padding-top: 80px;
-  /* Offset for nav if needed */
 }
 
 .hero-line {
@@ -209,7 +159,6 @@ h6 {
   color: var(--color-accent);
 }
 
-/* Abstract Shapes */
 .hero-shapes {
   position: absolute;
   top: 0;
@@ -223,24 +172,19 @@ h6 {
 
 .shape {
   position: absolute;
-  /* Increased opacity for better visibility per user feedback */
   opacity: 0.6;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
-  /* Ensure they don't block text selection */
 }
 
-/* Specific shape tweaks */
 .shape-circle {
   width: 40vw;
-  /* Larger but thinner */
   height: 40vw;
   max-width: 600px;
   max-height: 600px;
   stroke-width: 1.5;
-  /* Much thinner, elegant stroke */
   opacity: 0.4;
 }
 
@@ -250,9 +194,7 @@ h6 {
   max-width: 250px;
   max-height: 250px;
   opacity: 0.08;
-  /* Very subtle watermark feel */
   border-radius: 20px;
-  /* Soften edges */
 }
 
 .display-text {
@@ -292,9 +234,6 @@ a {
   cursor: pointer;
 }
 
-/* ─────────────────────────────────────────────────────────── 
-   LAYOUT UTILITIES
-   ─────────────────────────────────────────────────────────── */
 .container {
   width: 100%;
   max-width: var(--container-width);
@@ -319,12 +258,10 @@ a {
   grid-template-columns: repeat(12, 1fr);
 }
 
-/* Sticky Corners Layout */
 .sticky-wrapper {
   position: relative;
   z-index: 100;
   pointer-events: none;
-  /* Let clicks pass through to content */
 }
 
 .sticky-element {
@@ -353,7 +290,6 @@ a {
   left: var(--space-sm);
 }
 
-/* Sections */
 .section {
   padding: var(--space-2xl) 0;
   position: relative;
@@ -376,11 +312,6 @@ a {
   align-items: center;
 }
 
-/* ─────────────────────────────────────────────────────────── 
-   COMPONENTS
-   ─────────────────────────────────────────────────────────── */
-
-/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -392,7 +323,6 @@ a {
   font-weight: 500;
   font-size: var(--text-sm);
   border-radius: 8px;
-  /* Slightly rounded */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
 }
@@ -420,7 +350,6 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Page Transitions */
 body {
   opacity: 0;
   transition: opacity 0.4s ease-out;
@@ -430,7 +359,6 @@ body.loaded {
   opacity: 1;
 }
 
-/* --- CUSTOM CURSOR --- */
 .custom-cursor {
   position: fixed;
   top: 0;
@@ -453,16 +381,6 @@ body.loaded {
   border: 2px solid var(--color-accent);
 }
 
-/* Hide default cursor on desktop - REMOVED per user request */
-/* @media (min-width: 992px) {
-  body,
-  a,
-  button,
-  .btn {
-    cursor: auto; 
-  }
-} */
-
 .btn-floating {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
@@ -477,7 +395,6 @@ body.loaded {
   color: white;
 }
 
-/* Project Cards / Bento Grid */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -549,9 +466,6 @@ body.loaded {
   transform: translateY(0);
 }
 
-
-
-/* Scoped to overlay cards (Index page) */
 .project-overlay .project-actions {
   opacity: 0;
   transform: translateY(20px);
@@ -573,7 +487,6 @@ body.loaded {
   pointer-events: auto;
 }
 
-/* Base Action Button (Index Overlay) */
 .btn-action {
   padding: 8px 16px;
   font-size: var(--text-sm);
@@ -606,7 +519,6 @@ body.loaded {
   color: white;
 }
 
-/* General Outline Button (Work Page) */
 .btn-outline {
   background: transparent;
   border: 1px solid var(--color-border);
@@ -623,15 +535,9 @@ body.loaded {
   background: var(--color-bg-primary);
 }
 
-
-/* ─────────────────────────────────────────────────────────── 
-   ANIMATIONS & UTILITIES
-   ─────────────────────────────────────────────────────────── */
 .reveal-text {
   position: relative;
   overflow: visible;
-  /* Fix clipping - allow text to breathe */
-  /* Removed padding/margin hacks */
 }
 
 .reveal-text span {
@@ -650,15 +556,12 @@ body.loaded {
   transition: opacity var(--transition-slow), transform var(--transition-slow);
 }
 
-/* Force visibility hack for debugging if JS fails */
 .is-visible .fade-up,
 .fade-up {
   opacity: 1 !important;
   transform: none !important;
 }
 
-
-/* Marquee Animation */
 .marquee-container {
   overflow: hidden;
   white-space: nowrap;
@@ -690,13 +593,6 @@ body.loaded {
   }
 }
 
-
-/* ─────────────────────────────────────────────────────────── 
-   RECRUITER SECTIONS (Skills, Process, Stats)
-   — NEWLY ADDED
-   ─────────────────────────────────────────────────────────── */
-
-/* Skills / Tags */
 .tags-container {
   display: flex;
   flex-wrap: wrap;
@@ -718,7 +614,6 @@ body.loaded {
   border-color: var(--color-text-primary);
 }
 
-/* Process Grid */
 .process-step {
   border-top: 1px solid var(--color-border);
   padding-top: var(--space-sm);
@@ -738,7 +633,6 @@ body.loaded {
   margin-bottom: var(--space-xs);
 }
 
-/* Stats */
 .stat-item {
   text-align: center;
 }
@@ -759,10 +653,6 @@ body.loaded {
   font-weight: 600;
 }
 
-
-/* ─────────────────────────────────────────────────────────── 
-   RESPONSIVE
-   ─────────────────────────────────────────────────────────── */
 @media (max-width: 1024px) {
   :root {
     --text-hero: 4rem;
@@ -781,7 +671,6 @@ body.loaded {
     display: none;
   }
 
-  /* Simplify on mobile */
   .grid-cols-2,
   .grid-cols-3 {
     grid-template-columns: 1fr;
@@ -795,13 +684,10 @@ body.loaded {
 
   .hero-title {
     font-size: clamp(2rem, 13vw, 4.5rem);
-    /* Slightly smaller max to prevent huge blowout */
     line-height: 1.1;
-    /* Much looser to prevent overlap */
     margin-bottom: 2rem;
   }
 
-  /* Fix vertical spacing */
   .hero-text span:nth-child(2) {
     z-index: 2;
   }

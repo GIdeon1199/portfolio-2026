@@ -3,20 +3,18 @@ import { ScrollTrigger } from 'https://cdn.skypack.dev/gsap/ScrollTrigger';
 import { Draggable } from 'https://cdn.skypack.dev/gsap/Draggable';
 
 export function initInfiniteSlider() {
-    gsap.registerPlugin(Draggable); // ScrollTrigger no longer needed for driving animation
+    gsap.registerPlugin(Draggable);
 
     console.log("Initializing Seamless Loop Slider (Horizontal Interaction)...");
 
-    let iteration = 0; // gets iterated when we scroll all the way to the end or start and wraps around
+    let iteration = 0;
 
-    // set initial state of items
     gsap.set('.cards li', { xPercent: 400, opacity: 0, scale: 0 });
 
-    const spacing = 0.1; // spacing of the cards (stagger)
+    const spacing = 0.1;
     const snapTime = gsap.utils.snap(spacing);
     const cards = gsap.utils.toArray('.cards li');
 
-    // animateFunc: called for each element in buildSeamlessLoop
     const animateFunc = element => {
         const tl = gsap.timeline();
         tl.fromTo(element, { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, zIndex: 100, duration: 0.5, yoyo: true, repeat: 1, ease: "power1.in", immediateRender: false })
@@ -38,15 +36,11 @@ export function initInfiniteSlider() {
         paused: true
     });
 
-    // --- HORIZONTAL WHEEL / TRACKPAD LOGIC ---
     const gallery = document.querySelector('.gallery');
     if (gallery) {
         gallery.addEventListener('wheel', (e) => {
-            // Only capture if it's primarily horizontal
             if (Math.abs(e.deltaX) > Math.abs(e.deltaY)) {
                 e.preventDefault();
-                // Adjust sensitivity as needed. 
-                // seamlessLoop.duration() * factor
                 const sensitivity = 0.001;
                 scrub.vars.offset += e.deltaX * sensitivity;
                 scrub.invalidate().restart();
@@ -54,12 +48,10 @@ export function initInfiniteSlider() {
         }, { passive: false });
     }
 
-
-    // --- BUTTON LOGIC ---
     function moveSlider(direction) {
         const currentOffset = scrub.vars.offset;
         const targetOffset = currentOffset + (direction * spacing);
-        const snapped = snapTime(targetOffset); // Optional: Snap to exact card
+        const snapped = snapTime(targetOffset);
 
         scrub.vars.offset = snapped;
         scrub.invalidate().restart();
@@ -68,12 +60,9 @@ export function initInfiniteSlider() {
     const nextBtn = document.querySelector(".next");
     const prevBtn = document.querySelector(".prev");
 
-    // Next button moves forward (positive spacing)
     if (nextBtn) nextBtn.addEventListener("click", () => moveSlider(1));
-    // Prev button moves backward (negative spacing)
     if (prevBtn) prevBtn.addEventListener("click", () => moveSlider(-1));
 
-    // --- DRAGGABLE LOGIC ---
     Draggable.create(".drag-proxy", {
         type: "x",
         trigger: ".cards",
@@ -81,13 +70,10 @@ export function initInfiniteSlider() {
             this.startOffset = scrub.vars.offset;
         },
         onDrag() {
-            // Map pixel movement to timeline progress
-            // 0.002 is a sensitivity factor for "feel"
             scrub.vars.offset = this.startOffset + (this.startX - this.x) * 0.002;
             scrub.invalidate().restart();
         },
         onDragEnd() {
-            // Optional: Snap on release
             const snapped = snapTime(scrub.vars.offset);
             scrub.vars.offset = snapped;
             scrub.invalidate().restart();

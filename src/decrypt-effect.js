@@ -4,7 +4,6 @@ export function initDecryptEffect() {
     const target = document.querySelector('.decrypt-text');
     if (!target) return;
 
-    // Define the mapping: Letter -> Symbol
     const mapping = [
         { char: 'U', symbol: '∪' },
         { char: 'N', symbol: 'η' },
@@ -18,38 +17,32 @@ export function initDecryptEffect() {
         { char: 'X', symbol: 'χ' }
     ];
 
-    // Clear and rebuild HTML for granular control
     target.innerHTML = '';
-    target.setAttribute('aria-label', 'UNORTHODOX'); // Accessibility
+    target.setAttribute('aria-label', 'UNORTHODOX');
 
-    // Create spans
     const spans = mapping.map((item, index) => {
         const span = document.createElement('span');
-        span.textContent = item.symbol; // Start with symbol
-        span.dataset.char = item.char;   // Store real char
-        span.dataset.symbol = item.symbol; // Store symbol
+        span.textContent = item.symbol;
+        span.dataset.char = item.char;
+        span.dataset.symbol = item.symbol;
         span.style.display = 'inline-block';
-        span.style.minWidth = '0.6em'; // Prevent layout shift during swap
+        span.style.minWidth = '0.6em';
         target.appendChild(span);
         return span;
     });
 
-    // Hover Animation
     target.addEventListener('mouseenter', () => {
         gsap.to(spans, {
             duration: 0.5,
             stagger: {
                 amount: 0.3,
-                from: "random" // Scramble feel
+                from: "random"
             },
             onStart: function () {
-                // We use a tween to swap text content
-                // But simple textContent swap in onStart/Update is easier
                 this.targets().forEach(span => {
-                    // Random delay for the swap itself to look glitchy
                     setTimeout(() => {
                         span.textContent = span.dataset.char;
-                        span.style.color = 'var(--color-accent)'; // Optional: highlight
+                        span.style.color = 'var(--color-accent)';
                     }, Math.random() * 300);
                 });
             }
@@ -67,7 +60,7 @@ export function initDecryptEffect() {
                 this.targets().forEach(span => {
                     setTimeout(() => {
                         span.textContent = span.dataset.symbol;
-                        span.style.color = ''; // Reset color
+                        span.style.color = '';
                     }, Math.random() * 300);
                 });
             }

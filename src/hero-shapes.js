@@ -7,18 +7,16 @@ export function initHeroShapes() {
     const shapes = document.querySelectorAll('.hero-shapes .shape');
     if (!shapes.length) return;
 
-    // Randomize initial positions slightly
     shapes.forEach((shape, i) => {
         gsap.set(shape, {
             xPercent: -50,
             yPercent: -50,
-            x: gsap.utils.random(-200, 200), // Spread out more
+            x: gsap.utils.random(-200, 200),
             y: gsap.utils.random(-100, 100),
             rotation: gsap.utils.random(0, 360)
         });
     });
 
-    // 1. Floating Animation (Continuous)
     shapes.forEach((shape, i) => {
         gsap.to(shape, {
             y: `+=${gsap.utils.random(20, 50)}`,
@@ -31,7 +29,6 @@ export function initHeroShapes() {
         });
     });
 
-    // 2. Scroll Parallax
     gsap.to('.shape-circle', {
         scrollTrigger: {
             trigger: '.hero-section-fix',
@@ -55,9 +52,6 @@ export function initHeroShapes() {
         ease: 'none'
     });
 
-
-
-    // 3. Mouse Parallax (Interactive)
     const heroSection = document.querySelector('.hero-section-fix');
 
     if (heroSection) {
