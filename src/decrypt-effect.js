@@ -1,4 +1,4 @@
-import gsap from 'https://cdn.skypack.dev/gsap';
+import gsap from 'gsap';
 
 export function initDecryptEffect() {
     const target = document.querySelector('.decrypt-text');
@@ -19,53 +19,68 @@ export function initDecryptEffect() {
 
     target.innerHTML = '';
     target.setAttribute('aria-label', 'UNORTHODOX');
+    target.style.cursor = 'crosshair'; // Hint at interaction
 
-    const spans = mapping.map((item, index) => {
+    const spans = mapping.map((item) => {
         const span = document.createElement('span');
-        span.textContent = item.symbol;
+        span.textContent = item.symbol; // Start with symbols
         span.dataset.char = item.char;
         span.dataset.symbol = item.symbol;
         span.style.display = 'inline-block';
         span.style.minWidth = '0.6em';
+        span.style.transition = 'color 0.3s ease';
         target.appendChild(span);
         return span;
     });
 
-    target.addEventListener('mouseenter', () => {
+    const scrambleSettings = {
+        duration: 0.5,
+        stagger: {
+            amount: 0.3,
+            from: "random"
+        }
+    };
+
+    // Function to reveal text (turn to letters)
+    const revealText = () => {
         gsap.to(spans, {
-            duration: 0.5,
-            stagger: {
-                amount: 0.3,
-                from: "random"
-            },
+            ...scrambleSettings,
             onStart: function () {
                 this.targets().forEach(span => {
+                    const delay = Math.random() * 300;
                     setTimeout(() => {
                         span.textContent = span.dataset.char;
-                        span.style.color = 'var(--color-accent)';
-                    }, Math.random() * 300);
+                        span.style.color = 'var(--color-text-primary)'; // Reset color
+                    }, delay);
                 });
             }
         });
-    });
+    };
 
-    target.addEventListener('mouseleave', () => {
+    // Function to hide text (turn to symbols)
+    const hideText = () => {
         gsap.to(spans, {
-            duration: 0.5,
-            stagger: {
-                amount: 0.3,
-                from: "random"
-            },
+            ...scrambleSettings,
             onStart: function () {
                 this.targets().forEach(span => {
+                    const delay = Math.random() * 300;
                     setTimeout(() => {
                         span.textContent = span.dataset.symbol;
-                        span.style.color = '';
-                    }, Math.random() * 300);
+                        span.style.color = 'var(--color-accent)'; // Highlight symbols
+                    }, delay);
                 });
             }
         });
-    });
+    };
 
-    console.log("✅ Decrypt Effect: Initialized on", target);
+    // Initial Animation: Wait a bit, then reveal
+    setTimeout(() => {
+        revealText();
+    }, 1500); // delayed to run after hero entrance
+
+    // Interactions
+    target.addEventListener('mouseenter', hideText);
+    target.addEventListener('mouseleave', revealText);
+
+    console.log("✅ Decrypt Effect: Initialized with Auto-Reveal");
 }
