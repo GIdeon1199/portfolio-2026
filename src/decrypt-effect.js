@@ -1,86 +1,103 @@
 import gsap from 'gsap';
 
 export function initDecryptEffect() {
+    console.log("🔓 Decrypt Effect: initializing...");
+    // Check GSAP
+    if (!gsap) {
+        console.error("❌ Decrypt Effect: GSAP not found!");
+        return;
+    }
+    console.log(`🔓 Decrypt Effect: GSAP Version ${gsap.version}`);
+
     const target = document.querySelector('.decrypt-text');
-    if (!target) return;
+    if (!target) {
+        console.error("❌ Decrypt Effect: Target .decrypt-text not found");
+        return;
+    }
+    console.log("🔓 Decrypt Effect: Target found", target);
 
-    const mapping = [
-        { char: 'U', symbol: '∪' },
-        { char: 'N', symbol: 'η' },
-        { char: 'O', symbol: '⊙' },
-        { char: 'R', symbol: 'ℜ' },
-        { char: 'T', symbol: 'τ' },
-        { char: 'H', symbol: 'ℏ' },
-        { char: 'O', symbol: '⊘' },
-        { char: 'D', symbol: '∂' },
-        { char: 'O', symbol: '𝟎' },
-        { char: 'X', symbol: 'χ' }
-    ];
+    const text = "UNORTHODOX";
+    const symbols = ['∪', 'η', '⊙', 'ℜ', 'τ', 'ℏ', '⊘', '∂', '𝟎', 'χ'];
 
-    target.innerHTML = '';
-    target.setAttribute('aria-label', 'UNORTHODOX');
-    target.style.cursor = 'crosshair'; // Hint at interaction
+    // Safety check length
+    if (symbols.length !== text.length) {
+        console.warn("Decrypt Effect: Length mismatch between text and symbols");
+    }
 
-    const spans = mapping.map((item) => {
-        const span = document.createElement('span');
-        span.textContent = item.symbol; // Start with symbols
-        span.dataset.char = item.char;
-        span.dataset.symbol = item.symbol;
-        span.style.display = 'inline-block';
-        span.style.minWidth = '0.6em';
-        span.style.transition = 'color 0.3s ease';
-        target.appendChild(span);
-        return span;
-    });
+    const mapping = text.split('').map((char, i) => ({
+        char: char,
+        symbol: symbols[i] || '?'
+    }));
 
-    const scrambleSettings = {
-        duration: 0.5,
-        stagger: {
-            amount: 0.3,
-            from: "random"
-        }
-    };
+    // Construct DOM
+    try {
+        target.innerHTML = '';
+        target.setAttribute('aria-label', text);
+        target.style.cursor = 'help'; // Changed to help to indicate interaction
 
-    // Function to reveal text (turn to letters)
-    const revealText = () => {
-        gsap.to(spans, {
-            ...scrambleSettings,
-            onStart: function () {
-                this.targets().forEach(span => {
-                    const delay = Math.random() * 300;
-                    setTimeout(() => {
-                        span.textContent = span.dataset.char;
-                        span.style.color = 'var(--color-text-primary)'; // Reset color
-                    }, delay);
-                });
-            }
+        const spans = mapping.map((item) => {
+            const span = document.createElement('span');
+            span.textContent = item.symbol; // Start with symbols
+            span.dataset.char = item.char;
+            span.dataset.symbol = item.symbol;
+            span.style.display = 'inline-block';
+            span.style.minWidth = '0.6em';
+            span.style.transition = 'color 0.3s ease';
+            target.appendChild(span);
+            return span;
         });
-    };
 
-    // Function to hide text (turn to symbols)
-    const hideText = () => {
-        gsap.to(spans, {
-            ...scrambleSettings,
-            onStart: function () {
-                this.targets().forEach(span => {
-                    const delay = Math.random() * 300;
-                    setTimeout(() => {
-                        span.textContent = span.dataset.symbol;
-                        span.style.color = 'var(--color-accent)'; // Highlight symbols
-                    }, delay);
-                });
+        console.log("🔓 Decrypt Effect: DOM constructed with symbols");
+
+        const scrambleSettings = {
+            duration: 0.5,
+            stagger: {
+                amount: 0.3,
+                from: "random"
             }
-        });
-    };
+        };
 
-    // Initial Animation: Wait a bit, then reveal
-    setTimeout(() => {
-        revealText();
-    }, 1500); // delayed to run after hero entrance
+        const revealText = () => {
+            console.log("🔓 Decrypt Effect: Revealing text...");
+            gsap.to(spans, {
+                ...scrambleSettings,
+                onStart: function () {
+                    this.targets().forEach(span => {
+                        const delay = Math.random() * 300;
+                        setTimeout(() => {
+                            span.textContent = span.dataset.char;
+                            span.style.color = 'var(--color-text-primary)';
+                        }, delay);
+                    });
+                }
+            });
+        };
 
-    // Interactions
-    target.addEventListener('mouseenter', hideText);
-    target.addEventListener('mouseleave', revealText);
+        const hideText = () => {
+            gsap.to(spans, {
+                ...scrambleSettings,
+                onStart: function () {
+                    this.targets().forEach(span => {
+                        const delay = Math.random() * 300;
+                        setTimeout(() => {
+                            span.textContent = span.dataset.symbol;
+                            span.style.color = 'var(--color-accent)';
+                        }, delay);
+                    });
+                }
+            });
+        };
 
-    console.log("✅ Decrypt Effect: Initialized with Auto-Reveal");
+        // Delay start
+        setTimeout(() => {
+            revealText();
+        }, 1500);
+
+        // Interactions
+        target.addEventListener('mouseenter', hideText);
+        target.addEventListener('mouseleave', revealText);
+
+    } catch (e) {
+        console.error("❌ Decrypt Effect: Error during initialization", e);
+    }
 }
