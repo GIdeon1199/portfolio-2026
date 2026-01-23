@@ -5,29 +5,38 @@ export function initScrollSpy() {
     gsap.registerPlugin(ScrollTrigger);
 
     // 1. Find all potential sections to track
-    // Looking for headings that mark distinct sections in the case study
-    const contentSections = document.querySelectorAll('.case-section, .section-container');
+    // Refined selector to catch sections
+    const allSections = document.querySelectorAll('.case-section, .section-container');
     const trackingData = [];
+    const seenHeadings = new Set();
 
-    // Filter relevant sections - typically those with an H2
-    contentSections.forEach((section, index) => {
+    allSections.forEach((section, index) => {
+        // Only track if it has an H2
         const heading = section.querySelector('h2');
-        if (heading && heading.textContent.trim().length > 0) {
-            // Create a unique ID if not present
-            if (!section.id) {
-                const slug = heading.textContent
-                    .toLowerCase()
-                    .replace(/[^a-z0-9]+/g, '-')
-                    .replace(/(^-|-$)/g, '');
-                section.id = `section-${slug}-${index}`;
-            }
+        if (!heading) return;
 
-            trackingData.push({
-                id: section.id,
-                label: heading.textContent.trim(),
-                element: section
-            });
+        const headingText = heading.textContent.trim();
+
+        // Skip empty or duplicate headings
+        // This is the CRITICAL FIX: duplicated nested containers caused duplicate list items
+        if (headingText.length === 0 || seenHeadings.has(headingText)) return;
+
+        seenHeadings.add(headingText);
+
+        // Create a unique ID if not present
+        if (!section.id) {
+            const slug = headingText
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/(^-|-$)/g, '');
+            section.id = `section-${slug}-${index}`;
         }
+
+        trackingData.push({
+            id: section.id,
+            label: headingText,
+            element: section
+        });
     });
 
     if (trackingData.length === 0) return;
@@ -36,22 +45,28 @@ export function initScrollSpy() {
     const sidebar = document.createElement('nav');
     sidebar.classList.add('scrollspy-nav');
 
+    // Create the bullet list container
     const ul = document.createElement('ul');
     ul.classList.add('scrollspy-list');
 
     trackingData.forEach(item => {
         const li = document.createElement('li');
         li.classList.add('scrollspy-item');
-        li.textContent = item.label;
+
+        // Structure: Bullet + Label
+        // We put the label in a span to animate/show it on hover if desired
+        const span = document.createElement('span');
+        span.textContent = item.label;
+        li.appendChild(span);
+
         li.dataset.target = item.id;
 
-        li.addEventListener('click', () => {
+        li.addEventListener('click', (e) => {
+            e.preventDefault();
             const targetEl = document.getElementById(item.id);
             if (targetEl) {
-                // Determine offset - maybe header height or slight buffer
+                // Determine offset - roughly header height
                 const offset = 100;
-                // Use lenis if available globally, otherwise native scroll
-                // Assuming smooth scroll behavior in CSS or Lenis global
                 const top = targetEl.getBoundingClientRect().top + window.scrollY - offset;
                 window.scrollTo({
                     top: top,
@@ -72,9 +87,15 @@ export function initScrollSpy() {
     if (hero) {
         ScrollTrigger.create({
             trigger: hero,
-            start: "bottom center", // When bottom of hero hits center of viewport
+            start: "bottom center", // Trigger when bottom of hero hits center of viewport
             onEnter: () => sidebar.classList.add('visible'),
-            onLeaveBack: () => sidebar.classList.remove('visible')
+            onLeaveBack: () => sidebar.classList.remove('visible'),
+            // Also ensure it is visible if we reload page already scrolled down
+            onUpdate: (self) => {
+                if (self.progress > 0 && !sidebar.classList.contains('visible')) {
+                    sidebar.classList.add('visible');
+                }
+            }
         });
     } else {
         // Fallback: Show immediately if no hero
@@ -82,23 +103,22 @@ export function initScrollSpy() {
     }
 
     // 4. Active State Tracking logic
-    // We'll use ScrollTrigger for each section to update the active class on the sidebar
     trackingData.forEach(item => {
         ScrollTrigger.create({
             trigger: item.element,
-            start: "top center",
-            end: "bottom center",
+            start: "top center+=100", // Activate slightly before it hits center
+            end: "bottom center+=100",
             onEnter: () => setActive(item.id),
             onEnterBack: () => setActive(item.id)
         });
     });
 
     function setActive(id) {
-        document.querySelectorAll('.scrollspy-item').forEach(el => {
-            el.classList.remove('active');
-            if (el.dataset.target === id) {
-                el.classList.add('active');
-            }
-        });
+        // Remove active class from all
+        document.querySelectorAll('.scrollspy-item').forEach(el => el.classList.remove('active'));
+
+        // Add to matching
+        const match = document.querySelector(`.scrollspy-item[data-target="${id}"]`);
+        if (match) match.classList.add('active');
     }
 }
