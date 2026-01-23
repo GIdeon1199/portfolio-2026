@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./src/neo-brutalist.css">
     <link rel="stylesheet" href="./src/case-study.css">
+    <link rel="stylesheet" href="./src/scrollspy.css">
     <script type="importmap">
     {
         "imports": {
@@ -460,6 +461,12 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.animate-on-scroll, .fade-in, .case-title').forEach(el => observer.observe(el));
+
+        // Initialize ScrollSpy
+        import { initScrollSpy } from './src/scrollspy.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            initScrollSpy();
+        });
     </script>
     <script type="module" src="./src/global.js"></script>
 </body>

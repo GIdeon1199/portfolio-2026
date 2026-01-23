@@ -1,0 +1,90 @@
+/* Vertical Scrollspy Styles */
+.scrollspy-nav {
+    position: fixed;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    width: 200px;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    /* Prevent clicks when hidden */
+    display: none;
+    /* Hidden by default on mobile */
+}
+
+/* Show only on desktop */
+@media (min-width: 1024px) {
+    .scrollspy-nav {
+        display: block;
+    }
+}
+
+.scrollspy-nav.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scrollspy-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode support if applicable, or generic fallback */
+@media (prefers-color-scheme: dark) {
+    .scrollspy-list {
+        border-left-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+.scrollspy-item {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary, #666);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+    font-family: var(--font-sans, sans-serif);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+}
+
+.scrollspy-item::before {
+    content: '';
+    position: absolute;
+    left: -1px;
+    /* Align with border */
+    top: 0.4em;
+    /* Align vertically with text */
+    width: 2px;
+    height: 0.8em;
+    background: transparent;
+    transition: background 0.3s ease;
+}
+
+.scrollspy-item:hover {
+    opacity: 0.8;
+    color: var(--color-text-primary, #000);
+}
+
+.scrollspy-item.active {
+    opacity: 1;
+    color: var(--color-accent, #FF3C00);
+    /* Fallback or variable */
+    font-weight: 600;
+}
+
+.scrollspy-item.active::before {
+    background: var(--color-accent, #FF3C00);
+}
+
+/* Smooth Scrolling is handled by Lenis or CSS */
+html {
+    scroll-behavior: smooth;
+}
