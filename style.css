@@ -62,12 +62,12 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Ensure sections snap naturally */
-.section,
+/* Ensure sections snap naturally - REMOVED for hybrid scroll */
+/* .section,
 footer,
 .hero-section-fix {
   scroll-snap-align: start;
-}
+} */
 
 html.lenis,
 html.lenis body {
