@@ -93,6 +93,15 @@
     color: var(--color-text-secondary);
 }
 
+.card-inner-content p {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--color-text-primary);
+    margin: 0.5rem 0;
+    opacity: 0.9;
+}
+
 
 .actions {
     position: absolute;
