@@ -111,6 +111,14 @@
     margin: 0 auto;
 }
 
+/* Add padding on desktop to avoid scrollspy overlap */
+@media (min-width: 1024px) {
+    .section-container {
+        padding-left: 240px;
+        /* 200px nav + 40px gap */
+    }
+}
+
 .section-eyebrow {
     font-family: var(--font-sans);
     font-size: var(--text-xs);
