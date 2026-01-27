@@ -58,16 +58,14 @@ html {
   height: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  scroll-snap-type: y mandatory;
+  scroll-snap-type: y proximity;
   scroll-behavior: smooth;
 }
 
-/* Ensure sections snap naturally - REMOVED for hybrid scroll */
-/* .section,
-footer,
+/* Ensure sections snap naturally - Restored for better UX exit */
 .hero-section-fix {
   scroll-snap-align: start;
-} */
+}
 
 html.lenis,
 html.lenis body {
