@@ -58,6 +58,15 @@ html {
   height: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections snap naturally */
+.section,
+footer,
+.hero-section-fix {
+  scroll-snap-align: start;
 }
 
 html.lenis,
