@@ -68,6 +68,7 @@
     -webkit-backdrop-filter: blur(8px);
     border-left: 4px solid var(--color-accent);
     text-align: left;
+    line-height: normal;
     display: flex;
     flex-direction: column;
     justify-content: center;
