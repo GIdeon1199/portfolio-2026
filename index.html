@@ -280,11 +280,13 @@
 
     <script type="module">
         import { initAnimations } from './src/animations.js';
+        import { initCardSnap } from './src/card-snap.js';
 
         document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.add('loaded');
             try {
                 initAnimations();
+                initCardSnap();
             } catch (e) {
                 console.error("Animation init failed:", e);
                 document.body.style.opacity = '1';

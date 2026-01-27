@@ -58,13 +58,7 @@ html {
   height: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
-  scroll-snap-type: y proximity;
-  scroll-behavior: smooth;
-}
-
-/* Ensure sections snap naturally - Restored for better UX exit */
-.hero-section-fix {
-  scroll-snap-align: start;
+  /* scroll-snap removed - now handled by GSAP */
 }
 
 html.lenis,
