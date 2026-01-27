@@ -270,6 +270,12 @@ a {
   z-index: 999;
 }
 
+.absolute-element {
+  position: absolute;
+  pointer-events: auto;
+  z-index: 999;
+}
+
 .sticky-tl {
   top: var(--space-sm);
   left: var(--space-sm);
