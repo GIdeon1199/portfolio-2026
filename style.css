@@ -633,19 +633,128 @@ body.loaded {
   gap: var(--space-xs);
 }
 
+/* Expandable Skill Tags */
 .skill-tag {
-  padding: 8px 16px;
+  position: relative;
+  padding: 10px 18px;
   border: 1px solid var(--color-border);
   border-radius: 100px;
   font-size: var(--text-sm);
   font-weight: 500;
   transition: all var(--transition-fast);
+  cursor: pointer;
+  display: inline-block;
 }
 
 .skill-tag:hover {
   background-color: var(--color-text-primary);
   color: var(--color-text-inverse);
   border-color: var(--color-text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+}
+
+/* Skill Tooltip Dropdown */
+.skill-tag .skill-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  width: 280px;
+  padding: 16px;
+  background: #ffffff;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--color-border);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+  z-index: 9999;
+}
+
+.skill-tag:hover .skill-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Hover bridge - invisible area connecting tag to dropdown */
+.skill-tag .skill-dropdown::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: transparent;
+}
+
+/* Arrow on tooltip */
+.skill-tag .skill-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+  z-index: 1;
+}
+
+.skill-dropdown-title {
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.skill-dropdown-desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  margin-bottom: 12px;
+}
+
+.skill-dropdown-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border);
+}
+
+.skill-dropdown-projects span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.skill-project-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--color-text-primary);
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.skill-project-link:hover {
+  background: var(--color-bg-alt);
+}
+
+.skill-project-link::before {
+  content: '→';
+  color: var(--color-accent);
 }
 
 .process-step {

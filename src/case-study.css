@@ -466,9 +466,9 @@ blockquote footer::before {
 .swipe-container {
     position: relative;
     width: 100%;
-    max-width: 600px;
+    max-width: 700px;
     margin: 4rem auto;
-    height: 400px;
+    height: 500px;
     perspective: 1000px;
 }
 
@@ -498,7 +498,7 @@ blockquote footer::before {
 .swipe-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     pointer-events: none;
 }
 
@@ -521,4 +521,13 @@ blockquote footer::before {
 .swipe-card.swiping-right {
     transform: translateX(120%) rotate(10deg);
     opacity: 0;
+}
+
+/* Case study images */
+.case-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
 }

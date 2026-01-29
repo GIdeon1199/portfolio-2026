@@ -226,6 +226,14 @@
         import { initScrollSpy } from './src/scrollspy.js';
         document.addEventListener('DOMContentLoaded', () => {
             initScrollSpy();
+
+            // Auto-scroll to content on page load
+            const caseHeader = document.querySelector('.case-header');
+            if (caseHeader) {
+                setTimeout(() => {
+                    caseHeader.scrollIntoView({ behavior: 'instant', block: 'start' });
+                }, 100);
+            }
         });
     </script>
     <script type="module" src="./src/global.js"></script>

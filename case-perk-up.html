@@ -269,6 +269,15 @@
         import { initScrollSpy } from './src/scrollspy.js';
         document.addEventListener('DOMContentLoaded', () => {
             initScrollSpy();
+            
+            // Auto-scroll to content on page load
+            const caseHeader = document.querySelector('.case-header');
+            if (caseHeader) {
+                // Small delay to ensure page is fully rendered
+                setTimeout(() => {
+                    caseHeader.scrollIntoView({ behavior: 'instant', block: 'start' });
+                }, 100);
+            }
         });
 
         // Swipe Deck Logic
