@@ -174,7 +174,7 @@
         </div>
     </div>
 
-    <main class="about-page">
+    <main id="page-content" class="about-page">
         <div class="about-grid">
             <!-- Portrait Column -->
             <div class="about-image-frame fade-in">
@@ -277,6 +277,11 @@
 
     <script type="module">
 
+        // Auto-scroll to content on page load
+        const pageContent = document.getElementById('page-content');
+        if (pageContent) {
+            pageContent.scrollIntoView({ behavior: 'instant' });
+        }
 
         // Simple scroll reveal logic
         const observer = new IntersectionObserver((entries) => {

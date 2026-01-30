@@ -335,7 +335,7 @@
         </div>
     </div>
 
-    <main>
+    <main id="page-content">
         <!-- Header -->
         <header class="work-header">
             <h1 class="fade-in">Selected Work</h1>
@@ -659,6 +659,11 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             initInfiniteSlider();
+            // Auto-scroll to content on page load
+            const pageContent = document.getElementById('page-content');
+            if (pageContent) {
+                pageContent.scrollIntoView({ behavior: 'instant' });
+            }
         });
 
         // Simple scroll reveal logic

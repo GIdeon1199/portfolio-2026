@@ -239,7 +239,7 @@
         </div>
     </div>
 
-    <main class="contact-page">
+    <main id="page-content" class="contact-page">
         <div class="contact-container">
             <h1 class="fade-in">Let's Connect</h1>
             <p class="contact-intro fade-in delay-1">
@@ -289,6 +289,12 @@
 
     <script type="module">
         import { initNavigation } from './src/navigation.js';
+
+        // Auto-scroll to content on page load
+        const pageContent = document.getElementById('page-content');
+        if (pageContent) {
+            pageContent.scrollIntoView({ behavior: 'instant' });
+        }
 
         // Simple scroll reveal logic
         const observer = new IntersectionObserver((entries) => {
